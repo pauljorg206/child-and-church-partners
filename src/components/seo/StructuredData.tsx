@@ -117,3 +117,69 @@ export function DonateActionSchema() {
     />
   );
 }
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `https://childandchurchpartners.org${item.url}`,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// Helper to generate breadcrumb items from pathname
+export function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
+  const items: BreadcrumbItem[] = [{ name: "Home", url: "/" }];
+
+  if (pathname === "/") return items;
+
+  const segments = pathname.split("/").filter(Boolean);
+  let currentPath = "";
+
+  const nameMap: Record<string, string> = {
+    about: "About",
+    founders: "Our Founders",
+    inspiration: "Our Inspiration",
+    "what-we-believe": "What We Believe",
+    "financial-transparency": "Financial Transparency",
+    "sponsorship-works": "How Sponsorship Works",
+    "our-approach": "Our Approach",
+    children: "Why Children",
+    churches: "Why Churches",
+    "where-we-work": "Where We Work",
+    give: "Get Involved",
+    equip: "Give to Equip",
+    donate: "Donate",
+    contact: "Contact",
+    gallery: "Gallery",
+    faq: "FAQ",
+    privacy: "Privacy Policy",
+    terms: "Terms of Service",
+    cookies: "Cookie Policy",
+  };
+
+  for (const segment of segments) {
+    currentPath += `/${segment}`;
+    const name =
+      nameMap[segment] || segment.charAt(0).toUpperCase() + segment.slice(1);
+    items.push({ name, url: currentPath });
+  }
+
+  return items;
+}
