@@ -1,5 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
+import ImageStrip from "@/components/sections/ImageStrip";
 import Image from "next/image";
 import type { Metadata } from "next";
 
@@ -13,14 +14,14 @@ const coreValues = [
   {
     title: "Faith in Action",
     description:
-      "We believe faith must be expressed through tangible acts of love and service. James 2:17 reminds us that faith without works is dead.",
+      "We believe faith must be expressed through tangible acts of love and service.",
     verse: "Faith by itself, if it does not have works, is dead.",
     reference: "James 2:17",
   },
   {
     title: "Dignity of Every Child",
     description:
-      "Every child is created in God's image and deserves the opportunity to thrive. We work to ensure no child is held back by circumstances of birth.",
+      "Every child is created in God's image and deserves the opportunity to thrive.",
     verse:
       "Let the little children come to me... for the kingdom of heaven belongs to such as these.",
     reference: "Matthew 19:14",
@@ -28,7 +29,7 @@ const coreValues = [
   {
     title: "Empowering the Local Church",
     description:
-      "We believe the local church is God's plan for community transformation. By strengthening churches, we multiply our impact across generations.",
+      "We believe the local church is God's plan for community transformation.",
     verse:
       "I will build my church, and the gates of hell shall not prevail against it.",
     reference: "Matthew 16:18",
@@ -36,10 +37,29 @@ const coreValues = [
   {
     title: "Lasting Transformation",
     description:
-      "We seek not just to meet immediate needs, but to break cycles of poverty and create pathways to sustainable change.",
+      "We seek not just to meet immediate needs, but to break cycles of poverty.",
     verse:
-      "And let us not grow weary of doing good, for in due season we will reap, if we do not give up.",
+      "And let us not grow weary of doing good, for in due season we will reap.",
     reference: "Galatians 6:9",
+  },
+];
+
+const inspirationImages = [
+  {
+    src: "/images/photo-gallery/child-sponsorship-program-002.jpg",
+    alt: "Sponsored children in the Philippines",
+  },
+  {
+    src: "/images/photo-gallery/church-worship-philippines-001.jpg",
+    alt: "Church worship service",
+  },
+  {
+    src: "/images/photo-gallery/feeding-program-philippines-003.jpg",
+    alt: "Feeding program",
+  },
+  {
+    src: "/images/photo-gallery/youth-leadership-training-001.jpg",
+    alt: "Youth leadership training",
   },
 ];
 
@@ -53,6 +73,9 @@ export default function InspirationPage() {
         backgroundImage="/images/photo-gallery/children-learning-philippines-001.jpg"
       />
 
+      {/* Image Strip */}
+      <ImageStrip images={inspirationImages} />
+
       {/* Opening Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
@@ -64,28 +87,21 @@ export default function InspirationPage() {
                 </h2>
                 <p className="mb-4 text-gray-600">
                   Child & Church Partners International didn&apos;t begin with a
-                  business plan—it began with a calling. For decades before our
-                  official founding in 2017, our founders Dani and Rez Sindac
-                  served alongside Filipino pastors and communities through The
-                  Valley Cathedral Philippines.
-                </p>
-                <p className="mb-4 text-gray-600">
-                  They witnessed firsthand the challenges facing children in
-                  poverty: lack of educational resources, limited opportunities,
-                  and the struggle to break generational cycles. They also saw
-                  something else—the incredible resilience of Filipino families
-                  and the transformative power of local churches.
+                  business plan—it began with a calling. Our founders Dani and
+                  Rez Sindac served alongside Filipino pastors for decades
+                  before officially founding the organization in 2017.
                 </p>
                 <p className="text-gray-600">
-                  These experiences shaped a vision: what if we could
-                  systematically connect sponsors with children and churches,
-                  creating lasting partnerships that transform lives?
+                  They witnessed the challenges facing children in poverty and
+                  the transformative power of local churches. These experiences
+                  shaped a vision: connect sponsors with children and churches
+                  to create lasting partnerships that transform lives.
                 </p>
               </div>
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="https://static.wixstatic.com/media/6ebd37_f3a5ad9f77714fd085d1f6ad9e6ed71f~mv2.jpeg"
-                  alt="Children in the Philippines"
+                  src="/images/photo-gallery/child-education-support-001.jpg"
+                  alt="Children receiving education support"
                   fill
                   className="object-cover"
                 />
@@ -152,92 +168,72 @@ export default function InspirationPage() {
         </div>
       </section>
 
-      {/* Vision Section */}
+      {/* Vision Section with Images */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="mx-auto max-w-4xl">
-            <div className="mb-12 text-center">
-              <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
-                Our Vision for Transformation
-              </h2>
-            </div>
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+              Our Vision for Transformation
+            </h2>
+          </div>
 
-            <div className="grid gap-8 md:grid-cols-3">
-              <div className="text-center">
-                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary-blue/10">
-                  <svg
-                    className="h-10 w-10 text-primary-blue"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                    />
-                  </svg>
-                </div>
+          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+            <div className="overflow-hidden rounded-2xl bg-neutral-off-white">
+              <div className="relative h-48">
+                <Image
+                  src="/images/photo-gallery/children-learning-philippines-004.jpg"
+                  alt="Children in classroom"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
                 <h3 className="mb-2 text-lg font-bold text-gray-900">
                   Educated Children
                 </h3>
-                <p className="text-gray-600">
-                  We envision every sponsored child completing their education
-                  and gaining the skills to build a better future for themselves
-                  and their communities.
+                <p className="text-sm text-gray-600">
+                  Every sponsored child completing their education and building
+                  a better future.
                 </p>
               </div>
+            </div>
 
-              <div className="text-center">
-                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-accent-gold/10">
-                  <svg
-                    className="h-10 w-10 text-accent-gold"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
-                </div>
+            <div className="overflow-hidden rounded-2xl bg-neutral-off-white">
+              <div className="relative h-48">
+                <Image
+                  src="/images/photo-gallery/pastor-training-philippines-001.jpg"
+                  alt="Pastor training"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
                 <h3 className="mb-2 text-lg font-bold text-gray-900">
                   Thriving Churches
                 </h3>
-                <p className="text-gray-600">
-                  We see local churches equipped with trained pastors and
-                  resources to serve their communities, becoming beacons of hope
-                  and transformation.
+                <p className="text-sm text-gray-600">
+                  Local churches equipped with trained pastors to serve their
+                  communities.
                 </p>
               </div>
+            </div>
 
-              <div className="text-center">
-                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary-red/10">
-                  <svg
-                    className="h-10 w-10 text-primary-red"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                    />
-                  </svg>
-                </div>
+            <div className="overflow-hidden rounded-2xl bg-neutral-off-white">
+              <div className="relative h-48">
+                <Image
+                  src="/images/photo-gallery/community-outreach-event-004.jpg"
+                  alt="Community gathering"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
                 <h3 className="mb-2 text-lg font-bold text-gray-900">
                   Transformed Communities
                 </h3>
-                <p className="text-gray-600">
-                  We dream of communities where children grow up with
-                  opportunity, churches lead positive change, and cycles of
-                  poverty are broken for good.
+                <p className="text-sm text-gray-600">
+                  Communities where children thrive and cycles of poverty are
+                  broken.
                 </p>
               </div>
             </div>
@@ -248,50 +244,63 @@ export default function InspirationPage() {
       {/* Story of Hope */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="mx-auto max-w-4xl">
-            <div className="rounded-2xl bg-white p-8 shadow-sm md:p-12">
-              <h2 className="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">
-                Stories That Inspire Us Daily
-              </h2>
-              <p className="mb-6 text-gray-600">
-                Every day, we&apos;re inspired by the stories of children
-                overcoming obstacles, pastors serving sacrificially, and
-                communities being transformed. Like the story of a young girl
-                who, through sponsorship, was able to stay in school and is now
-                pursuing her dream of becoming a teacher. Or the small rural
-                church that, with support from sponsors, started a feeding
-                program that now serves dozens of children each week.
-              </p>
-              <p className="mb-6 text-gray-600">
-                These aren&apos;t just success stories—they&apos;re reminders of
-                why we do what we do. Each sponsored child represents a life
-                full of potential. Each supported church represents a community
-                being touched by God&apos;s love.
-              </p>
-              <p className="font-medium text-gray-700">
-                This is what inspires us: the knowledge that together, we can
-                help children and churches overcome barriers and lead change.
-              </p>
+          <div className="mx-auto max-w-5xl">
+            <div className="grid items-center gap-12 md:grid-cols-2">
+              <div className="relative aspect-square overflow-hidden rounded-2xl shadow-lg">
+                <Image
+                  src="/images/photo-gallery/child-sponsorship-program-005.jpg"
+                  alt="Sponsored child success story"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">
+                  Stories That Inspire Us
+                </h2>
+                <p className="mb-4 text-gray-600">
+                  Every day, we&apos;re inspired by children overcoming
+                  obstacles and pastors serving sacrificially. Like the young
+                  girl who, through sponsorship, stayed in school and is now
+                  pursuing her dream of becoming a teacher.
+                </p>
+                <p className="mb-4 text-gray-600">
+                  Or the small rural church that started a feeding program now
+                  serving dozens of children each week.
+                </p>
+                <p className="font-medium text-gray-700">
+                  Each sponsored child represents a life full of potential. Each
+                  supported church represents a community touched by God&apos;s
+                  love.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Join Our Mission */}
-      <section className="section-padding bg-white">
-        <div className="container-site">
+      {/* Be Part of the Story - with background image */}
+      <section className="relative py-20">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/photo-gallery/church-community-outreach-002.jpg"
+            alt="Community"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-primary-blue/90" />
+        </div>
+        <div className="container-site relative z-10">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
+            <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
               Be Part of the Story
             </h2>
-            <p className="mb-8 text-lg text-gray-600">
-              Our inspiration comes not just from the past, but from the future
-              we believe is possible. A future where every child has the chance
-              to thrive, where every church is equipped to serve, and where
+            <p className="mb-4 text-lg text-gray-200">
+              A future where every child thrives, every church is equipped, and
               communities are transformed by hope.
             </p>
-            <p className="text-lg font-medium text-gray-700">
-              Will you join us in making this vision a reality?
+            <p className="text-xl font-medium text-accent-gold">
+              Will you join us?
             </p>
           </div>
         </div>
