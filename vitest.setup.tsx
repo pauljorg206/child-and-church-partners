@@ -39,6 +39,7 @@ vi.mock("next/image", () => ({
       <img
         src={src}
         alt={alt}
+        role="img"
         data-fill={fill}
         data-priority={priority}
         {...props}
@@ -64,11 +65,30 @@ vi.mock("next/link", () => ({
   ),
 }));
 
-// Mock IntersectionObserver
-const mockIntersectionObserver = vi.fn();
-mockIntersectionObserver.mockReturnValue({
-  observe: () => null,
-  unobserve: () => null,
-  disconnect: () => null,
-});
-window.IntersectionObserver = mockIntersectionObserver;
+// Mock IntersectionObserver as a class
+class MockIntersectionObserver {
+  callback: IntersectionObserverCallback;
+
+  constructor(callback: IntersectionObserverCallback) {
+    this.callback = callback;
+  }
+
+  observe(element: Element) {
+    // Immediately trigger the callback with isIntersecting: true
+    this.callback(
+      [{ isIntersecting: true, target: element } as IntersectionObserverEntry],
+      this as unknown as IntersectionObserver
+    );
+  }
+
+  unobserve() {
+    // No-op
+  }
+
+  disconnect() {
+    // No-op
+  }
+}
+
+window.IntersectionObserver =
+  MockIntersectionObserver as unknown as typeof IntersectionObserver;

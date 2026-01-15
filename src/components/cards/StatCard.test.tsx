@@ -1,17 +1,8 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import StatCard from "./StatCard";
 
 describe("StatCard", () => {
-  beforeEach(() => {
-    // Mock IntersectionObserver to trigger visibility immediately
-    const mockObserver = vi.fn((callback) => {
-      callback([{ isIntersecting: true }]);
-      return { observe: vi.fn(), unobserve: vi.fn(), disconnect: vi.fn() };
-    });
-    vi.stubGlobal("IntersectionObserver", mockObserver);
-  });
-
   it("renders the statistic number and label", () => {
     render(<StatCard number="10,000" label="Children Helped" />);
 
