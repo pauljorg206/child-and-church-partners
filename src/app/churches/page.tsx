@@ -52,7 +52,7 @@ export default function WhyChurchesPage() {
         title="Why Churches"
         subtitle="Equip pastors to lead their communities with truth and grace."
         variant="simple"
-        backgroundImage="/images/photo-gallery/church-service-philippines-001.jpg"
+        backgroundImage="/images/photo-gallery/church-service-philippines-001.jpeg"
       />
 
       {/* Image + Quote Section */}
@@ -61,7 +61,7 @@ export default function WhyChurchesPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative h-80 overflow-hidden rounded-2xl lg:h-[400px]">
               <Image
-                src="/images/photo-gallery/church-community-service-001.jpg"
+                src="/images/photo-gallery/church-community-service-001.jpeg"
                 alt="Church community in the Philippines"
                 fill
                 className="object-cover"
