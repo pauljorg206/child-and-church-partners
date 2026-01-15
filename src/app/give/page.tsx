@@ -12,7 +12,7 @@ const giveImages = [
     alt: "Feeding ministry for children",
   },
   {
-    src: "/images/photo-gallery/child-education-support-001.jpg",
+    src: "/images/photo-gallery/child-education-support-004.jpeg",
     alt: "Child education support",
   },
   {
