@@ -50,7 +50,7 @@ const inspirationImages = [
     alt: "Sponsored children in the Philippines",
   },
   {
-    src: "/images/photo-gallery/church-worship-philippines-001.jpg",
+    src: "/images/photo-gallery/church-worship-philippines-003.jpeg",
     alt: "Church worship service",
   },
   {
@@ -70,7 +70,7 @@ export default function InspirationPage() {
         title="Our Inspiration"
         subtitle="The faith, calling, and vision that drive everything we do."
         variant="simple"
-        backgroundImage="/images/photo-gallery/children-learning-philippines-001.jpg"
+        backgroundImage="/images/photo-gallery/children-learning-philippines-002.jpg"
       />
 
       {/* Image Strip */}
@@ -100,7 +100,7 @@ export default function InspirationPage() {
               </div>
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="/images/photo-gallery/filipino-children-ministry-001.jpg"
+                  src="/images/photo-gallery/filipino-children-ministry-002.jpeg"
                   alt="Filipino children in ministry"
                   fill
                   className="object-cover"
@@ -201,7 +201,7 @@ export default function InspirationPage() {
             <div className="overflow-hidden rounded-2xl bg-neutral-off-white">
               <div className="relative h-48">
                 <Image
-                  src="/images/photo-gallery/pastor-training-philippines-001.jpg"
+                  src="/images/photo-gallery/pastor-training-philippines-003.jpeg"
                   alt="Pastor training"
                   fill
                   className="object-cover"

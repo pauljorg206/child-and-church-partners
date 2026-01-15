@@ -32,15 +32,15 @@ const stats = [
 
 const churchImages = [
   {
-    src: "/images/photo-gallery/church-worship-philippines-001.jpg",
+    src: "/images/photo-gallery/church-worship-philippines-005.jpg",
     alt: "Church worship",
   },
   {
-    src: "/images/photo-gallery/bible-study-fellowship-001.jpeg",
+    src: "/images/photo-gallery/bible-study-fellowship-003.jpeg",
     alt: "Bible study",
   },
   {
-    src: "/images/photo-gallery/pastor-training-philippines-002.jpg",
+    src: "/images/photo-gallery/pastor-training-philippines-004.jpg",
     alt: "Pastor training",
   },
 ];
@@ -135,7 +135,7 @@ export default function WhyChurchesPage() {
               <div className="overflow-hidden rounded-xl bg-white">
                 <div className="relative h-40">
                   <Image
-                    src="/images/photo-gallery/youth-leadership-training-001.jpg"
+                    src="/images/photo-gallery/youth-leadership-training-002.jpg"
                     alt="Leadership development"
                     fill
                     className="object-cover"
@@ -151,7 +151,7 @@ export default function WhyChurchesPage() {
               <div className="overflow-hidden rounded-xl bg-white">
                 <div className="relative h-40">
                   <Image
-                    src="/images/photo-gallery/church-community-outreach-001.jpg"
+                    src="/images/photo-gallery/church-community-outreach-003.jpg"
                     alt="Community outreach"
                     fill
                     className="object-cover"
@@ -176,7 +176,7 @@ export default function WhyChurchesPage() {
             <div className="grid md:grid-cols-2">
               <div className="relative h-64 md:h-auto">
                 <Image
-                  src="/images/photo-gallery/pastor-training-philippines-001.jpg"
+                  src="/images/photo-gallery/pastor-training-philippines-005.jpg"
                   alt="Pastor Jun Omboy"
                   fill
                   className="object-cover"
