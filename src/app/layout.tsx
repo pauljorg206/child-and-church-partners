@@ -5,6 +5,10 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PayPalProvider from "@/components/providers/PayPalProvider";
+import {
+  OrganizationSchema,
+  WebsiteSchema,
+} from "@/components/seo/StructuredData";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,6 +48,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -53,6 +58,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <OrganizationSchema />
+        <WebsiteSchema />
+      </head>
       <body className={inter.className}>
         <PayPalProvider>
           <Header />

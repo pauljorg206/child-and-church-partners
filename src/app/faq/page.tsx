@@ -3,6 +3,7 @@ import CTASection from "@/components/sections/CTASection";
 import FAQAccordion, { FAQCategory } from "@/components/ui/FAQAccordion";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { FAQSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
@@ -150,9 +151,44 @@ const faqData = {
   ],
 };
 
+// Plain text FAQs for structured data schema
+const faqSchemaData = [
+  {
+    question: "What is Child & Church Partners International?",
+    answer:
+      "Child & Church Partners International is a U.S.-based 501(c)(3) Christian nonprofit organization dedicated to helping children and churches in the Philippines overcome barriers and lead change.",
+  },
+  {
+    question: "How does child sponsorship work?",
+    answer:
+      "When you sponsor a child for $35 per month, your support provides educational assistance, health and nutrition support, and connection to a vibrant church community.",
+  },
+  {
+    question: "Is my donation tax-deductible?",
+    answer:
+      "Yes! Child & Church Partners International is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to the extent allowed by law.",
+  },
+  {
+    question: "How does church sponsorship work?",
+    answer:
+      "Church sponsorship at $50 per month helps equip local churches in the Philippines to serve their communities effectively through pastoral training, ministry resources, and outreach programs.",
+  },
+  {
+    question: "Can I communicate with my sponsored child?",
+    answer:
+      "Yes! We encourage sponsors to connect with their sponsored children through letters and messages, and we provide regular updates on your sponsored child's progress.",
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer:
+      "We accept donations through PayPal (credit card, debit card, or PayPal balance) and checks made payable to Child & Church Partners International.",
+  },
+];
+
 export default function FAQPage() {
   return (
     <>
+      <FAQSchema faqs={faqSchemaData} />
       <Hero
         title="Frequently Asked Questions"
         subtitle="Find answers to common questions about our organization, programs, and how you can help."
