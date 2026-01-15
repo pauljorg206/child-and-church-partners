@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useId } from "react";
 
 interface NewsletterFormProps {
   variant?: "inline" | "stacked";
@@ -14,6 +14,7 @@ export default function NewsletterForm({
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const formId = useId();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,7 +30,7 @@ export default function NewsletterForm({
 
   if (status === "success") {
     return (
-      <div className="py-4 text-center">
+      <div className="py-4 text-center" role="status" aria-live="polite">
         <div className="mb-2 font-semibold text-green-600">
           Thanks for subscribing!
         </div>
@@ -43,26 +44,41 @@ export default function NewsletterForm({
   if (variant === "stacked") {
     return (
       <form onSubmit={handleSubmit} className="space-y-3">
-        <input
-          type="text"
-          placeholder="Your Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
-        />
-        <input
-          type="email"
-          placeholder="Your Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
-        />
+        <div>
+          <label htmlFor={`${formId}-name`} className="sr-only">
+            Your Name
+          </label>
+          <input
+            id={`${formId}-name`}
+            type="text"
+            placeholder="Your Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            aria-required="true"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
+          />
+        </div>
+        <div>
+          <label htmlFor={`${formId}-email`} className="sr-only">
+            Your Email
+          </label>
+          <input
+            id={`${formId}-email`}
+            type="email"
+            placeholder="Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            aria-required="true"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
+          />
+        </div>
         <button
           type="submit"
           disabled={status === "loading"}
           className="btn-primary w-full disabled:opacity-50"
+          aria-busy={status === "loading"}
         >
           {status === "loading" ? "Subscribing..." : "Subscribe for Updates"}
         </button>
@@ -72,26 +88,41 @@ export default function NewsletterForm({
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
-      <input
-        type="text"
-        placeholder="Your Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-        className="flex-1 rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
-      />
-      <input
-        type="email"
-        placeholder="Your Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-        className="flex-1 rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
-      />
+      <div className="flex-1">
+        <label htmlFor={`${formId}-name-inline`} className="sr-only">
+          Your Name
+        </label>
+        <input
+          id={`${formId}-name-inline`}
+          type="text"
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          aria-required="true"
+          className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
+        />
+      </div>
+      <div className="flex-1">
+        <label htmlFor={`${formId}-email-inline`} className="sr-only">
+          Your Email
+        </label>
+        <input
+          id={`${formId}-email-inline`}
+          type="email"
+          placeholder="Your Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          aria-required="true"
+          className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
+        />
+      </div>
       <button
         type="submit"
         disabled={status === "loading"}
         className="btn-primary whitespace-nowrap disabled:opacity-50"
+        aria-busy={status === "loading"}
       >
         {status === "loading" ? "..." : "Subscribe"}
       </button>

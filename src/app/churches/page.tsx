@@ -1,7 +1,9 @@
 import Hero from "@/components/sections/Hero";
 import StatsSection from "@/components/sections/StatsSection";
 import CTASection from "@/components/sections/CTASection";
-import ProgramCard from "@/components/cards/ProgramCard";
+import ImageGrid from "@/components/sections/ImageGrid";
+import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,28 +16,32 @@ const stats = [
   {
     number: "60%",
     label: "Small Churches",
-    description:
-      "The majority of churches in the Philippines are small, rural congregations—often with fewer than 50 members, limited budgets, and pastors who work other jobs to support their families.",
+    description: "Rural congregations with limited resources.",
   },
   {
-    number: "35,000-40,000",
+    number: "40,000",
     label: "Untrained Pastors",
-    description:
-      "A study by the Philippine Council of Evangelical Churches found that between 35,000 to 40,000 Filipino pastors lack formal theological education, impacting the depth and accuracy of biblical teachings.",
+    description: "Leaders without formal theological education.",
   },
   {
     number: "85%",
     label: "Global Challenge",
-    description:
-      "According to Lausanne.org, approximately 85% of pastors worldwide lead churches without formal theological education. The Philippines faces this challenge acutely.",
+    description: "Pastors worldwide lack training.",
   },
 ];
 
-const testimonials = [
+const churchImages = [
   {
-    quote: "I want to learn more how to rightly handle the word of God.",
-    name: "Pastor Jun Omboy",
-    title: "Church Pastor",
+    src: "/images/photo-gallery/church-worship-philippines-001.jpg",
+    alt: "Church worship",
+  },
+  {
+    src: "/images/photo-gallery/bible-study-fellowship-001.jpeg",
+    alt: "Bible study",
+  },
+  {
+    src: "/images/photo-gallery/pastor-training-philippines-002.jpg",
+    alt: "Pastor training",
   },
 ];
 
@@ -44,170 +50,244 @@ export default function WhyChurchesPage() {
     <>
       <Hero
         title="Why Churches"
-        subtitle="Sponsor a church in the Philippines and help equip pastors to lead their communities."
+        subtitle="Equip pastors to lead their communities with truth and grace."
         variant="simple"
+        backgroundImage="/images/photo-gallery/church-service-philippines-001.jpg"
       />
 
-      {/* Quote Section */}
-      <section className="section-padding bg-neutral-off-white">
+      {/* Image + Quote Section */}
+      <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="mx-auto max-w-3xl text-center">
-            <blockquote className="mb-4 text-2xl italic text-gray-700 sm:text-3xl">
-              &ldquo;...and on this rock I will build my church, and the gates
-              of hell shall not prevail against it.&rdquo;
-            </blockquote>
-            <cite className="font-semibold text-accent-gold">
-              — Matthew 16:18
-            </cite>
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="relative h-80 overflow-hidden rounded-2xl lg:h-[400px]">
+              <Image
+                src="/images/photo-gallery/church-community-service-001.jpg"
+                alt="Church community in the Philippines"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <blockquote className="mb-6 border-l-4 border-accent-gold pl-4 text-xl italic text-gray-700">
+                &ldquo;...on this rock I will build my church, and the gates of
+                hell shall not prevail against it.&rdquo;
+                <footer className="mt-2 text-base font-semibold not-italic text-accent-gold">
+                  — Matthew 16:18
+                </footer>
+              </blockquote>
+              <p className="text-lg text-gray-600">
+                Most Filipino churches are small, rural congregations with
+                limited budgets. Pastors often work other jobs to support their
+                families while serving their communities faithfully.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Statistics */}
       <StatsSection
-        title="THE CHALLENGE"
-        subtitle="Churches in the Philippines face significant challenges in equipping their leaders."
+        title="The Challenge"
         stats={stats}
-        background="white"
+        background="off-white"
       />
 
-      {/* Hope Section */}
+      {/* Image Grid */}
+      <section className="section-padding bg-white">
+        <div className="container-site">
+          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+            Churches Making a Difference
+          </h2>
+          <ImageGrid images={churchImages} columns={3} />
+        </div>
+      </section>
+
+      {/* Hope Section with Photos */}
       <section className="section-padding bg-primary-blue">
         <div className="container-site">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
-              THERE IS HOPE
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
+              There Is Hope
             </h2>
-            <p className="mb-8 text-lg text-gray-200">
-              You can help struggling churches in the Philippines live out their
-              calling to point people to Jesus. Your financial support will give
-              pastors access to:
+            <p className="mb-12 text-lg text-gray-200">
+              Your support gives pastors access to training, resources, and
+              community.
             </p>
             <div className="grid gap-6 md:grid-cols-3">
-              <div className="rounded-xl bg-white/10 p-6">
-                <div className="mb-3 text-3xl text-accent-gold">
-                  <svg
-                    className="mx-auto h-12 w-12"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
-                  </svg>
+              <div className="overflow-hidden rounded-xl bg-white">
+                <div className="relative h-40">
+                  <Image
+                    src="/images/photo-gallery/bible-study-fellowship-002.jpeg"
+                    alt="Bible training"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-white">
-                  Bible Training
-                </h3>
+                <div className="p-4">
+                  <h3 className="font-semibold text-gray-900">
+                    Bible Training
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Sound doctrine & teaching
+                  </p>
+                </div>
               </div>
-              <div className="rounded-xl bg-white/10 p-6">
-                <div className="mb-3 text-3xl text-accent-gold">
-                  <svg
-                    className="mx-auto h-12 w-12"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-                  </svg>
+              <div className="overflow-hidden rounded-xl bg-white">
+                <div className="relative h-40">
+                  <Image
+                    src="/images/photo-gallery/youth-leadership-training-001.jpg"
+                    alt="Leadership development"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-white">
-                  Leadership Development
-                </h3>
+                <div className="p-4">
+                  <h3 className="font-semibold text-gray-900">Leadership</h3>
+                  <p className="text-sm text-gray-600">
+                    Growing next-gen leaders
+                  </p>
+                </div>
               </div>
-              <div className="rounded-xl bg-white/10 p-6">
-                <div className="mb-3 text-3xl text-accent-gold">
-                  <svg
-                    className="mx-auto h-12 w-12"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
-                  </svg>
+              <div className="overflow-hidden rounded-xl bg-white">
+                <div className="relative h-40">
+                  <Image
+                    src="/images/photo-gallery/church-community-outreach-001.jpg"
+                    alt="Community outreach"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-white">
-                  Books & Study Materials
-                </h3>
+                <div className="p-4">
+                  <h3 className="font-semibold text-gray-900">Resources</h3>
+                  <p className="text-sm text-gray-600">
+                    Books & study materials
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Impact Section */}
-      <section className="section-padding bg-white">
+      {/* Pastor Testimonial */}
+      <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
-              The Impact
-            </h2>
-            <p className="mb-4 text-lg text-gray-600">
-              Pastors will be equipped to preach God&apos;s Word faithfully and
-              lead their congregations biblically. They teach sound doctrine
-              with clarity and confidence, helping believers grow deeper in
-              their relationship with Jesus.
-            </p>
-            <p className="mb-8 text-lg text-gray-600">
-              Churches that are healthy and vibrant inspire hope and change in
-              their communities. This kind of teaching leads to true
-              transformation — both of the heart and the mind.
-            </p>
-
-            {/* Testimonial */}
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="rounded-2xl bg-neutral-off-white p-8 text-center"
-              >
+          <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl bg-white shadow-lg">
+            <div className="grid md:grid-cols-2">
+              <div className="relative h-64 md:h-auto">
+                <Image
+                  src="/images/photo-gallery/pastor-training-philippines-001.jpg"
+                  alt="Pastor Jun Omboy"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-col justify-center p-8">
+                <span className="mb-2 inline-block text-sm font-semibold uppercase tracking-wider text-accent-gold">
+                  Pastor Story
+                </span>
                 <blockquote className="mb-4 text-xl italic text-gray-700">
-                  &ldquo;{testimonial.quote}&rdquo;
+                  &ldquo;I want to learn more how to rightly handle the word of
+                  God.&rdquo;
                 </blockquote>
                 <div className="font-semibold text-gray-900">
-                  {testimonial.name}
+                  Pastor Jun Omboy
                 </div>
-                <div className="text-gray-600">{testimonial.title}</div>
+                <div className="text-gray-600">Church Pastor, Philippines</div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Sponsorship Card */}
-      <section className="section-padding bg-accent-gold">
-        <div className="container-site">
-          <div className="mx-auto max-w-md">
-            <ProgramCard
-              title="Sponsor a Church"
-              amount="$50/month"
-              description="Your gift helps small rural churches serve their communities in tangible and lasting ways."
-              bulletPoints={[
-                "Outreach events and training",
-                "Musical instruments and chairs",
-                "Sunday school materials",
-                "Urgent ministry needs",
-              ]}
-              ctaLabel="Sponsor a Church Today"
-              ctaHref="/donate"
-              variant="featured"
-            />
-          </div>
+      {/* Sponsorship CTA */}
+      <section className="relative py-20">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/photo-gallery/church-worship-philippines-002.jpg"
+            alt="Church worship"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-accent-gold/95" />
         </div>
-      </section>
-
-      {/* Final Quote */}
-      <section className="section-padding bg-white">
-        <div className="container-site">
-          <div className="mx-auto max-w-3xl text-center">
-            <blockquote className="text-2xl italic text-gray-700 sm:text-3xl">
-              &ldquo;A church built on God&apos;s truth and grace has power to
-              shine life into a world darkened by despair.&rdquo;
-            </blockquote>
+        <div className="container-site relative z-10">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
+              Equip a Pastor Today
+            </h2>
+            <p className="mb-8 text-lg text-gray-800">
+              Help small rural churches serve their communities in lasting ways.
+            </p>
+            <div className="inline-block rounded-2xl bg-white p-8 text-left shadow-xl">
+              <div className="mb-4 flex items-baseline justify-between">
+                <h3 className="text-xl font-bold text-gray-900">
+                  Sponsor a Church
+                </h3>
+                <span className="text-2xl font-bold text-accent-gold">
+                  $50/mo
+                </span>
+              </div>
+              <ul className="mb-6 space-y-2 text-gray-600">
+                <li className="flex items-center gap-2">
+                  <svg
+                    className="h-5 w-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  Pastor training & resources
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg
+                    className="h-5 w-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  Ministry equipment & materials
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg
+                    className="h-5 w-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  Outreach & community impact
+                </li>
+              </ul>
+              <Link
+                href="/donate"
+                className="btn btn-primary w-full text-center"
+              >
+                Sponsor a Church Today
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       <CTASection
         title="Ready to Support a Church?"
-        description="Help church pastors and staff have access to pastoral training and leadership development."
+        description="Help pastors access training and lead their communities with truth."
         primaryCta={{ label: "Donate Now", href: "/donate" }}
-        secondaryCta={{ label: "Learn More", href: "/give/equip" }}
+        secondaryCta={{ label: "Give to Equip", href: "/give/equip" }}
         background="blue"
       />
     </>
