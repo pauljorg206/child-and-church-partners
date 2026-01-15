@@ -28,7 +28,7 @@ export default function Footer() {
                 alt="Child & Church Partners"
                 width={50}
                 height={50}
-                className="h-12 w-auto brightness-0 invert"
+                className="h-12 w-auto"
               />
             </Link>
             <p className="mb-4 text-sm text-gray-400">
