@@ -32,15 +32,15 @@ const stats = [
 
 const childImages = [
   {
-    src: "/images/photo-gallery/children-learning-philippines-001.jpg",
+    src: "/images/photo-gallery/children-learning-philippines-005.jpeg",
     alt: "Children learning",
   },
   {
-    src: "/images/photo-gallery/child-education-support-001.jpg",
+    src: "/images/photo-gallery/child-education-support-003.jpg",
     alt: "Education support",
   },
   {
-    src: "/images/photo-gallery/child-sponsorship-program-002.jpg",
+    src: "/images/photo-gallery/child-sponsorship-program-003.jpeg",
     alt: "Sponsored children",
   },
 ];
@@ -61,7 +61,7 @@ export default function WhyChildrenPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative h-80 overflow-hidden rounded-2xl lg:h-[400px]">
               <Image
-                src="/images/photo-gallery/children-nutrition-outreach-001.jpg"
+                src="/images/photo-gallery/children-nutrition-outreach-001.jpeg"
                 alt="Children in the Philippines"
                 fill
                 className="object-cover"
@@ -108,7 +108,7 @@ export default function WhyChildrenPage() {
             <div className="grid md:grid-cols-2">
               <div className="relative h-64 md:h-auto">
                 <Image
-                  src="/images/photo-gallery/sponsored-child-philippines-001.jpg"
+                  src="/images/photo-gallery/sponsored-child-philippines-003.jpg"
                   alt="Sponsored child story"
                   fill
                   className="object-cover"
