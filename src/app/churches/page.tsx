@@ -51,12 +51,12 @@ export default function WhyChurchesPage() {
       {/* Quote Section */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="text-2xl sm:text-3xl text-gray-700 italic mb-4">
-              &ldquo;...and on this rock I will build my church, and the gates of
-              hell shall not prevail against it.&rdquo;
+          <div className="mx-auto max-w-3xl text-center">
+            <blockquote className="mb-4 text-2xl italic text-gray-700 sm:text-3xl">
+              &ldquo;...and on this rock I will build my church, and the gates
+              of hell shall not prevail against it.&rdquo;
             </blockquote>
-            <cite className="text-accent-gold font-semibold">
+            <cite className="font-semibold text-accent-gold">
               — Matthew 16:18
             </cite>
           </div>
@@ -74,20 +74,20 @@ export default function WhyChurchesPage() {
       {/* Hope Section */}
       <section className="section-padding bg-primary-blue">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
               THERE IS HOPE
             </h2>
-            <p className="text-lg text-gray-200 mb-8">
+            <p className="mb-8 text-lg text-gray-200">
               You can help struggling churches in the Philippines live out their
               calling to point people to Jesus. Your financial support will give
               pastors access to:
             </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white/10 rounded-xl p-6">
-                <div className="text-accent-gold text-3xl mb-3">
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="rounded-xl bg-white/10 p-6">
+                <div className="mb-3 text-3xl text-accent-gold">
                   <svg
-                    className="w-12 h-12 mx-auto"
+                    className="mx-auto h-12 w-12"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -98,10 +98,10 @@ export default function WhyChurchesPage() {
                   Bible Training
                 </h3>
               </div>
-              <div className="bg-white/10 rounded-xl p-6">
-                <div className="text-accent-gold text-3xl mb-3">
+              <div className="rounded-xl bg-white/10 p-6">
+                <div className="mb-3 text-3xl text-accent-gold">
                   <svg
-                    className="w-12 h-12 mx-auto"
+                    className="mx-auto h-12 w-12"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -112,10 +112,10 @@ export default function WhyChurchesPage() {
                   Leadership Development
                 </h3>
               </div>
-              <div className="bg-white/10 rounded-xl p-6">
-                <div className="text-accent-gold text-3xl mb-3">
+              <div className="rounded-xl bg-white/10 p-6">
+                <div className="mb-3 text-3xl text-accent-gold">
                   <svg
-                    className="w-12 h-12 mx-auto"
+                    className="mx-auto h-12 w-12"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -134,17 +134,17 @@ export default function WhyChurchesPage() {
       {/* Impact Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 text-center">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
               The Impact
             </h2>
-            <p className="text-lg text-gray-600 mb-4">
-              Pastors will be equipped to preach God&apos;s Word faithfully and lead
-              their congregations biblically. They teach sound doctrine with
-              clarity and confidence, helping believers grow deeper in their
-              relationship with Jesus.
+            <p className="mb-4 text-lg text-gray-600">
+              Pastors will be equipped to preach God&apos;s Word faithfully and
+              lead their congregations biblically. They teach sound doctrine
+              with clarity and confidence, helping believers grow deeper in
+              their relationship with Jesus.
             </p>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="mb-8 text-lg text-gray-600">
               Churches that are healthy and vibrant inspire hope and change in
               their communities. This kind of teaching leads to true
               transformation — both of the heart and the mind.
@@ -154,9 +154,9 @@ export default function WhyChurchesPage() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-neutral-off-white rounded-2xl p-8 text-center"
+                className="rounded-2xl bg-neutral-off-white p-8 text-center"
               >
-                <blockquote className="text-xl italic text-gray-700 mb-4">
+                <blockquote className="mb-4 text-xl italic text-gray-700">
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
                 <div className="font-semibold text-gray-900">
@@ -172,7 +172,7 @@ export default function WhyChurchesPage() {
       {/* Sponsorship Card */}
       <section className="section-padding bg-accent-gold">
         <div className="container-site">
-          <div className="max-w-md mx-auto">
+          <div className="mx-auto max-w-md">
             <ProgramCard
               title="Sponsor a Church"
               amount="$50/month"
@@ -194,10 +194,10 @@ export default function WhyChurchesPage() {
       {/* Final Quote */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="text-2xl sm:text-3xl text-gray-700 italic">
-              &ldquo;A church built on God&apos;s truth and grace has power to shine
-              life into a world darkened by despair.&rdquo;
+          <div className="mx-auto max-w-3xl text-center">
+            <blockquote className="text-2xl italic text-gray-700 sm:text-3xl">
+              &ldquo;A church built on God&apos;s truth and grace has power to
+              shine life into a world darkened by despair.&rdquo;
             </blockquote>
           </div>
         </div>

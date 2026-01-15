@@ -32,12 +32,7 @@ const config: Config = {
           "Roboto",
           "sans-serif",
         ],
-        heading: [
-          "Inter",
-          "system-ui",
-          "-apple-system",
-          "sans-serif",
-        ],
+        heading: ["Inter", "system-ui", "-apple-system", "sans-serif"],
       },
       container: {
         center: true,

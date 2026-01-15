@@ -28,17 +28,18 @@ export default function CTASection({
   };
 
   const textColor = background === "gold" ? "text-gray-900" : "text-white";
-  const subtextColor = background === "gold" ? "text-gray-700" : "text-gray-200";
+  const subtextColor =
+    background === "gold" ? "text-gray-700" : "text-gray-200";
 
   return (
     <section className={`section-padding ${bgClasses[background]}`}>
       <div className="container-site text-center">
-        <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${textColor}`}>
+        <h2 className={`mb-4 text-3xl font-bold sm:text-4xl ${textColor}`}>
           {title}
         </h2>
 
         {description && (
-          <p className={`text-lg mb-8 max-w-2xl mx-auto ${subtextColor}`}>
+          <p className={`mx-auto mb-8 max-w-2xl text-lg ${subtextColor}`}>
             {description}
           </p>
         )}
@@ -58,7 +59,7 @@ export default function CTASection({
           {secondaryCta && (
             <Link
               href={secondaryCta.href}
-              className={`btn text-lg border-2 ${
+              className={`btn border-2 text-lg ${
                 background === "gold"
                   ? "border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
                   : "border-white text-white hover:bg-white hover:text-gray-900"

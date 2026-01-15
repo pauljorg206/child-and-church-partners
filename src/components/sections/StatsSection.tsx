@@ -33,10 +33,10 @@ export default function StatsSection({
     <section className={`section-padding ${bgClasses[background]}`}>
       <div className="container-site">
         {(title || subtitle) && (
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="mb-12 text-center sm:mb-16">
             {title && (
               <h2
-                className={`text-3xl sm:text-4xl font-bold mb-4 ${
+                className={`mb-4 text-3xl font-bold sm:text-4xl ${
                   background === "dark" ? "text-white" : "text-gray-900"
                 }`}
               >
@@ -45,7 +45,7 @@ export default function StatsSection({
             )}
             {subtitle && (
               <p
-                className={`text-lg max-w-2xl mx-auto ${
+                className={`mx-auto max-w-2xl text-lg ${
                   background === "dark" ? "text-gray-300" : "text-gray-600"
                 }`}
               >
@@ -55,7 +55,7 @@ export default function StatsSection({
           </div>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3">
           {stats.map((stat, index) => (
             <StatCard
               key={index}

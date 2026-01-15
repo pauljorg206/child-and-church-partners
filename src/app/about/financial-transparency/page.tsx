@@ -109,9 +109,9 @@ export default function FinancialTransparencyPage() {
       {/* Our Commitment */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
                 Our Commitment to You
               </h2>
               <p className="text-lg text-gray-600">
@@ -124,11 +124,11 @@ export default function FinancialTransparencyPage() {
             </div>
 
             {/* Trust Badges */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-neutral-off-white rounded-2xl p-6 text-center">
-                <div className="w-16 h-16 bg-primary-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="mb-12 grid gap-6 md:grid-cols-3">
+              <div className="rounded-2xl bg-neutral-off-white p-6 text-center">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-blue/10">
                   <svg
-                    className="w-8 h-8 text-primary-blue"
+                    className="h-8 w-8 text-primary-blue"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -141,7 +141,7 @@ export default function FinancialTransparencyPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">
+                <h3 className="mb-2 font-bold text-gray-900">
                   501(c)(3) Registered
                 </h3>
                 <p className="text-sm text-gray-600">
@@ -149,10 +149,10 @@ export default function FinancialTransparencyPage() {
                 </p>
               </div>
 
-              <div className="bg-neutral-off-white rounded-2xl p-6 text-center">
-                <div className="w-16 h-16 bg-accent-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="rounded-2xl bg-neutral-off-white p-6 text-center">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent-gold/10">
                   <svg
-                    className="w-8 h-8 text-accent-gold"
+                    className="h-8 w-8 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -165,16 +165,16 @@ export default function FinancialTransparencyPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">Since 2017</h3>
+                <h3 className="mb-2 font-bold text-gray-900">Since 2017</h3>
                 <p className="text-sm text-gray-600">
                   Years of faithful service and proven track record
                 </p>
               </div>
 
-              <div className="bg-neutral-off-white rounded-2xl p-6 text-center">
-                <div className="w-16 h-16 bg-primary-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="rounded-2xl bg-neutral-off-white p-6 text-center">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-red/10">
                   <svg
-                    className="w-8 h-8 text-primary-red"
+                    className="h-8 w-8 text-primary-red"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -187,9 +187,7 @@ export default function FinancialTransparencyPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">
-                  Donor Focused
-                </h3>
+                <h3 className="mb-2 font-bold text-gray-900">Donor Focused</h3>
                 <p className="text-sm text-gray-600">
                   Your gifts go directly to those who need it most
                 </p>
@@ -202,9 +200,9 @@ export default function FinancialTransparencyPage() {
       {/* Fund Allocation */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
                 How Your Donations Are Used
               </h2>
               <p className="text-lg text-gray-600">
@@ -214,12 +212,12 @@ export default function FinancialTransparencyPage() {
             </div>
 
             {/* Visual Bar */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm mb-8">
-              <div className="flex rounded-full overflow-hidden h-8 mb-6">
+            <div className="mb-8 rounded-2xl bg-white p-8 shadow-sm">
+              <div className="mb-6 flex h-8 overflow-hidden rounded-full">
                 {fundAllocation.map((item, index) => (
                   <div
                     key={index}
-                    className={`${item.color} flex items-center justify-center text-white text-sm font-medium`}
+                    className={`${item.color} flex items-center justify-center text-sm font-medium text-white`}
                     style={{ width: `${item.percentage}%` }}
                   >
                     {item.percentage}%
@@ -227,15 +225,17 @@ export default function FinancialTransparencyPage() {
                 ))}
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid gap-6 md:grid-cols-3">
                 {fundAllocation.map((item, index) => (
                   <div key={index}>
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className={`w-4 h-4 rounded ${item.color}`} />
+                    <div className="mb-2 flex items-center gap-2">
+                      <div className={`h-4 w-4 rounded ${item.color}`} />
                       <span className="font-bold text-gray-900">
                         {item.category}
                       </span>
-                      <span className="text-gray-500">({item.percentage}%)</span>
+                      <span className="text-gray-500">
+                        ({item.percentage}%)
+                      </span>
                     </div>
                     <p className="text-sm text-gray-600">{item.description}</p>
                   </div>
@@ -243,7 +243,7 @@ export default function FinancialTransparencyPage() {
               </div>
             </div>
 
-            <p className="text-center text-gray-500 text-sm">
+            <p className="text-center text-sm text-gray-500">
               * Allocation percentages are targets based on our operational
               goals. Actual percentages may vary slightly year to year.
             </p>
@@ -254,9 +254,9 @@ export default function FinancialTransparencyPage() {
       {/* Accountability Practices */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
                 Accountability Practices
               </h2>
               <p className="text-lg text-gray-600">
@@ -265,16 +265,16 @@ export default function FinancialTransparencyPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid gap-6 md:grid-cols-2">
               {accountabilityPractices.map((practice, index) => (
                 <div
                   key={index}
-                  className="bg-neutral-off-white rounded-2xl p-6"
+                  className="rounded-2xl bg-neutral-off-white p-6"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary-blue/10">
                       <svg
-                        className="w-6 h-6 text-primary-blue"
+                        className="h-6 w-6 text-primary-blue"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -283,10 +283,10 @@ export default function FinancialTransparencyPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900 mb-2">
+                      <h3 className="mb-2 font-bold text-gray-900">
                         {practice.title}
                       </h3>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-sm text-gray-600">
                         {practice.description}
                       </p>
                     </div>
@@ -301,9 +301,9 @@ export default function FinancialTransparencyPage() {
       {/* Donor Bill of Rights */}
       <section className="section-padding bg-primary-blue text-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold md:text-4xl">
                 Our Commitments to Donors
               </h2>
               <p className="text-xl text-blue-100">
@@ -311,14 +311,14 @@ export default function FinancialTransparencyPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid gap-4 md:grid-cols-2">
               {donorCommitments.map((commitment, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-3 bg-white/10 rounded-xl p-4"
+                  className="flex items-start gap-3 rounded-xl bg-white/10 p-4"
                 >
                   <svg
-                    className="w-6 h-6 text-accent-gold flex-shrink-0 mt-0.5"
+                    className="mt-0.5 h-6 w-6 flex-shrink-0 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -341,24 +341,24 @@ export default function FinancialTransparencyPage() {
       {/* Request Information */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
               Request More Information
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="mb-8 text-lg text-gray-600">
               We believe in full transparency. If you have questions about our
               finances, operations, or how your donations are used, we&apos;re
               happy to provide more details.
             </p>
 
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-4">
+            <div className="rounded-2xl bg-white p-8 shadow-sm">
+              <h3 className="mb-4 font-bold text-gray-900">
                 Available Upon Request:
               </h3>
-              <ul className="text-left space-y-3 mb-6">
+              <ul className="mb-6 space-y-3 text-left">
                 <li className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-accent-gold flex-shrink-0 mt-0.5"
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -377,7 +377,7 @@ export default function FinancialTransparencyPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-accent-gold flex-shrink-0 mt-0.5"
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -390,13 +390,13 @@ export default function FinancialTransparencyPage() {
                     />
                   </svg>
                   <span className="text-gray-700">
-                    <strong>Annual Report</strong> - Summary of programs, impact,
-                    and financials
+                    <strong>Annual Report</strong> - Summary of programs,
+                    impact, and financials
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-accent-gold flex-shrink-0 mt-0.5"
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -415,7 +415,7 @@ export default function FinancialTransparencyPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-accent-gold flex-shrink-0 mt-0.5"
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

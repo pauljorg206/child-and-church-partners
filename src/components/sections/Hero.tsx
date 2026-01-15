@@ -66,7 +66,7 @@ export default function Hero({
         >
           <h1
             className={cn(
-              "font-bold text-white text-balance",
+              "text-balance font-bold text-white",
               variant === "simple"
                 ? "text-3xl sm:text-4xl lg:text-5xl"
                 : "text-4xl sm:text-5xl lg:text-6xl"
@@ -76,7 +76,7 @@ export default function Hero({
           </h1>
 
           {subtitle && (
-            <p className="mt-6 text-lg sm:text-xl text-gray-200 max-w-2xl">
+            <p className="mt-6 max-w-2xl text-lg text-gray-200 sm:text-xl">
               {subtitle}
             </p>
           )}
@@ -96,7 +96,7 @@ export default function Hero({
               {secondaryCta && (
                 <Link
                   href={secondaryCta.href}
-                  className="btn border-2 border-white text-white hover:bg-white hover:text-gray-900 text-lg"
+                  className="btn border-2 border-white text-lg text-white hover:bg-white hover:text-gray-900"
                 >
                   {secondaryCta.label}
                 </Link>

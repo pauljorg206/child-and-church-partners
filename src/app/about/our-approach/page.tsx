@@ -113,19 +113,19 @@ export default function OurApproachPage() {
       {/* Introduction */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="mx-auto max-w-4xl">
+            <div className="grid items-center gap-12 md:grid-cols-2">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
                   Partnership, Not Paternalism
                 </h2>
-                <p className="text-gray-600 mb-4">
+                <p className="mb-4 text-gray-600">
                   At Child & Church Partners, we believe lasting change comes
                   from within communities, not from outside organizations
                   imposing solutions. That&apos;s why we work alongside local
                   churches rather than around them.
                 </p>
-                <p className="text-gray-600 mb-4">
+                <p className="mb-4 text-gray-600">
                   Our approach recognizes that Filipino pastors and community
                   leaders understand their context better than we ever could.
                   They know who needs help, what resources will make a
@@ -138,7 +138,7 @@ export default function OurApproachPage() {
                   Together, we see lives transformed.
                 </p>
               </div>
-              <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
                 <Image
                   src="https://static.wixstatic.com/media/6ebd37_f3a5ad9f77714fd085d1f6ad9e6ed71f~mv2.jpeg"
                   alt="Partnership with local churches in the Philippines"
@@ -154,26 +154,26 @@ export default function OurApproachPage() {
       {/* Four Pillars */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
               Four Pillars of Our Approach
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
               These principles guide every decision we make and every program we
               implement.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
             {approachPillars.map((pillar, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm">
-                <div className="flex items-start gap-4 mb-4">
+              <div key={index} className="rounded-2xl bg-white p-8 shadow-sm">
+                <div className="mb-4 flex items-start gap-4">
                   <div className="text-4xl font-bold text-accent-gold/30">
                     {pillar.number}
                   </div>
-                  <div className="w-12 h-12 bg-primary-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary-blue/10">
                     <svg
-                      className="w-6 h-6 text-primary-blue"
+                      className="h-6 w-6 text-primary-blue"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -182,7 +182,7 @@ export default function OurApproachPage() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="mb-3 text-xl font-bold text-gray-900">
                   {pillar.title}
                 </h3>
                 <p className="text-gray-600">{pillar.description}</p>
@@ -195,9 +195,9 @@ export default function OurApproachPage() {
       {/* How It Works */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
                 How Our Process Works
               </h2>
               <p className="text-lg text-gray-600">
@@ -208,21 +208,21 @@ export default function OurApproachPage() {
 
             <div className="relative">
               {/* Connecting line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-accent-gold/30 hidden md:block" />
+              <div className="absolute bottom-0 left-8 top-0 hidden w-0.5 bg-accent-gold/30 md:block" />
 
               <div className="space-y-6">
                 {processSteps.map((item, index) => (
                   <div key={index} className="relative flex gap-6">
-                    <div className="hidden md:flex w-16 h-16 bg-accent-gold rounded-full items-center justify-center flex-shrink-0 z-10">
-                      <span className="text-white font-bold text-xl">
+                    <div className="z-10 hidden h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-accent-gold md:flex">
+                      <span className="text-xl font-bold text-white">
                         {item.step}
                       </span>
                     </div>
-                    <div className="bg-neutral-off-white rounded-2xl p-6 flex-1">
-                      <div className="md:hidden text-accent-gold font-bold mb-2">
+                    <div className="flex-1 rounded-2xl bg-neutral-off-white p-6">
+                      <div className="mb-2 font-bold text-accent-gold md:hidden">
                         Step {item.step}
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      <h3 className="mb-2 text-xl font-bold text-gray-900">
                         {item.title}
                       </h3>
                       <p className="text-gray-600">{item.description}</p>
@@ -238,16 +238,16 @@ export default function OurApproachPage() {
       {/* What Makes Us Different */}
       <section className="section-padding bg-primary-blue text-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">
               What Makes Our Approach Different
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid gap-8 md:grid-cols-3">
               <div className="text-center">
-                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
                   <svg
-                    className="w-8 h-8 text-accent-gold"
+                    className="h-8 w-8 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -266,7 +266,7 @@ export default function OurApproachPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Focused Geography</h3>
+                <h3 className="mb-2 text-xl font-bold">Focused Geography</h3>
                 <p className="text-blue-100">
                   We work exclusively in the Philippines, allowing us to develop
                   deep expertise and relationships in one context rather than
@@ -275,9 +275,9 @@ export default function OurApproachPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
                   <svg
-                    className="w-8 h-8 text-accent-gold"
+                    className="h-8 w-8 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -290,7 +290,7 @@ export default function OurApproachPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Personal Connections</h3>
+                <h3 className="mb-2 text-xl font-bold">Personal Connections</h3>
                 <p className="text-blue-100">
                   Our founders personally know many of the pastors we work with.
                   This isn&apos;t institutional charity—it&apos;s friends
@@ -299,9 +299,9 @@ export default function OurApproachPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
                   <svg
-                    className="w-8 h-8 text-accent-gold"
+                    className="h-8 w-8 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -314,7 +314,7 @@ export default function OurApproachPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Dual Focus</h3>
+                <h3 className="mb-2 text-xl font-bold">Dual Focus</h3>
                 <p className="text-blue-100">
                   We support both children AND churches because they&apos;re
                   interconnected. Strong churches create strong communities
@@ -329,20 +329,20 @@ export default function OurApproachPage() {
       {/* Quote Section */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="mx-auto max-w-3xl text-center">
             <svg
-              className="w-12 h-12 text-accent-gold mx-auto mb-6"
+              className="mx-auto mb-6 h-12 w-12 text-accent-gold"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
-            <blockquote className="text-2xl md:text-3xl text-gray-700 italic mb-6">
+            <blockquote className="mb-6 text-2xl italic text-gray-700 md:text-3xl">
               &ldquo;We don&apos;t just send money. We walk alongside pastors
               and communities, sharing in their struggles and celebrating their
               victories. That&apos;s what partnership means.&rdquo;
             </blockquote>
-            <cite className="text-gray-900 font-medium">
+            <cite className="font-medium text-gray-900">
               — Dani Sindac, Co-Founder
             </cite>
           </div>

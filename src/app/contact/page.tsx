@@ -13,14 +13,44 @@ export default function ContactPage() {
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+    setErrorMessage("");
 
-    // TODO: Integrate with form backend
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setStatus("success");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject || "New Contact Form Submission",
+          message: formData.message,
+          from_name: "Child & Church Partners Website",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("error");
+        setErrorMessage(
+          result.message || "Something went wrong. Please try again."
+        );
+      }
+    } catch {
+      setStatus("error");
+      setErrorMessage("Failed to send message. Please try again later.");
+    }
   };
 
   return (
@@ -61,80 +91,93 @@ export default function ContactPage() {
                   <p className="text-green-600">
                     Thank you for reaching out. We&apos;ll get back to you soon.
                   </p>
+                  <button
+                    onClick={() => setStatus("idle")}
+                    className="mt-4 text-sm text-green-700 underline hover:text-green-800"
+                  >
+                    Send another message
+                  </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label className="mb-2 block text-sm font-medium text-gray-700">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
-                      className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
-                      placeholder="John Doe"
-                    />
-                  </div>
+                <>
+                  {status === "error" && (
+                    <div className="mb-6 rounded-xl border border-red-200 bg-red-50 p-4 text-center">
+                      <p className="text-red-600">{errorMessage}</p>
+                    </div>
+                  )}
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                        Your Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
+                        className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
+                        placeholder="John Doe"
+                      />
+                    </div>
 
-                  <div>
-                    <label className="mb-2 block text-sm font-medium text-gray-700">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
-                      className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
-                      placeholder="john@example.com"
-                    />
-                  </div>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
+                        className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
+                        placeholder="john@example.com"
+                      />
+                    </div>
 
-                  <div>
-                    <label className="mb-2 block text-sm font-medium text-gray-700">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.subject}
-                      onChange={(e) =>
-                        setFormData({ ...formData, subject: e.target.value })
-                      }
-                      className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
-                      placeholder="How can we help?"
-                    />
-                  </div>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                        Subject
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.subject}
+                        onChange={(e) =>
+                          setFormData({ ...formData, subject: e.target.value })
+                        }
+                        className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
+                        placeholder="How can we help?"
+                      />
+                    </div>
 
-                  <div>
-                    <label className="mb-2 block text-sm font-medium text-gray-700">
-                      Message *
-                    </label>
-                    <textarea
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
-                      className="w-full resize-none rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
-                      placeholder="Your message..."
-                    />
-                  </div>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                        Message *
+                      </label>
+                      <textarea
+                        required
+                        rows={5}
+                        value={formData.message}
+                        onChange={(e) =>
+                          setFormData({ ...formData, message: e.target.value })
+                        }
+                        className="w-full resize-none rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
+                        placeholder="Your message..."
+                      />
+                    </div>
 
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="btn-primary w-full disabled:opacity-50"
-                  >
-                    {status === "loading" ? "Sending..." : "Send Message"}
-                  </button>
-                </form>
+                    <button
+                      type="submit"
+                      disabled={status === "loading"}
+                      className="btn-primary w-full disabled:opacity-50"
+                    >
+                      {status === "loading" ? "Sending..." : "Send Message"}
+                    </button>
+                  </form>
+                </>
               )}
             </div>
 

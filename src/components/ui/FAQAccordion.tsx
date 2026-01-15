@@ -20,16 +20,16 @@ export default function FAQAccordion({
     <div className="border-b border-gray-200">
       <button
         type="button"
-        className="w-full py-5 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 rounded-lg"
+        className="flex w-full items-center justify-between rounded-lg py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
-        <span className="text-lg font-medium text-gray-900 pr-4">
+        <span className="pr-4 text-lg font-medium text-gray-900">
           {question}
         </span>
         <span
           className={cn(
-            "flex-shrink-0 w-6 h-6 text-accent-gold transition-transform duration-200",
+            "h-6 w-6 flex-shrink-0 text-accent-gold transition-transform duration-200",
             isOpen && "rotate-180"
           )}
         >
@@ -49,7 +49,7 @@ export default function FAQAccordion({
           isOpen ? "max-h-96 pb-5" : "max-h-0"
         )}
       >
-        <div className="text-gray-600 leading-relaxed">{answer}</div>
+        <div className="leading-relaxed text-gray-600">{answer}</div>
       </div>
     </div>
   );
@@ -64,7 +64,7 @@ interface FAQCategoryProps {
 export function FAQCategory({ title, children }: FAQCategoryProps) {
   return (
     <div className="mb-12">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">{title}</h2>
+      <h2 className="mb-6 text-2xl font-bold text-gray-900">{title}</h2>
       <div>{children}</div>
     </div>
   );

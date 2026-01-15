@@ -43,7 +43,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <nav className="container-site">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
@@ -53,13 +53,13 @@ export default function Header() {
               height={60}
               className="h-12 w-auto"
             />
-            <span className="hidden sm:block font-bold text-primary-blue text-lg">
+            <span className="hidden text-lg font-bold text-primary-blue sm:block">
               Child & Church Partners
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden items-center gap-8 lg:flex">
             {navigation.map((item) => (
               <div
                 key={item.name}
@@ -69,12 +69,12 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className="text-gray-700 hover:text-primary-blue font-medium transition-colors"
+                  className="font-medium text-gray-700 transition-colors hover:text-primary-blue"
                 >
                   {item.name}
                   {item.children && (
                     <svg
-                      className="inline-block ml-1 w-4 h-4"
+                      className="ml-1 inline-block h-4 w-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -91,8 +91,8 @@ export default function Header() {
 
                 {/* Dropdown */}
                 {item.children && openDropdown === item.name && (
-                  <div className="absolute top-full left-0 pt-2">
-                    <div className="bg-white rounded-lg shadow-lg py-2 min-w-[200px]">
+                  <div className="absolute left-0 top-full pt-2">
+                    <div className="min-w-[200px] rounded-lg bg-white py-2 shadow-lg">
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
@@ -113,7 +113,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <Link
               href="/donate"
-              className="btn-primary text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
+              className="btn-primary px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base"
             >
               Donate
             </Link>
@@ -121,7 +121,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               type="button"
-              className="lg:hidden p-2 rounded-md text-gray-700"
+              className="rounded-md p-2 text-gray-700 lg:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">Open menu</span>
@@ -161,7 +161,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         <div
           className={cn(
-            "lg:hidden overflow-hidden transition-all duration-300",
+            "overflow-hidden transition-all duration-300 lg:hidden",
             mobileMenuOpen ? "max-h-96 pb-4" : "max-h-0"
           )}
         >
@@ -170,18 +170,18 @@ export default function Header() {
               <div key={item.name}>
                 <Link
                   href={item.href}
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg font-medium"
+                  className="block rounded-lg px-4 py-2 font-medium text-gray-700 hover:bg-gray-50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
                 {item.children && (
-                  <div className="pl-6 space-y-1">
+                  <div className="space-y-1 pl-6">
                     {item.children.map((child) => (
                       <Link
                         key={child.name}
                         href={child.href}
-                        className="block px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg text-sm"
+                        className="block rounded-lg px-4 py-2 text-sm text-gray-600 hover:bg-gray-50"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {child.name}

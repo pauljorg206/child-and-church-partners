@@ -43,11 +43,11 @@ export default function WhyChildrenPage() {
       {/* Quote Section */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="text-2xl sm:text-3xl text-gray-700 italic mb-4">
+          <div className="mx-auto max-w-3xl text-center">
+            <blockquote className="mb-4 text-2xl italic text-gray-700 sm:text-3xl">
               &ldquo;The youth is the hope of our motherland.&rdquo;
             </blockquote>
-            <cite className="text-accent-gold font-semibold">
+            <cite className="font-semibold text-accent-gold">
               — Dr. Jose Rizal, National Hero of the Philippines
             </cite>
           </div>
@@ -57,20 +57,20 @@ export default function WhyChildrenPage() {
       {/* Key Message */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 text-center">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
               The Challenge
             </h2>
-            <p className="text-lg text-gray-600 mb-4">
+            <p className="mb-4 text-lg text-gray-600">
               Young Filipinos – with their boldness, creativity and boundless
               energy – have a huge potential to inspire hope and change in their
               communities. But poverty creates barriers that prevent them from
               reaching their full potential.
             </p>
-            <p className="text-lg text-gray-600 mb-4">
-              More than 100 years after Dr. Rizal&apos;s death, the cost of education
-              in the Philippines remains painfully exorbitant for millions of
-              Filipino families who try to survive on $2 a day.
+            <p className="mb-4 text-lg text-gray-600">
+              More than 100 years after Dr. Rizal&apos;s death, the cost of
+              education in the Philippines remains painfully exorbitant for
+              millions of Filipino families who try to survive on $2 a day.
             </p>
             <p className="text-lg text-gray-600">
               Although public schools don&apos;t charge tuition, out-of-pocket
@@ -94,16 +94,16 @@ export default function WhyChildrenPage() {
       {/* Vulnerability Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 text-center">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
               Vulnerability
             </h2>
-            <p className="text-lg text-gray-600 mb-4">
+            <p className="mb-4 text-lg text-gray-600">
               Despite rapid economic growth and declining poverty, the poverty
               situation remains extremely challenging for children in the
               Philippines.
             </p>
-            <p className="text-lg text-gray-600 mb-4">
+            <p className="mb-4 text-lg text-gray-600">
               Children with disabilities and children from rural and indigenous
               communities are more vulnerable to social discrimination. They are
               also likely to be more deprived of social services.
@@ -115,14 +115,14 @@ export default function WhyChildrenPage() {
       {/* CTA Section */}
       <section className="section-padding bg-primary-blue">
         <div className="container-site">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
               HELP SAVE A CHILD FROM GENERATIONAL POVERTY
             </h2>
-            <p className="text-xl text-accent-gold font-semibold mb-4">
+            <p className="mb-4 text-xl font-semibold text-accent-gold">
               BE A CHANNEL OF HOPE
             </p>
-            <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-gray-200">
               When you sponsor a child, you help that child have access to good
               education, spiritual development, life skills training, and other
               opportunities that can improve their way of living. You also help
@@ -130,7 +130,7 @@ export default function WhyChildrenPage() {
             </p>
           </div>
 
-          <div className="max-w-md mx-auto">
+          <div className="mx-auto max-w-md">
             <ProgramCard
               title="Sponsor a Child"
               amount="$35/month"

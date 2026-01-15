@@ -66,8 +66,8 @@ export default function FoundersPage() {
       {/* Founders Introduction */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-80 lg:h-[500px] rounded-2xl overflow-hidden">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="relative h-80 overflow-hidden rounded-2xl lg:h-[500px]">
               <Image
                 src="/images/received_571220392093528.jpeg"
                 alt="Dani and Rez Sindac, Founders"
@@ -76,16 +76,16 @@ export default function FoundersPage() {
               />
             </div>
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
                 Dani and Rez Sindac
               </h2>
-              <p className="text-lg text-gray-600 mb-4">
+              <p className="mb-4 text-lg text-gray-600">
                 Born and raised in the Philippines, Dani and Rez Sindac have
                 dedicated their lives to serving children and churches. They
                 have served as church planters, pastors, and worship leaders in
                 the Philippines, Arizona, and Texas.
               </p>
-              <p className="text-lg text-gray-600 mb-4">
+              <p className="mb-4 text-lg text-gray-600">
                 Their journey has taken them from the villages of the
                 Philippines to the cities of America, but their heart has always
                 remained with the people they left behind.
@@ -94,8 +94,8 @@ export default function FoundersPage() {
                 Through Child & Church Partners, they continue to walk alongside
                 pastors in the Philippines—encouraging, equipping, and
                 supporting them as they raise next-generation leaders, share
-                Christ&apos;s love with children and families, and transform lives
-                for God&apos;s glory.
+                Christ&apos;s love with children and families, and transform
+                lives for God&apos;s glory.
               </p>
             </div>
           </div>
@@ -105,13 +105,13 @@ export default function FoundersPage() {
       {/* Timeline Section */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
             Our Journey
           </h2>
-          <div className="max-w-3xl mx-auto">
+          <div className="mx-auto max-w-3xl">
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-accent-gold transform md:-translate-x-1/2" />
+              <div className="absolute bottom-0 left-4 top-0 w-0.5 transform bg-accent-gold md:left-1/2 md:-translate-x-1/2" />
 
               {/* Timeline Items */}
               {timeline.map((item, index) => (
@@ -128,11 +128,11 @@ export default function FoundersPage() {
                       index % 2 === 0 ? "md:mr-8" : "md:ml-8"
                     }`}
                   >
-                    <div className="bg-white rounded-xl p-6 shadow-sm">
-                      <div className="text-accent-gold font-bold text-lg mb-1">
+                    <div className="rounded-xl bg-white p-6 shadow-sm">
+                      <div className="mb-1 text-lg font-bold text-accent-gold">
                         {item.year}
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      <h3 className="mb-2 text-xl font-bold text-gray-900">
                         {item.title}
                       </h3>
                       <p className="text-gray-600">{item.description}</p>
@@ -140,7 +140,7 @@ export default function FoundersPage() {
                   </div>
 
                   {/* Timeline Dot */}
-                  <div className="absolute left-4 md:left-1/2 top-6 w-3 h-3 bg-accent-gold rounded-full transform -translate-x-1/2 ring-4 ring-white" />
+                  <div className="absolute left-4 top-6 h-3 w-3 -translate-x-1/2 transform rounded-full bg-accent-gold ring-4 ring-white md:left-1/2" />
                 </div>
               ))}
             </div>
@@ -151,14 +151,14 @@ export default function FoundersPage() {
       {/* Quote Section */}
       <section className="section-padding bg-primary-blue">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="text-2xl sm:text-3xl text-white italic mb-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <blockquote className="mb-6 text-2xl italic text-white sm:text-3xl">
               &ldquo;We believe that when we invest in children and churches, we
               invest in the future of the Philippines. Every child we sponsor,
               every pastor we equip, every church we support—it all contributes
               to a brighter tomorrow.&rdquo;
             </blockquote>
-            <div className="text-accent-gold font-semibold">
+            <div className="font-semibold text-accent-gold">
               — Dani and Rez Sindac
             </div>
           </div>

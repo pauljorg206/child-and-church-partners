@@ -31,8 +31,9 @@ export default function CookiePolicyPage() {
           efficiently and provide useful information to website owners.
         </p>
         <p>
-          Cookies can be &quot;persistent&quot; (remaining on your device for a set
-          period) or &quot;session&quot; cookies (deleted when you close your browser).
+          Cookies can be &quot;persistent&quot; (remaining on your device for a
+          set period) or &quot;session&quot; cookies (deleted when you close
+          your browser).
         </p>
       </section>
 
@@ -45,7 +46,7 @@ export default function CookiePolicyPage() {
           enable basic features like page navigation and access to secure areas.
           The website cannot function properly without these cookies.
         </p>
-        <table className="w-full text-left border-collapse">
+        <table className="w-full border-collapse text-left">
           <thead>
             <tr className="border-b border-gray-200">
               <th className="py-2 pr-4">Cookie</th>
@@ -65,8 +66,8 @@ export default function CookiePolicyPage() {
         <h3>Analytics Cookies</h3>
         <p>
           We may use analytics cookies to understand how visitors interact with
-          our website. This helps us improve the user experience and optimize our
-          content.
+          our website. This helps us improve the user experience and optimize
+          our content.
         </p>
         <p>
           If we use analytics services, they collect information anonymously and
@@ -84,15 +85,15 @@ export default function CookiePolicyPage() {
         <h3>PayPal</h3>
         <p>
           When you make a donation through PayPal, PayPal may set cookies to
-          process your payment securely. These cookies are governed by PayPal&apos;s
-          privacy and cookie policies.
+          process your payment securely. These cookies are governed by
+          PayPal&apos;s privacy and cookie policies.
         </p>
 
         <h3>YouTube</h3>
         <p>
           We embed YouTube videos on our website. When you view these videos,
-          YouTube may set cookies. These cookies are subject to Google&apos;s privacy
-          and cookie policies.
+          YouTube may set cookies. These cookies are subject to Google&apos;s
+          privacy and cookie policies.
         </p>
         <p>
           We use YouTube&apos;s privacy-enhanced mode where possible to minimize
@@ -101,9 +102,9 @@ export default function CookiePolicyPage() {
 
         <h3>Social Media</h3>
         <p>
-          If you share our content on social media platforms, those platforms may
-          set cookies on your device. Please refer to the respective platform&apos;s
-          cookie policies for more information.
+          If you share our content on social media platforms, those platforms
+          may set cookies on your device. Please refer to the respective
+          platform&apos;s cookie policies for more information.
         </p>
       </section>
 
@@ -118,9 +119,9 @@ export default function CookiePolicyPage() {
         <h3>Browser Settings</h3>
         <p>
           Most browsers allow you to refuse cookies or delete cookies that have
-          already been set. The methods for doing so vary from browser to browser.
-          You can typically find these settings in the &quot;Options&quot; or
-          &quot;Preferences&quot; menu of your browser.
+          already been set. The methods for doing so vary from browser to
+          browser. You can typically find these settings in the
+          &quot;Options&quot; or &quot;Preferences&quot; menu of your browser.
         </p>
         <ul>
           <li>
@@ -176,13 +177,14 @@ export default function CookiePolicyPage() {
       <section id="updates">
         <h2>Policy Updates</h2>
         <p>
-          We may update this Cookie Policy from time to time to reflect changes in
-          our practices or for other operational, legal, or regulatory reasons.
+          We may update this Cookie Policy from time to time to reflect changes
+          in our practices or for other operational, legal, or regulatory
+          reasons.
         </p>
         <p>
           We encourage you to check this page periodically for any changes. The
-          &quot;Last Updated&quot; date at the top of this policy indicates when it was
-          last revised.
+          &quot;Last Updated&quot; date at the top of this policy indicates when
+          it was last revised.
         </p>
       </section>
 

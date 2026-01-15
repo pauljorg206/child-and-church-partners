@@ -44,7 +44,7 @@ const faqData = {
       answer: (
         <div>
           <p className="mb-3">Your monthly sponsorship of $35 provides:</p>
-          <ul className="list-disc pl-5 space-y-1">
+          <ul className="list-disc space-y-1 pl-5">
             <li>Transportation and lunch assistance for school</li>
             <li>School supplies and project materials</li>
             <li>Health and nutrition support</li>
@@ -80,8 +80,10 @@ const faqData = {
       question: "What does my $50 per month provide?",
       answer: (
         <div>
-          <p className="mb-3">Your monthly church sponsorship of $50 helps provide:</p>
-          <ul className="list-disc pl-5 space-y-1">
+          <p className="mb-3">
+            Your monthly church sponsorship of $50 helps provide:
+          </p>
+          <ul className="list-disc space-y-1 pl-5">
             <li>Outreach events and community programs</li>
             <li>Musical instruments and worship equipment</li>
             <li>Sunday school materials and curriculum</li>
@@ -159,7 +161,7 @@ export default function FAQPage() {
 
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto">
+          <div className="mx-auto max-w-3xl">
             <FAQCategory title="About Child & Church Partners">
               {faqData.general.map((faq, index) => (
                 <FAQAccordion
@@ -211,13 +213,14 @@ export default function FAQPage() {
             </FAQCategory>
 
             {/* Still have questions */}
-            <div className="mt-12 p-8 bg-neutral-off-white rounded-2xl text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="mt-12 rounded-2xl bg-neutral-off-white p-8 text-center">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900">
                 Still Have Questions?
               </h2>
-              <p className="text-gray-600 mb-6">
-                We&apos;re here to help! If you couldn&apos;t find the answer you&apos;re
-                looking for, please don&apos;t hesitate to reach out.
+              <p className="mb-6 text-gray-600">
+                We&apos;re here to help! If you couldn&apos;t find the answer
+                you&apos;re looking for, please don&apos;t hesitate to reach
+                out.
               </p>
               <Link href="/contact" className="btn-primary">
                 Contact Us

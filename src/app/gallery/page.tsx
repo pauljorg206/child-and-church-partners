@@ -356,12 +356,12 @@ export default function GalleryPage() {
       <section className="section-padding bg-white">
         <div className="container-site">
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
+          <div className="mb-8 flex flex-wrap justify-center gap-2">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => handleCategoryChange(category)}
-                className={`px-4 py-2 rounded-full font-medium transition-all ${
+                className={`rounded-full px-4 py-2 font-medium transition-all ${
                   activeCategory === category
                     ? "bg-primary-blue text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -376,16 +376,16 @@ export default function GalleryPage() {
           </div>
 
           {/* Results count */}
-          <p className="text-center text-gray-600 mb-8">
+          <p className="mb-8 text-center text-gray-600">
             Showing {visibleImages.length} of {filteredImages.length} photos
           </p>
 
           {/* Gallery Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {visibleImages.map((image, index) => (
               <div
                 key={`${image.src}-${index}`}
-                className="relative aspect-square rounded-xl overflow-hidden cursor-pointer group"
+                className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl"
                 onClick={() => setSelectedImage(index)}
               >
                 <Image
@@ -395,8 +395,8 @@ export default function GalleryPage() {
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-end justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-white text-sm text-center">
+                <div className="absolute inset-0 flex items-end justify-center bg-black/0 transition-all duration-300 group-hover:bg-black/40">
+                  <div className="p-4 text-center text-sm text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     {image.caption}
                   </div>
                 </div>
@@ -406,18 +406,18 @@ export default function GalleryPage() {
 
           {/* Empty State */}
           {filteredImages.length === 0 && (
-            <div className="text-center py-12">
+            <div className="py-12 text-center">
               <p className="text-gray-600">No photos found in this category.</p>
             </div>
           )}
 
           {/* Load More */}
           {hasMore && (
-            <div className="text-center mt-12">
+            <div className="mt-12 text-center">
               <button onClick={loadMore} className="btn-primary">
                 Load More Photos
               </button>
-              <p className="text-gray-500 text-sm mt-2">
+              <p className="mt-2 text-sm text-gray-500">
                 {filteredImages.length - visibleCount} more photos available
               </p>
             </div>
@@ -428,11 +428,11 @@ export default function GalleryPage() {
       {/* Lightbox */}
       {selectedImage !== null && (
         <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10"
+            className="absolute right-4 top-4 z-10 text-4xl text-white hover:text-gray-300"
             onClick={() => setSelectedImage(null)}
             aria-label="Close lightbox"
           >
@@ -441,13 +441,11 @@ export default function GalleryPage() {
 
           {/* Previous Button */}
           <button
-            className="absolute left-4 text-white text-6xl hover:text-gray-300 hidden md:block z-10"
+            className="absolute left-4 z-10 hidden text-6xl text-white hover:text-gray-300 md:block"
             onClick={(e) => {
               e.stopPropagation();
               setSelectedImage(
-                selectedImage > 0
-                  ? selectedImage - 1
-                  : visibleImages.length - 1
+                selectedImage > 0 ? selectedImage - 1 : visibleImages.length - 1
               );
             }}
             aria-label="Previous image"
@@ -457,7 +455,7 @@ export default function GalleryPage() {
 
           {/* Image */}
           <div
-            className="relative max-w-4xl max-h-[80vh] w-full h-full"
+            className="relative h-full max-h-[80vh] w-full max-w-4xl"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -472,13 +470,11 @@ export default function GalleryPage() {
 
           {/* Next Button */}
           <button
-            className="absolute right-4 text-white text-6xl hover:text-gray-300 hidden md:block z-10 mr-8"
+            className="absolute right-4 z-10 mr-8 hidden text-6xl text-white hover:text-gray-300 md:block"
             onClick={(e) => {
               e.stopPropagation();
               setSelectedImage(
-                selectedImage < visibleImages.length - 1
-                  ? selectedImage + 1
-                  : 0
+                selectedImage < visibleImages.length - 1 ? selectedImage + 1 : 0
               );
             }}
             aria-label="Next image"
@@ -489,7 +485,7 @@ export default function GalleryPage() {
           {/* Caption */}
           <div className="absolute bottom-4 left-0 right-0 text-center text-white">
             <p className="text-lg">{visibleImages[selectedImage].caption}</p>
-            <p className="text-sm text-gray-400 mt-1">
+            <p className="mt-1 text-sm text-gray-400">
               {selectedImage + 1} of {visibleImages.length}
             </p>
           </div>

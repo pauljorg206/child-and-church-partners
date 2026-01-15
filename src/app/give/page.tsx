@@ -81,14 +81,14 @@ export default function GivePage() {
       {/* Main Sponsorship Options */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-4">
+          <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
             Sponsorship Programs
           </h2>
-          <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12">
+          <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
             Choose how you want to make a lasting impact in the Philippines.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
             {programs.map((program) => (
               <ProgramCard
                 key={program.title}
@@ -107,14 +107,14 @@ export default function GivePage() {
       {/* Give to Equip Banner */}
       <section className="section-padding bg-primary-blue">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
               Give to Equip
             </h2>
-            <p className="text-xl text-accent-gold font-semibold mb-4">
+            <p className="mb-4 text-xl font-semibold text-accent-gold">
               Goal: $35,000
             </p>
-            <p className="text-lg text-gray-200 mb-8">
+            <p className="mb-8 text-lg text-gray-200">
               Help build an equipping center for Filipino pastors. In the
               Philippines, more than 35,000 pastors lead churches without formal
               Bible training. Your gift can change that.
@@ -129,37 +129,37 @@ export default function GivePage() {
       {/* Campaign Giving */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-4">
+          <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
             Campaign Giving
           </h2>
-          <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12">
+          <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
             Support specific initiatives that make a direct impact.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid gap-8 md:grid-cols-3">
             {campaigns.map((campaign) => (
               <div
                 key={campaign.title}
-                className="bg-white rounded-2xl p-6 shadow-sm"
+                className="rounded-2xl bg-white p-6 shadow-sm"
               >
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="mb-3 text-xl font-bold text-gray-900">
                   {campaign.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{campaign.description}</p>
+                <p className="mb-4 text-gray-600">{campaign.description}</p>
                 {campaign.impact && (
-                  <p className="text-sm text-primary-blue font-medium mb-4">
+                  <p className="mb-4 text-sm font-medium text-primary-blue">
                     {campaign.impact}
                   </p>
                 )}
                 {campaign.bulletPoints && (
-                  <ul className="space-y-2 mb-4">
+                  <ul className="mb-4 space-y-2">
                     {campaign.bulletPoints.map((point) => (
                       <li
                         key={point}
-                        className="flex items-start gap-2 text-gray-600 text-sm"
+                        className="flex items-start gap-2 text-sm text-gray-600"
                       >
                         <svg
-                          className="w-4 h-4 mt-0.5 text-accent-gold flex-shrink-0"
+                          className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent-gold"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -176,7 +176,7 @@ export default function GivePage() {
                 )}
                 <Link
                   href="/donate"
-                  className="text-primary-blue font-medium hover:text-blue-700 transition-colors"
+                  className="font-medium text-primary-blue transition-colors hover:text-blue-700"
                 >
                   Give Now &rarr;
                 </Link>

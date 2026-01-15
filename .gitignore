@@ -39,6 +39,9 @@ coverage/
 # TypeScript
 *.tsbuildinfo
 
+# Test setup files (auto-generated)
+vitest.setup.ts
+
 # Vercel
 .vercel
 

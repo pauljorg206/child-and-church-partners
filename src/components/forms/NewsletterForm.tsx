@@ -6,10 +6,14 @@ interface NewsletterFormProps {
   variant?: "inline" | "stacked";
 }
 
-export default function NewsletterForm({ variant = "inline" }: NewsletterFormProps) {
+export default function NewsletterForm({
+  variant = "inline",
+}: NewsletterFormProps) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,11 +29,11 @@ export default function NewsletterForm({ variant = "inline" }: NewsletterFormPro
 
   if (status === "success") {
     return (
-      <div className="text-center py-4">
-        <div className="text-green-600 font-semibold mb-2">
+      <div className="py-4 text-center">
+        <div className="mb-2 font-semibold text-green-600">
           Thanks for subscribing!
         </div>
-        <p className="text-gray-600 text-sm">
+        <p className="text-sm text-gray-600">
           You&apos;ll receive updates on the lives you&apos;re changing.
         </p>
       </div>
@@ -45,7 +49,7 @@ export default function NewsletterForm({ variant = "inline" }: NewsletterFormPro
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accent-gold focus:border-transparent outline-none"
+          className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
         />
         <input
           type="email"
@@ -53,12 +57,12 @@ export default function NewsletterForm({ variant = "inline" }: NewsletterFormPro
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accent-gold focus:border-transparent outline-none"
+          className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="w-full btn-primary disabled:opacity-50"
+          className="btn-primary w-full disabled:opacity-50"
         >
           {status === "loading" ? "Subscribing..." : "Subscribe for Updates"}
         </button>
@@ -67,14 +71,14 @@ export default function NewsletterForm({ variant = "inline" }: NewsletterFormPro
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
       <input
         type="text"
         placeholder="Your Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
-        className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accent-gold focus:border-transparent outline-none"
+        className="flex-1 rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
       />
       <input
         type="email"
@@ -82,7 +86,7 @@ export default function NewsletterForm({ variant = "inline" }: NewsletterFormPro
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-accent-gold focus:border-transparent outline-none"
+        className="flex-1 rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
       />
       <button
         type="submit"

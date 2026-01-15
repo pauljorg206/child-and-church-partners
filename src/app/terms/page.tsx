@@ -31,10 +31,11 @@ export default function TermsOfServicePage() {
       <section id="acceptance">
         <h2>Acceptance of Terms</h2>
         <p>
-          Welcome to Child & Church Partners International. By accessing or using
-          our website at childandchurchpartners.org (&quot;Website&quot;), you agree to be
-          bound by these Terms of Service (&quot;Terms&quot;). If you do not agree to all
-          of these Terms, please do not use our Website.
+          Welcome to Child & Church Partners International. By accessing or
+          using our website at childandchurchpartners.org (&quot;Website&quot;),
+          you agree to be bound by these Terms of Service (&quot;Terms&quot;).
+          If you do not agree to all of these Terms, please do not use our
+          Website.
         </p>
         <p>
           These Terms apply to all visitors, users, and others who access or use
@@ -77,9 +78,7 @@ export default function TermsOfServicePage() {
             You are the authorized user of the payment method used for the
             donation
           </li>
-          <li>
-            The information you provide is accurate and complete
-          </li>
+          <li>The information you provide is accurate and complete</li>
         </ul>
 
         <h3>Tax-Deductible Status</h3>
@@ -93,26 +92,26 @@ export default function TermsOfServicePage() {
 
         <h3>Recurring Donations</h3>
         <p>
-          If you sign up for recurring donations (such as monthly child or church
-          sponsorship), you authorize us to charge your payment method on a
-          recurring basis until you cancel. You may cancel recurring donations at
-          any time by contacting us.
+          If you sign up for recurring donations (such as monthly child or
+          church sponsorship), you authorize us to charge your payment method on
+          a recurring basis until you cancel. You may cancel recurring donations
+          at any time by contacting us.
         </p>
 
         <h3>Refund Policy</h3>
         <p>
           Due to the nature of charitable contributions, donations are generally
-          non-refundable. However, if you believe a donation was made in error or
-          without your authorization, please contact us immediately, and we will
-          work with you to resolve the issue.
+          non-refundable. However, if you believe a donation was made in error
+          or without your authorization, please contact us immediately, and we
+          will work with you to resolve the issue.
         </p>
 
         <h3>Use of Donations</h3>
         <p>
-          We strive to use donations for their designated purposes. If a specific
-          program or project is overfunded or cannot be completed, we reserve the
-          right to use the funds where they are needed most within our charitable
-          mission.
+          We strive to use donations for their designated purposes. If a
+          specific program or project is overfunded or cannot be completed, we
+          reserve the right to use the funds where they are needed most within
+          our charitable mission.
         </p>
       </section>
 
@@ -123,16 +122,16 @@ export default function TermsOfServicePage() {
           <li>Provide accurate and truthful information</li>
           <li>Use the Website only for lawful purposes</li>
           <li>
-            Not attempt to gain unauthorized access to any portion of the Website
+            Not attempt to gain unauthorized access to any portion of the
+            Website
           </li>
           <li>
             Not interfere with or disrupt the Website or servers connected to it
           </li>
+          <li>Not use the Website to transmit harmful or malicious content</li>
           <li>
-            Not use the Website to transmit harmful or malicious content
-          </li>
-          <li>
-            Not impersonate any person or entity or misrepresent your affiliation
+            Not impersonate any person or entity or misrepresent your
+            affiliation
           </li>
         </ul>
       </section>
@@ -140,15 +139,16 @@ export default function TermsOfServicePage() {
       <section id="intellectual-property">
         <h2>Intellectual Property</h2>
         <p>
-          The content on our Website, including but not limited to text, graphics,
-          logos, images, and software, is the property of Child & Church Partners
-          International or our content suppliers and is protected by copyright and
-          other intellectual property laws.
+          The content on our Website, including but not limited to text,
+          graphics, logos, images, and software, is the property of Child &
+          Church Partners International or our content suppliers and is
+          protected by copyright and other intellectual property laws.
         </p>
         <p>
-          You may view, download, and print content from our Website for personal,
-          non-commercial use only. You may not modify, reproduce, distribute, or
-          commercially exploit any content without our prior written permission.
+          You may view, download, and print content from our Website for
+          personal, non-commercial use only. You may not modify, reproduce,
+          distribute, or commercially exploit any content without our prior
+          written permission.
         </p>
         <p>
           The Child & Church Partners name and logo are trademarks of our
@@ -161,16 +161,19 @@ export default function TermsOfServicePage() {
         <h2>Disclaimers</h2>
         <p>
           THE WEBSITE AND ALL CONTENT, MATERIALS, AND SERVICES PROVIDED ON OR
-          THROUGH THE WEBSITE ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT
-          WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+          THROUGH THE WEBSITE ARE PROVIDED &quot;AS IS&quot; AND &quot;AS
+          AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR
+          IMPLIED.
         </p>
         <p>
-          We do not warrant that the Website will be uninterrupted, error-free, or
-          free of viruses or other harmful components. We do not warrant the
-          accuracy, completeness, or usefulness of any information on the Website.
+          We do not warrant that the Website will be uninterrupted, error-free,
+          or free of viruses or other harmful components. We do not warrant the
+          accuracy, completeness, or usefulness of any information on the
+          Website.
         </p>
         <p>
-          Any reliance you place on such information is strictly at your own risk.
+          Any reliance you place on such information is strictly at your own
+          risk.
         </p>
       </section>
 
@@ -184,8 +187,8 @@ export default function TermsOfServicePage() {
           USE OF OR INABILITY TO USE THE WEBSITE.
         </p>
         <p>
-          IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU EXCEED THE AMOUNT YOU PAID
-          TO US, IF ANY, IN THE SIX (6) MONTHS PRIOR TO THE CLAIM.
+          IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU EXCEED THE AMOUNT YOU
+          PAID TO US, IF ANY, IN THE SIX (6) MONTHS PRIOR TO THE CLAIM.
         </p>
       </section>
 
@@ -195,9 +198,9 @@ export default function TermsOfServicePage() {
           You agree to indemnify, defend, and hold harmless Child & Church
           Partners International and its officers, directors, employees,
           volunteers, and agents from and against any claims, liabilities,
-          damages, losses, and expenses (including reasonable attorneys&apos; fees)
-          arising out of or in any way connected with your use of the Website or
-          violation of these Terms.
+          damages, losses, and expenses (including reasonable attorneys&apos;
+          fees) arising out of or in any way connected with your use of the
+          Website or violation of these Terms.
         </p>
       </section>
 
@@ -218,9 +221,9 @@ export default function TermsOfServicePage() {
       <section id="changes">
         <h2>Changes to Terms</h2>
         <p>
-          We reserve the right to modify these Terms at any time. We will provide
-          notice of material changes by posting the updated Terms on this page and
-          updating the &quot;Last Updated&quot; date.
+          We reserve the right to modify these Terms at any time. We will
+          provide notice of material changes by posting the updated Terms on
+          this page and updating the &quot;Last Updated&quot; date.
         </p>
         <p>
           Your continued use of the Website after any changes constitutes your

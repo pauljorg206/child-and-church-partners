@@ -21,21 +21,24 @@ const coreValues = [
     title: "Dignity of Every Child",
     description:
       "Every child is created in God's image and deserves the opportunity to thrive. We work to ensure no child is held back by circumstances of birth.",
-    verse: "Let the little children come to me... for the kingdom of heaven belongs to such as these.",
+    verse:
+      "Let the little children come to me... for the kingdom of heaven belongs to such as these.",
     reference: "Matthew 19:14",
   },
   {
     title: "Empowering the Local Church",
     description:
       "We believe the local church is God's plan for community transformation. By strengthening churches, we multiply our impact across generations.",
-    verse: "I will build my church, and the gates of hell shall not prevail against it.",
+    verse:
+      "I will build my church, and the gates of hell shall not prevail against it.",
     reference: "Matthew 16:18",
   },
   {
     title: "Lasting Transformation",
     description:
       "We seek not just to meet immediate needs, but to break cycles of poverty and create pathways to sustainable change.",
-    verse: "And let us not grow weary of doing good, for in due season we will reap, if we do not give up.",
+    verse:
+      "And let us not grow weary of doing good, for in due season we will reap, if we do not give up.",
     reference: "Galatians 6:9",
   },
 ];
@@ -52,20 +55,20 @@ export default function InspirationPage() {
       {/* Opening Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="mx-auto max-w-4xl">
+            <div className="grid items-center gap-12 md:grid-cols-2">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
                   A Calling Decades in the Making
                 </h2>
-                <p className="text-gray-600 mb-4">
+                <p className="mb-4 text-gray-600">
                   Child & Church Partners International didn&apos;t begin with a
                   business plan—it began with a calling. For decades before our
                   official founding in 2017, our founders Dani and Rez Sindac
                   served alongside Filipino pastors and communities through The
                   Valley Cathedral Philippines.
                 </p>
-                <p className="text-gray-600 mb-4">
+                <p className="mb-4 text-gray-600">
                   They witnessed firsthand the challenges facing children in
                   poverty: lack of educational resources, limited opportunities,
                   and the struggle to break generational cycles. They also saw
@@ -78,7 +81,7 @@ export default function InspirationPage() {
                   creating lasting partnerships that transform lives?
                 </p>
               </div>
-              <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
                 <Image
                   src="https://static.wixstatic.com/media/6ebd37_f3a5ad9f77714fd085d1f6ad9e6ed71f~mv2.jpeg"
                   alt="Children in the Philippines"
@@ -94,21 +97,22 @@ export default function InspirationPage() {
       {/* Biblical Foundation */}
       <section className="section-padding bg-primary-blue text-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl">
               Our Biblical Foundation
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="mb-8 text-xl text-blue-100">
               Everything we do flows from Scripture and our commitment to live
               out the Gospel through practical love.
             </p>
-            <div className="bg-white/10 rounded-2xl p-8 md:p-12">
-              <blockquote className="text-2xl md:text-3xl font-serif italic mb-4">
-                &ldquo;Religion that God our Father accepts as pure and faultless
-                is this: to look after orphans and widows in their distress and
-                to keep oneself from being polluted by the world.&rdquo;
+            <div className="rounded-2xl bg-white/10 p-8 md:p-12">
+              <blockquote className="mb-4 font-serif text-2xl italic md:text-3xl">
+                &ldquo;Religion that God our Father accepts as pure and
+                faultless is this: to look after orphans and widows in their
+                distress and to keep oneself from being polluted by the
+                world.&rdquo;
               </blockquote>
-              <cite className="text-accent-gold text-lg">James 1:27 (NIV)</cite>
+              <cite className="text-lg text-accent-gold">James 1:27 (NIV)</cite>
             </div>
           </div>
         </div>
@@ -117,27 +121,27 @@ export default function InspirationPage() {
       {/* Core Values */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
               Values That Guide Us
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
               These core values shape every decision, program, and partnership.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
             {coreValues.map((value, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <div key={index} className="rounded-2xl bg-white p-8 shadow-sm">
+                <h3 className="mb-3 text-xl font-bold text-gray-900">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{value.description}</p>
+                <p className="mb-4 text-gray-600">{value.description}</p>
                 <div className="border-l-4 border-accent-gold pl-4">
-                  <p className="text-gray-700 italic mb-1">
+                  <p className="mb-1 italic text-gray-700">
                     &ldquo;{value.verse}&rdquo;
                   </p>
-                  <p className="text-sm text-accent-gold font-medium">
+                  <p className="text-sm font-medium text-accent-gold">
                     {value.reference}
                   </p>
                 </div>
@@ -150,18 +154,18 @@ export default function InspirationPage() {
       {/* Vision Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
                 Our Vision for Transformation
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid gap-8 md:grid-cols-3">
               <div className="text-center">
-                <div className="w-20 h-20 bg-primary-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary-blue/10">
                   <svg
-                    className="w-10 h-10 text-primary-blue"
+                    className="h-10 w-10 text-primary-blue"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -174,7 +178,7 @@ export default function InspirationPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="mb-2 text-lg font-bold text-gray-900">
                   Educated Children
                 </h3>
                 <p className="text-gray-600">
@@ -185,9 +189,9 @@ export default function InspirationPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 bg-accent-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-accent-gold/10">
                   <svg
-                    className="w-10 h-10 text-accent-gold"
+                    className="h-10 w-10 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -200,7 +204,7 @@ export default function InspirationPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="mb-2 text-lg font-bold text-gray-900">
                   Thriving Churches
                 </h3>
                 <p className="text-gray-600">
@@ -211,9 +215,9 @@ export default function InspirationPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 bg-primary-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary-red/10">
                   <svg
-                    className="w-10 h-10 text-primary-red"
+                    className="h-10 w-10 text-primary-red"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -226,7 +230,7 @@ export default function InspirationPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="mb-2 text-lg font-bold text-gray-900">
                   Transformed Communities
                 </h3>
                 <p className="text-gray-600">
@@ -243,12 +247,12 @@ export default function InspirationPage() {
       {/* Story of Hope */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          <div className="mx-auto max-w-4xl">
+            <div className="rounded-2xl bg-white p-8 shadow-sm md:p-12">
+              <h2 className="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">
                 Stories That Inspire Us Daily
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="mb-6 text-gray-600">
                 Every day, we&apos;re inspired by the stories of children
                 overcoming obstacles, pastors serving sacrificially, and
                 communities being transformed. Like the story of a young girl
@@ -257,13 +261,13 @@ export default function InspirationPage() {
                 church that, with support from sponsors, started a feeding
                 program that now serves dozens of children each week.
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className="mb-6 text-gray-600">
                 These aren&apos;t just success stories—they&apos;re reminders of
                 why we do what we do. Each sponsored child represents a life
                 full of potential. Each supported church represents a community
                 being touched by God&apos;s love.
               </p>
-              <p className="text-gray-700 font-medium">
+              <p className="font-medium text-gray-700">
                 This is what inspires us: the knowledge that together, we can
                 help children and churches overcome barriers and lead change.
               </p>
@@ -275,17 +279,17 @@ export default function InspirationPage() {
       {/* Join Our Mission */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
               Be Part of the Story
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="mb-8 text-lg text-gray-600">
               Our inspiration comes not just from the past, but from the future
               we believe is possible. A future where every child has the chance
               to thrive, where every church is equipped to serve, and where
               communities are transformed by hope.
             </p>
-            <p className="text-lg text-gray-700 font-medium">
+            <p className="text-lg font-medium text-gray-700">
               Will you join us in making this vision a reality?
             </p>
           </div>

@@ -43,24 +43,24 @@ export default function StatCard({
     <div
       ref={cardRef}
       className={`text-center transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
     >
-      <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-accent-gold mb-2">
+      <div className="mb-2 text-4xl font-bold text-accent-gold sm:text-5xl lg:text-6xl">
         {number}
       </div>
-      <div className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+      <div className="mb-2 text-lg font-semibold text-gray-900 sm:text-xl">
         {label}
       </div>
       {description && (
-        <p className="text-gray-600 text-sm sm:text-base max-w-xs mx-auto">
+        <p className="mx-auto max-w-xs text-sm text-gray-600 sm:text-base">
           {description}
         </p>
       )}
       {link && (
         <Link
           href={link.href}
-          className="inline-block mt-4 text-primary-blue hover:text-blue-700 font-medium transition-colors"
+          className="mt-4 inline-block font-medium text-primary-blue transition-colors hover:text-blue-700"
         >
           {link.label} &rarr;
         </Link>

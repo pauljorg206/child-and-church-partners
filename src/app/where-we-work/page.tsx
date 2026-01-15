@@ -66,11 +66,11 @@ export default function WhereWeWorkPage() {
       {/* Introduction Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
               The Philippines: Our Mission Field
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="mb-8 text-lg text-gray-600">
               Child & Church Partners International focuses exclusively on the
               Philippines, a nation of over 7,000 islands with rich culture,
               strong faith, and communities in need of support. Our founders,
@@ -78,7 +78,7 @@ export default function WhereWeWorkPage() {
               decades of ministry, giving us authentic connections with local
               churches and communities.
             </p>
-            <div className="aspect-video relative rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative aspect-video overflow-hidden rounded-2xl shadow-lg">
               <Image
                 src="https://static.wixstatic.com/media/6ebd37_7fb339cde52a41e597ad19cd339a2ada~mv2.jpg"
                 alt="Philippines landscape with church community"
@@ -93,10 +93,10 @@ export default function WhereWeWorkPage() {
       {/* Impact Stats */}
       <section className="section-padding bg-primary-blue text-white">
         <div className="container-site">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {impactStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-accent-gold mb-2">
+                <div className="mb-2 text-4xl font-bold text-accent-gold md:text-5xl">
                   {stat.number}
                 </div>
                 <div className="text-lg text-blue-100">{stat.label}</div>
@@ -109,15 +109,15 @@ export default function WhereWeWorkPage() {
       {/* Why Philippines */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-8 text-center text-3xl font-bold text-gray-900 md:text-4xl">
               Why the Philippines?
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-2xl shadow-sm">
-                <div className="w-12 h-12 bg-accent-gold/10 rounded-full flex items-center justify-center mb-4">
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="rounded-2xl bg-white p-8 shadow-sm">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-accent-gold/10">
                   <svg
-                    className="w-6 h-6 text-accent-gold"
+                    className="h-6 w-6 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -130,7 +130,7 @@ export default function WhereWeWorkPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="mb-3 text-xl font-bold text-gray-900">
                   Deep Personal Connection
                 </h3>
                 <p className="text-gray-600">
@@ -142,10 +142,10 @@ export default function WhereWeWorkPage() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-sm">
-                <div className="w-12 h-12 bg-accent-gold/10 rounded-full flex items-center justify-center mb-4">
+              <div className="rounded-2xl bg-white p-8 shadow-sm">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-accent-gold/10">
                   <svg
-                    className="w-6 h-6 text-accent-gold"
+                    className="h-6 w-6 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -158,7 +158,7 @@ export default function WhereWeWorkPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="mb-3 text-xl font-bold text-gray-900">
                   Strong Church Foundation
                 </h3>
                 <p className="text-gray-600">
@@ -169,10 +169,10 @@ export default function WhereWeWorkPage() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-sm">
-                <div className="w-12 h-12 bg-accent-gold/10 rounded-full flex items-center justify-center mb-4">
+              <div className="rounded-2xl bg-white p-8 shadow-sm">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-accent-gold/10">
                   <svg
-                    className="w-6 h-6 text-accent-gold"
+                    className="h-6 w-6 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -185,21 +185,21 @@ export default function WhereWeWorkPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="mb-3 text-xl font-bold text-gray-900">
                   Significant Need
                 </h3>
                 <p className="text-gray-600">
                   Despite economic growth, millions of Filipino children live in
-                  poverty. Many families struggle to afford education, nutrition,
-                  and healthcare. Our focused approach allows us to make
-                  meaningful, measurable differences.
+                  poverty. Many families struggle to afford education,
+                  nutrition, and healthcare. Our focused approach allows us to
+                  make meaningful, measurable differences.
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-sm">
-                <div className="w-12 h-12 bg-accent-gold/10 rounded-full flex items-center justify-center mb-4">
+              <div className="rounded-2xl bg-white p-8 shadow-sm">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-accent-gold/10">
                   <svg
-                    className="w-6 h-6 text-accent-gold"
+                    className="h-6 w-6 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -212,7 +212,7 @@ export default function WhereWeWorkPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="mb-3 text-xl font-bold text-gray-900">
                   Strategic Location
                 </h3>
                 <p className="text-gray-600">
@@ -230,13 +230,13 @@ export default function WhereWeWorkPage() {
       {/* Regions Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
               Regions We Serve
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our ministry spans five major regions of the Philippines, each with
-              unique communities and needs.
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+              Our ministry spans five major regions of the Philippines, each
+              with unique communities and needs.
             </p>
           </div>
 
@@ -244,11 +244,11 @@ export default function WhereWeWorkPage() {
             {regions.map((region, index) => (
               <div
                 key={index}
-                className="bg-neutral-off-white rounded-2xl p-6 md:p-8"
+                className="rounded-2xl bg-neutral-off-white p-6 md:p-8"
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2 text-xl font-bold text-gray-900">
                       {region.name}
                     </h3>
                     <p className="text-gray-600">{region.description}</p>
@@ -277,44 +277,50 @@ export default function WhereWeWorkPage() {
       {/* How We Work Section */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
               How We Work Locally
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="mb-8 text-lg text-gray-600">
               We don&apos;t work in isolation. Every program is implemented
-              through partnerships with local churches who know their communities
-              best.
+              through partnerships with local churches who know their
+              communities best.
             </p>
-            <div className="grid md:grid-cols-3 gap-6 text-left">
-              <div className="bg-white p-6 rounded-xl">
-                <div className="text-3xl font-bold text-accent-gold mb-2">1</div>
-                <h3 className="font-bold text-gray-900 mb-2">
+            <div className="grid gap-6 text-left md:grid-cols-3">
+              <div className="rounded-xl bg-white p-6">
+                <div className="mb-2 text-3xl font-bold text-accent-gold">
+                  1
+                </div>
+                <h3 className="mb-2 font-bold text-gray-900">
                   Partner with Churches
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-sm text-gray-600">
                   We identify and partner with established local churches led by
                   dedicated pastors who share our vision for community
                   transformation.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl">
-                <div className="text-3xl font-bold text-accent-gold mb-2">2</div>
-                <h3 className="font-bold text-gray-900 mb-2">
+              <div className="rounded-xl bg-white p-6">
+                <div className="mb-2 text-3xl font-bold text-accent-gold">
+                  2
+                </div>
+                <h3 className="mb-2 font-bold text-gray-900">
                   Identify Children in Need
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-sm text-gray-600">
                   Our church partners identify children in their communities who
                   would benefit most from sponsorship support for education and
                   development.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl">
-                <div className="text-3xl font-bold text-accent-gold mb-2">3</div>
-                <h3 className="font-bold text-gray-900 mb-2">
+              <div className="rounded-xl bg-white p-6">
+                <div className="mb-2 text-3xl font-bold text-accent-gold">
+                  3
+                </div>
+                <h3 className="mb-2 font-bold text-gray-900">
                   Deliver Holistic Support
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-sm text-gray-600">
                   Through the church, children receive educational assistance,
                   spiritual guidance, and community belonging—all coordinated
                   locally.

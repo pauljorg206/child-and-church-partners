@@ -65,11 +65,11 @@ export default function DonatePage() {
       {/* Donation Form Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid lg:grid-cols-5 gap-8">
+          <div className="mx-auto max-w-4xl">
+            <div className="grid gap-8 lg:grid-cols-5">
               {/* Donation Options */}
               <div className="lg:col-span-3">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900">
                   Choose Your Impact
                 </h2>
 
@@ -77,14 +77,14 @@ export default function DonatePage() {
                   {donationOptions.map((option) => (
                     <div
                       key={option.id}
-                      className="border border-gray-200 rounded-xl p-4 hover:border-accent-gold transition-colors cursor-pointer"
+                      className="cursor-pointer rounded-xl border border-gray-200 p-4 transition-colors hover:border-accent-gold"
                     >
                       <div className="flex items-start justify-between">
                         <div>
                           <h3 className="font-semibold text-gray-900">
                             {option.title}
                           </h3>
-                          <p className="text-sm text-gray-600 mt-1">
+                          <p className="mt-1 text-sm text-gray-600">
                             {option.description}
                           </p>
                         </div>
@@ -113,7 +113,7 @@ export default function DonatePage() {
 
                 {/* Custom Amount */}
                 <div className="mt-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="mb-2 block text-sm font-medium text-gray-700">
                     Or enter a custom amount
                   </label>
                   <div className="flex items-center gap-4">
@@ -124,10 +124,10 @@ export default function DonatePage() {
                       <input
                         type="number"
                         placeholder="0.00"
-                        className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-transparent outline-none"
+                        className="w-full rounded-lg border border-gray-300 py-3 pl-8 pr-4 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
                       />
                     </div>
-                    <select className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-transparent outline-none">
+                    <select className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold">
                       <option value="once">One-time</option>
                       <option value="monthly">Monthly</option>
                     </select>
@@ -137,17 +137,17 @@ export default function DonatePage() {
 
               {/* PayPal Section */}
               <div className="lg:col-span-2">
-                <div className="bg-neutral-off-white rounded-2xl p-6 sticky top-24">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <div className="sticky top-24 rounded-2xl bg-neutral-off-white p-6">
+                  <h3 className="mb-4 text-xl font-bold text-gray-900">
                     Complete Your Donation
                   </h3>
 
                   <div className="space-y-4">
                     {/* PayPal Button Placeholder */}
-                    <div className="bg-[#0070ba] text-white rounded-lg py-4 px-6 text-center font-semibold hover:bg-[#003087] transition-colors cursor-pointer">
+                    <div className="cursor-pointer rounded-lg bg-[#0070ba] px-6 py-4 text-center font-semibold text-white transition-colors hover:bg-[#003087]">
                       <div className="flex items-center justify-center gap-2">
                         <svg
-                          className="w-6 h-6"
+                          className="h-6 w-6"
                           viewBox="0 0 24 24"
                           fill="currentColor"
                         >
@@ -160,16 +160,16 @@ export default function DonatePage() {
                     <div className="text-center text-sm text-gray-500">or</div>
 
                     {/* Card Payment Placeholder */}
-                    <button className="w-full border-2 border-gray-300 rounded-lg py-3 px-6 font-semibold text-gray-700 hover:border-accent-gold transition-colors">
+                    <button className="w-full rounded-lg border-2 border-gray-300 px-6 py-3 font-semibold text-gray-700 transition-colors hover:border-accent-gold">
                       Debit or Credit Card
                     </button>
                   </div>
 
                   {/* Security Note */}
-                  <div className="mt-6 pt-6 border-t border-gray-200">
+                  <div className="mt-6 border-t border-gray-200 pt-6">
                     <div className="flex items-center gap-2 text-sm text-gray-600">
                       <svg
-                        className="w-5 h-5 text-green-600"
+                        className="h-5 w-5 text-green-600"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -192,31 +192,31 @@ export default function DonatePage() {
       {/* Other Ways to Give */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-8 text-center text-2xl font-bold text-gray-900">
               Other Ways to Give
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-2">
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="rounded-xl bg-white p-6">
+                <h3 className="mb-2 font-semibold text-gray-900">
                   Send a Check
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="mb-4 text-sm text-gray-600">
                   Make checks payable to &quot;Child & Church Partners
                   International&quot; and mail to:
                 </p>
-                <address className="text-gray-600 text-sm not-italic mb-4">
+                <address className="mb-4 text-sm not-italic text-gray-600">
                   Child & Church Partners International
                   <br />
                   Austin, TX 78750
                   <br />
                   USA
                 </address>
-                <p className="text-gray-500 text-xs">
+                <p className="text-xs text-gray-500">
                   <a
                     href="/contact"
-                    className="text-primary-blue hover:text-blue-700 transition-colors"
+                    className="text-primary-blue transition-colors hover:text-blue-700"
                   >
                     Contact us
                   </a>{" "}
@@ -224,17 +224,17 @@ export default function DonatePage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-2">
+              <div className="rounded-xl bg-white p-6">
+                <h3 className="mb-2 font-semibold text-gray-900">
                   Bank Transfer
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-sm text-gray-600">
                   For wire transfers or bank-to-bank transfers, please contact
                   us directly for banking information.
                 </p>
                 <a
                   href="/contact"
-                  className="text-primary-blue font-medium text-sm hover:text-blue-700 transition-colors mt-4 inline-block"
+                  className="mt-4 inline-block text-sm font-medium text-primary-blue transition-colors hover:text-blue-700"
                 >
                   Contact Us &rarr;
                 </a>
@@ -245,12 +245,12 @@ export default function DonatePage() {
       </section>
 
       {/* Tax Deductible Notice */}
-      <section className="py-8 bg-white">
+      <section className="bg-white py-8">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="mx-auto max-w-3xl text-center">
             <div className="flex items-center justify-center gap-3 text-gray-600">
               <svg
-                className="w-6 h-6 text-accent-gold"
+                className="h-6 w-6 text-accent-gold"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >

@@ -16,13 +16,13 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-[70vh] flex items-center justify-center px-4">
-      <div className="text-center max-w-lg">
+    <div className="flex min-h-[70vh] items-center justify-center px-4">
+      <div className="max-w-lg text-center">
         {/* Error Icon */}
         <div className="mb-8">
-          <div className="w-24 h-24 mx-auto bg-red-100 rounded-full flex items-center justify-center">
+          <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-red-100">
             <svg
-              className="w-12 h-12 text-red-600"
+              className="h-12 w-12 text-red-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -38,16 +38,16 @@ export default function Error({
         </div>
 
         {/* Message */}
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
           Something Went Wrong
         </h1>
-        <p className="text-lg text-gray-600 mb-8">
+        <p className="mb-8 text-lg text-gray-600">
           We apologize for the inconvenience. An unexpected error has occurred.
           Please try again or contact us if the problem persists.
         </p>
 
         {/* Actions */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div className="mb-8 flex flex-col justify-center gap-4 sm:flex-row">
           <button onClick={() => reset()} className="btn-primary">
             Try Again
           </button>
@@ -61,7 +61,7 @@ export default function Error({
           Need help?{" "}
           <Link
             href="/contact"
-            className="text-primary-blue hover:text-blue-700 font-medium"
+            className="font-medium text-primary-blue hover:text-blue-700"
           >
             Contact our support team
           </Link>
@@ -69,9 +69,7 @@ export default function Error({
 
         {/* Error ID for debugging */}
         {error.digest && (
-          <p className="mt-4 text-xs text-gray-400">
-            Error ID: {error.digest}
-          </p>
+          <p className="mt-4 text-xs text-gray-400">Error ID: {error.digest}</p>
         )}
       </div>
     </div>

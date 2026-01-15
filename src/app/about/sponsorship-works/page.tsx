@@ -104,9 +104,9 @@ export default function SponsorshipWorksPage() {
       {/* The Evidence Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
                 The Evidence for Sponsorship
               </h2>
               <p className="text-lg text-gray-600">
@@ -116,15 +116,15 @@ export default function SponsorshipWorksPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid gap-8 md:grid-cols-2">
               {sponsorshipBenefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className="bg-neutral-off-white rounded-2xl p-6"
+                  className="rounded-2xl bg-neutral-off-white p-6"
                 >
-                  <div className="w-12 h-12 bg-accent-gold/10 rounded-full flex items-center justify-center mb-4">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-accent-gold/10">
                     <svg
-                      className="w-6 h-6 text-accent-gold"
+                      className="h-6 w-6 text-accent-gold"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -132,7 +132,7 @@ export default function SponsorshipWorksPage() {
                       {benefit.icon}
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">
                     {benefit.title}
                   </h3>
                   <p className="text-gray-600">{benefit.description}</p>
@@ -146,8 +146,8 @@ export default function SponsorshipWorksPage() {
       {/* Statistics Section */}
       <section className="section-padding bg-primary-blue text-white">
         <div className="container-site">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
               The Impact of Sponsorship
             </h2>
             <p className="text-xl text-blue-100">
@@ -156,9 +156,9 @@ export default function SponsorshipWorksPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-4">
             <div className="text-center">
-              <div className="text-5xl font-bold text-accent-gold mb-2">
+              <div className="mb-2 text-5xl font-bold text-accent-gold">
                 27-40%
               </div>
               <div className="text-blue-100">
@@ -166,7 +166,7 @@ export default function SponsorshipWorksPage() {
               </div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-accent-gold mb-2">
+              <div className="mb-2 text-5xl font-bold text-accent-gold">
                 50%
               </div>
               <div className="text-blue-100">
@@ -174,13 +174,15 @@ export default function SponsorshipWorksPage() {
               </div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-accent-gold mb-2">
+              <div className="mb-2 text-5xl font-bold text-accent-gold">
                 14-18%
               </div>
-              <div className="text-blue-100">Higher monthly income as adults</div>
+              <div className="text-blue-100">
+                Higher monthly income as adults
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-accent-gold mb-2">
+              <div className="mb-2 text-5xl font-bold text-accent-gold">
                 35%
               </div>
               <div className="text-blue-100">
@@ -189,7 +191,7 @@ export default function SponsorshipWorksPage() {
             </div>
           </div>
 
-          <div className="text-center mt-8 text-blue-200 text-sm">
+          <div className="mt-8 text-center text-sm text-blue-200">
             Based on peer-reviewed research on child sponsorship programs
           </div>
         </div>
@@ -198,9 +200,9 @@ export default function SponsorshipWorksPage() {
       {/* Our Model Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg">
+          <div className="mx-auto max-w-4xl">
+            <div className="grid items-center gap-12 md:grid-cols-2">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
                 <Image
                   src="https://static.wixstatic.com/media/6ebd37_1f58d1c8c00446efbeb6d65a68dcb0d7~mv2.jpeg"
                   alt="Sponsored child receiving education support"
@@ -209,22 +211,21 @@ export default function SponsorshipWorksPage() {
                 />
               </div>
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
                   Our Unique Approach
                 </h2>
-                <p className="text-gray-600 mb-4">
-                  What sets Child & Church Partners apart is our
-                  church-centered model. Every sponsored child is connected to a
-                  local church community that provides more than just financial
-                  support.
+                <p className="mb-4 text-gray-600">
+                  What sets Child & Church Partners apart is our church-centered
+                  model. Every sponsored child is connected to a local church
+                  community that provides more than just financial support.
                 </p>
-                <p className="text-gray-600 mb-4">
+                <p className="mb-4 text-gray-600">
                   Through our partner churches, children receive:
                 </p>
-                <ul className="space-y-3 mb-6">
+                <ul className="mb-6 space-y-3">
                   <li className="flex items-start gap-3">
                     <svg
-                      className="w-6 h-6 text-accent-gold flex-shrink-0 mt-0.5"
+                      className="mt-0.5 h-6 w-6 flex-shrink-0 text-accent-gold"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -243,7 +244,7 @@ export default function SponsorshipWorksPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <svg
-                      className="w-6 h-6 text-accent-gold flex-shrink-0 mt-0.5"
+                      className="mt-0.5 h-6 w-6 flex-shrink-0 text-accent-gold"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -262,7 +263,7 @@ export default function SponsorshipWorksPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <svg
-                      className="w-6 h-6 text-accent-gold flex-shrink-0 mt-0.5"
+                      className="mt-0.5 h-6 w-6 flex-shrink-0 text-accent-gold"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -281,7 +282,7 @@ export default function SponsorshipWorksPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <svg
-                      className="w-6 h-6 text-accent-gold flex-shrink-0 mt-0.5"
+                      className="mt-0.5 h-6 w-6 flex-shrink-0 text-accent-gold"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -299,7 +300,7 @@ export default function SponsorshipWorksPage() {
                     </span>
                   </li>
                 </ul>
-                <p className="text-gray-700 font-medium">
+                <p className="font-medium text-gray-700">
                   This holistic approach addresses the whole child, not just
                   immediate needs.
                 </p>
@@ -312,9 +313,9 @@ export default function SponsorshipWorksPage() {
       {/* Comparison Section */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
                 Sponsorship vs. Traditional Giving
               </h2>
               <p className="text-lg text-gray-600">
@@ -323,7 +324,7 @@ export default function SponsorshipWorksPage() {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+            <div className="overflow-hidden rounded-2xl bg-white shadow-sm">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
@@ -351,7 +352,7 @@ export default function SponsorshipWorksPage() {
                         <td className="px-6 py-4 text-gray-900">
                           <div className="flex items-center gap-2">
                             <svg
-                              className="w-5 h-5 text-accent-gold"
+                              className="h-5 w-5 text-accent-gold"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -379,9 +380,9 @@ export default function SponsorshipWorksPage() {
       {/* Journey Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
                 A Child&apos;s Sponsorship Journey
               </h2>
               <p className="text-lg text-gray-600">
@@ -391,15 +392,15 @@ export default function SponsorshipWorksPage() {
             </div>
 
             <div className="relative">
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-accent-gold/30 hidden md:block" />
+              <div className="absolute bottom-0 left-8 top-0 hidden w-0.5 bg-accent-gold/30 md:block" />
 
               <div className="space-y-8">
                 <div className="relative flex gap-6">
-                  <div className="hidden md:flex w-16 h-16 bg-accent-gold rounded-full items-center justify-center flex-shrink-0 z-10">
-                    <span className="text-white font-bold text-xl">1</span>
+                  <div className="z-10 hidden h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-accent-gold md:flex">
+                    <span className="text-xl font-bold text-white">1</span>
                   </div>
-                  <div className="bg-neutral-off-white rounded-2xl p-6 flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <div className="flex-1 rounded-2xl bg-neutral-off-white p-6">
+                    <h3 className="mb-2 text-xl font-bold text-gray-900">
                       Enrollment
                     </h3>
                     <p className="text-gray-600">
@@ -411,11 +412,11 @@ export default function SponsorshipWorksPage() {
                 </div>
 
                 <div className="relative flex gap-6">
-                  <div className="hidden md:flex w-16 h-16 bg-accent-gold rounded-full items-center justify-center flex-shrink-0 z-10">
-                    <span className="text-white font-bold text-xl">2</span>
+                  <div className="z-10 hidden h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-accent-gold md:flex">
+                    <span className="text-xl font-bold text-white">2</span>
                   </div>
-                  <div className="bg-neutral-off-white rounded-2xl p-6 flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <div className="flex-1 rounded-2xl bg-neutral-off-white p-6">
+                    <h3 className="mb-2 text-xl font-bold text-gray-900">
                       Ongoing Support
                     </h3>
                     <p className="text-gray-600">
@@ -427,11 +428,11 @@ export default function SponsorshipWorksPage() {
                 </div>
 
                 <div className="relative flex gap-6">
-                  <div className="hidden md:flex w-16 h-16 bg-accent-gold rounded-full items-center justify-center flex-shrink-0 z-10">
-                    <span className="text-white font-bold text-xl">3</span>
+                  <div className="z-10 hidden h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-accent-gold md:flex">
+                    <span className="text-xl font-bold text-white">3</span>
                   </div>
-                  <div className="bg-neutral-off-white rounded-2xl p-6 flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <div className="flex-1 rounded-2xl bg-neutral-off-white p-6">
+                    <h3 className="mb-2 text-xl font-bold text-gray-900">
                       Growth & Development
                     </h3>
                     <p className="text-gray-600">
@@ -443,11 +444,11 @@ export default function SponsorshipWorksPage() {
                 </div>
 
                 <div className="relative flex gap-6">
-                  <div className="hidden md:flex w-16 h-16 bg-accent-gold rounded-full items-center justify-center flex-shrink-0 z-10">
-                    <span className="text-white font-bold text-xl">4</span>
+                  <div className="z-10 hidden h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-accent-gold md:flex">
+                    <span className="text-xl font-bold text-white">4</span>
                   </div>
-                  <div className="bg-neutral-off-white rounded-2xl p-6 flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <div className="flex-1 rounded-2xl bg-neutral-off-white p-6">
+                    <h3 className="mb-2 text-xl font-bold text-gray-900">
                       Graduation & Beyond
                     </h3>
                     <p className="text-gray-600">
@@ -467,22 +468,22 @@ export default function SponsorshipWorksPage() {
       {/* Testimonial Section */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="rounded-2xl bg-white p-8 shadow-sm md:p-12">
               <svg
-                className="w-12 h-12 text-accent-gold mx-auto mb-6"
+                className="mx-auto mb-6 h-12 w-12 text-accent-gold"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
-              <blockquote className="text-xl md:text-2xl text-gray-700 italic mb-6">
+              <blockquote className="mb-6 text-xl italic text-gray-700 md:text-2xl">
                 &ldquo;Sponsorship changed my life. I was able to finish school
                 and now I can help my family. My sponsor believed in me when I
                 didn&apos;t believe in myself. I want to be a teacher so I can
                 help other children the way I was helped.&rdquo;
               </blockquote>
-              <div className="text-gray-900 font-medium">
+              <div className="font-medium text-gray-900">
                 — Former Sponsored Child, Now College Student
               </div>
             </div>

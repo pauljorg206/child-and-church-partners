@@ -54,17 +54,17 @@ export default function Home() {
       {/* Mission Cards Section */}
       <section className="section-padding bg-primary-blue">
         <div className="container-site">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
               Be a Dream Releaser
             </h2>
-            <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-gray-200">
               Help poor children and struggling churches in the Philippines
               overcome, thrive and inspire change in their communities.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
             <ProgramCard
               title="Sponsor a Child"
               amount="$35/month"
@@ -106,12 +106,12 @@ export default function Home() {
       />
 
       {/* Trust Indicators */}
-      <section className="py-8 bg-white border-y border-gray-200">
+      <section className="border-y border-gray-200 bg-white py-8">
         <div className="container-site">
-          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-gray-600">
+          <div className="flex flex-wrap items-center justify-center gap-8 text-gray-600 sm:gap-12">
             <div className="flex items-center gap-2">
               <svg
-                className="w-6 h-6 text-accent-gold"
+                className="h-6 w-6 text-accent-gold"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -125,7 +125,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <svg
-                className="w-6 h-6 text-accent-gold"
+                className="h-6 w-6 text-accent-gold"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -139,7 +139,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <svg
-                className="w-6 h-6 text-accent-gold"
+                className="h-6 w-6 text-accent-gold"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -159,8 +159,8 @@ export default function Home() {
       {/* Founders Preview */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="relative h-80 overflow-hidden rounded-2xl lg:h-96">
               <Image
                 src="/images/received_571220392093528.jpeg"
                 alt="Dani and Rez Sindac, Founders"
@@ -169,15 +169,15 @@ export default function Home() {
               />
             </div>
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
                 Our Story
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="mb-6 text-lg text-gray-600">
                 Born and raised in the Philippines, Dani and Rez Sindac have
                 dedicated their lives to serving children and churches. Through
                 Child & Church Partners, they continue to walk alongside pastors
-                in the Philippines—encouraging, equipping, and supporting them as
-                they raise next-generation leaders.
+                in the Philippines—encouraging, equipping, and supporting them
+                as they raise next-generation leaders.
               </p>
               <Link href="/about/founders" className="btn-secondary">
                 Read Our Story
@@ -190,11 +190,11 @@ export default function Home() {
       {/* Newsletter Section */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
               Stay Connected
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="mb-8 text-lg text-gray-600">
               Get updates on the lives you&apos;re changing and stories from the
               field.
             </p>

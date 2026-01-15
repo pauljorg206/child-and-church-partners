@@ -30,10 +30,11 @@ export default function PrivacyPolicyPage() {
       <section id="introduction">
         <h2>Introduction</h2>
         <p>
-          Child & Church Partners International (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is
-          committed to protecting your privacy. This Privacy Policy explains how
-          we collect, use, disclose, and safeguard your information when you
-          visit our website at childandchurchpartners.org and use our services.
+          Child & Church Partners International (&quot;we,&quot; &quot;us,&quot;
+          or &quot;our&quot;) is committed to protecting your privacy. This
+          Privacy Policy explains how we collect, use, disclose, and safeguard
+          your information when you visit our website at
+          childandchurchpartners.org and use our services.
         </p>
         <p>
           We are a 501(c)(3) nonprofit organization registered in Texas, United
@@ -46,7 +47,10 @@ export default function PrivacyPolicyPage() {
         <h2>Information We Collect</h2>
 
         <h3>Personal Information</h3>
-        <p>We may collect personal information that you voluntarily provide, including:</p>
+        <p>
+          We may collect personal information that you voluntarily provide,
+          including:
+        </p>
         <ul>
           <li>Name and contact information (email address, phone number)</li>
           <li>Mailing address (for donation receipts)</li>
@@ -74,7 +78,9 @@ export default function PrivacyPolicyPage() {
         <p>We use the information we collect to:</p>
         <ul>
           <li>Process donations and provide tax receipts</li>
-          <li>Send updates about our programs and impact (with your consent)</li>
+          <li>
+            Send updates about our programs and impact (with your consent)
+          </li>
           <li>Respond to your inquiries and provide customer support</li>
           <li>Improve our website and services</li>
           <li>Comply with legal obligations</li>
@@ -108,9 +114,9 @@ export default function PrivacyPolicyPage() {
       <section id="data-security">
         <h2>Data Security</h2>
         <p>
-          We implement appropriate technical and organizational security measures
-          to protect your personal information against unauthorized access,
-          alteration, disclosure, or destruction. However, no method of
+          We implement appropriate technical and organizational security
+          measures to protect your personal information against unauthorized
+          access, alteration, disclosure, or destruction. However, no method of
           transmission over the Internet is 100% secure, and we cannot guarantee
           absolute security.
         </p>
@@ -156,24 +162,28 @@ export default function PrivacyPolicyPage() {
         <p>
           Our website is not intended for children under 13 years of age. We do
           not knowingly collect personal information from children under 13. If
-          you believe we have collected information from a child under 13, please
-          contact us immediately.
+          you believe we have collected information from a child under 13,
+          please contact us immediately.
         </p>
         <p>
-          Note: While our organization serves children in the Philippines through
-          our sponsorship programs, the personal information of sponsored
-          children is handled separately with appropriate safeguards and parental
-          consent as required by local laws.
+          Note: While our organization serves children in the Philippines
+          through our sponsorship programs, the personal information of
+          sponsored children is handled separately with appropriate safeguards
+          and parental consent as required by local laws.
         </p>
       </section>
 
       <section id="third-party">
         <h2>Third-Party Services</h2>
-        <p>Our website may contain links to third-party websites or use third-party services:</p>
+        <p>
+          Our website may contain links to third-party websites or use
+          third-party services:
+        </p>
         <ul>
           <li>
-            <strong>PayPal:</strong> For secure payment processing. PayPal&apos;s
-            privacy policy governs their handling of your payment information.
+            <strong>PayPal:</strong> For secure payment processing.
+            PayPal&apos;s privacy policy governs their handling of your payment
+            information.
           </li>
           <li>
             <strong>YouTube:</strong> For embedded video content. Google&apos;s

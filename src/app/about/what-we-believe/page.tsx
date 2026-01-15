@@ -13,42 +13,48 @@ const coreBeliefs = [
     title: "The Bible",
     belief:
       "We believe the Bible is the inspired, infallible Word of God—our ultimate authority for faith and practice. Scripture guides our mission, shapes our values, and informs how we serve.",
-    verse: "All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness.",
+    verse:
+      "All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness.",
     reference: "2 Timothy 3:16",
   },
   {
     title: "God",
     belief:
       "We believe in one God, eternally existing in three persons: Father, Son, and Holy Spirit. God is the Creator of all things, sovereign over all, and perfectly loving, just, and holy.",
-    verse: "For from him and through him and for him are all things. To him be the glory forever!",
+    verse:
+      "For from him and through him and for him are all things. To him be the glory forever!",
     reference: "Romans 11:36",
   },
   {
     title: "Jesus Christ",
     belief:
       "We believe Jesus Christ is the Son of God, fully divine and fully human. He lived a sinless life, died on the cross for our sins, rose bodily from the dead, and will return again.",
-    verse: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+    verse:
+      "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
     reference: "John 3:16",
   },
   {
     title: "The Holy Spirit",
     belief:
       "We believe the Holy Spirit indwells all believers, empowering them for godly living and service. The Spirit convicts of sin, guides into truth, and equips the church for ministry.",
-    verse: "But you will receive power when the Holy Spirit comes on you; and you will be my witnesses.",
+    verse:
+      "But you will receive power when the Holy Spirit comes on you; and you will be my witnesses.",
     reference: "Acts 1:8",
   },
   {
     title: "Salvation",
     belief:
       "We believe salvation is a gift of God's grace, received through faith in Jesus Christ alone. No amount of good works can earn salvation—it is freely given to all who believe.",
-    verse: "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God.",
+    verse:
+      "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God.",
     reference: "Ephesians 2:8",
   },
   {
     title: "The Church",
     belief:
       "We believe the local church is God's plan for reaching the world. The church is the body of Christ, called to worship, fellowship, discipleship, and mission in every community.",
-    verse: "And I tell you that you are Peter, and on this rock I will build my church, and the gates of Hades will not overcome it.",
+    verse:
+      "And I tell you that you are Peter, and on this rock I will build my church, and the gates of Hades will not overcome it.",
     reference: "Matthew 16:18",
   },
 ];
@@ -146,11 +152,11 @@ export default function WhatWeBelievePage() {
       {/* Introduction */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
               Rooted in Faith, Driven by Love
             </h2>
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="mb-6 text-lg text-gray-600">
               Child & Church Partners International is a Christian organization.
               Our faith isn&apos;t just a label—it&apos;s the foundation of
               everything we do. We serve because we have been loved by God, and
@@ -168,28 +174,28 @@ export default function WhatWeBelievePage() {
       {/* Core Beliefs */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
               Our Core Beliefs
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
               We hold to historic Christian faith as expressed in these
               foundational truths.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
             {coreBeliefs.map((item, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <div key={index} className="rounded-2xl bg-white p-6 shadow-sm">
+                <h3 className="mb-3 text-xl font-bold text-gray-900">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{item.belief}</p>
+                <p className="mb-4 text-gray-600">{item.belief}</p>
                 <div className="border-l-4 border-accent-gold pl-4">
-                  <p className="text-gray-700 italic text-sm mb-1">
+                  <p className="mb-1 text-sm italic text-gray-700">
                     &ldquo;{item.verse}&rdquo;
                   </p>
-                  <p className="text-xs text-accent-gold font-medium">
+                  <p className="text-xs font-medium text-accent-gold">
                     {item.reference}
                   </p>
                 </div>
@@ -202,20 +208,20 @@ export default function WhatWeBelievePage() {
       {/* Scripture Focus */}
       <section className="section-padding bg-primary-blue text-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="mb-8 text-3xl font-bold md:text-4xl">
               Our Guiding Scripture
             </h2>
-            <div className="bg-white/10 rounded-2xl p-8 md:p-12">
-              <blockquote className="text-2xl md:text-3xl font-serif italic mb-6">
+            <div className="rounded-2xl bg-white/10 p-8 md:p-12">
+              <blockquote className="mb-6 font-serif text-2xl italic md:text-3xl">
                 &ldquo;Religion that God our Father accepts as pure and
                 faultless is this: to look after orphans and widows in their
                 distress and to keep oneself from being polluted by the
                 world.&rdquo;
               </blockquote>
-              <cite className="text-accent-gold text-xl">James 1:27 (NIV)</cite>
+              <cite className="text-xl text-accent-gold">James 1:27 (NIV)</cite>
             </div>
-            <p className="mt-8 text-blue-100 text-lg max-w-2xl mx-auto">
+            <p className="mx-auto mt-8 max-w-2xl text-lg text-blue-100">
               This verse captures the heart of our mission. We believe caring
               for vulnerable children and supporting struggling communities
               isn&apos;t optional for followers of Jesus—it&apos;s essential.
@@ -227,21 +233,21 @@ export default function WhatWeBelievePage() {
       {/* Mission Values */}
       <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
               Values That Guide Our Mission
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
               These principles flow from our beliefs and shape how we work.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
             {missionValues.map((value, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-accent-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent-gold/10">
                   <svg
-                    className="w-8 h-8 text-accent-gold"
+                    className="h-8 w-8 text-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -249,7 +255,7 @@ export default function WhatWeBelievePage() {
                     {value.icon}
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="mb-2 text-lg font-bold text-gray-900">
                   {value.title}
                 </h3>
                 <p className="text-gray-600">{value.description}</p>
@@ -262,9 +268,9 @@ export default function WhatWeBelievePage() {
       {/* Statement on Service */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          <div className="mx-auto max-w-4xl">
+            <div className="rounded-2xl bg-white p-8 shadow-sm md:p-12">
+              <h2 className="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">
                 How Our Beliefs Shape Our Service
               </h2>
               <div className="space-y-4 text-gray-600">

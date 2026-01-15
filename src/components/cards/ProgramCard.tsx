@@ -24,10 +24,10 @@ export default function ProgramCard({
 }: ProgramCardProps) {
   return (
     <div
-      className={`rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl ${
+      className={`overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-xl ${
         variant === "featured"
           ? "bg-primary-blue text-white"
-          : "bg-white border border-gray-200"
+          : "border border-gray-200 bg-white"
       }`}
     >
       {image && (
@@ -38,7 +38,7 @@ export default function ProgramCard({
 
       <div className="p-6 sm:p-8">
         <h3
-          className={`text-xl sm:text-2xl font-bold mb-2 ${
+          className={`mb-2 text-xl font-bold sm:text-2xl ${
             variant === "featured" ? "text-white" : "text-gray-900"
           }`}
         >
@@ -47,7 +47,7 @@ export default function ProgramCard({
 
         {amount && (
           <div
-            className={`text-3xl font-bold mb-4 ${
+            className={`mb-4 text-3xl font-bold ${
               variant === "featured" ? "text-accent-gold" : "text-accent-gold"
             }`}
           >
@@ -66,7 +66,7 @@ export default function ProgramCard({
         )}
 
         {bulletPoints && bulletPoints.length > 0 && (
-          <ul className="space-y-2 mb-6">
+          <ul className="mb-6 space-y-2">
             {bulletPoints.map((point, index) => (
               <li
                 key={index}
@@ -75,7 +75,7 @@ export default function ProgramCard({
                 }`}
               >
                 <svg
-                  className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
+                  className={`mt-0.5 h-5 w-5 flex-shrink-0 ${
                     variant === "featured"
                       ? "text-accent-gold"
                       : "text-accent-gold"
@@ -97,7 +97,7 @@ export default function ProgramCard({
 
         <Link
           href={ctaHref}
-          className={`inline-block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all ${
+          className={`inline-block w-full rounded-lg px-6 py-3 text-center font-semibold transition-all ${
             variant === "featured"
               ? "bg-accent-gold text-gray-900 hover:bg-accent-gold-light"
               : "bg-primary-blue text-white hover:bg-blue-700"
