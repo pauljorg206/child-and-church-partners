@@ -38,6 +38,7 @@ export default function AboutPage() {
         title="About Us"
         subtitle="We help vulnerable children and struggling churches in the Philippines fulfill their fullest potential and possibilities."
         variant="simple"
+        backgroundImage="/images/photo-gallery/child-church-partners-ministry-001.jpg"
       />
 
       {/* Mission Section */}

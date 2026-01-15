@@ -74,8 +74,9 @@ export default function GivePage() {
     <>
       <Hero
         title="Make a Difference"
-        subtitle="Be a dream releaser. Help poor children and struggling churches in the Philippines overcome, thrive and inspire change in their communities."
+        subtitle="Be a dream releaser. Help children and churches overcome and thrive."
         variant="simple"
+        backgroundImage="/images/photo-gallery/ministry-philippines-ccpi-001.jpg"
       />
 
       {/* Main Sponsorship Options */}

@@ -108,6 +108,7 @@ export default function OurApproachPage() {
         title="Our Approach"
         subtitle="How we work alongside local churches to create lasting change in the Philippines."
         variant="simple"
+        backgroundImage="/images/photo-gallery/church-community-outreach-001.jpg"
       />
 
       {/* Introduction */}

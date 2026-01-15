@@ -59,8 +59,9 @@ export default function WhereWeWorkPage() {
     <>
       <Hero
         title="Where We Work"
-        subtitle="Serving children and churches across the Philippines, one community at a time."
+        subtitle="Serving children and churches across the Philippines."
         variant="simple"
+        backgroundImage="/images/photo-gallery/community-outreach-event-001.jpg"
       />
 
       {/* Introduction Section */}

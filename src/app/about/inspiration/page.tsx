@@ -50,6 +50,7 @@ export default function InspirationPage() {
         title="Our Inspiration"
         subtitle="The faith, calling, and vision that drive everything we do."
         variant="simple"
+        backgroundImage="/images/photo-gallery/children-learning-philippines-001.jpg"
       />
 
       {/* Opening Section */}

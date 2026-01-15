@@ -147,6 +147,7 @@ export default function WhatWeBelievePage() {
         title="What We Believe"
         subtitle="The faith foundation that shapes our mission and guides our work."
         variant="simple"
+        backgroundImage="/images/photo-gallery/church-worship-philippines-001.jpg"
       />
 
       {/* Introduction */}

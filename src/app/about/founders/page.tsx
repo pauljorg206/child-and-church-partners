@@ -61,6 +61,7 @@ export default function FoundersPage() {
         title="Our Founders"
         subtitle="The story of Child & Church Partners began long before it was officially founded."
         variant="simple"
+        backgroundImage="/images/photo-gallery/ministry-philippines-ccpi-002.jpg"
       />
 
       {/* Founders Introduction */}

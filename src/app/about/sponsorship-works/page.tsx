@@ -99,6 +99,7 @@ export default function SponsorshipWorksPage() {
         title="Why Sponsorship Works"
         subtitle="Discover why child sponsorship is one of the most effective ways to create lasting, meaningful change."
         variant="simple"
+        backgroundImage="/images/photo-gallery/child-sponsorship-program-001.jpg"
       />
 
       {/* The Evidence Section */}
