@@ -88,7 +88,7 @@ export default function Home() {
             <div className="overflow-hidden rounded-2xl bg-white shadow-lg">
               <div className="relative h-48">
                 <Image
-                  src="/images/photo-gallery/child-sponsorship-program-001.jpeg"
+                  src="/images/photo-gallery/sponsored-child-philippines-002.jpg"
                   alt="Sponsored child in the Philippines"
                   fill
                   className="object-cover"
