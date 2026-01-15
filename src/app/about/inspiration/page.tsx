@@ -100,8 +100,8 @@ export default function InspirationPage() {
               </div>
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="/images/photo-gallery/child-education-support-001.jpg"
-                  alt="Children receiving education support"
+                  src="/images/photo-gallery/filipino-children-ministry-001.jpg"
+                  alt="Filipino children in ministry"
                   fill
                   className="object-cover"
                 />
