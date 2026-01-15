@@ -1,7 +1,27 @@
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
+import ImageStrip from "@/components/sections/ImageStrip";
 import Image from "next/image";
 import type { Metadata } from "next";
+
+const regionImages = [
+  {
+    src: "/images/photo-gallery/volunteer-ministry-philippines-003.jpg",
+    alt: "Ministry in the Philippines",
+  },
+  {
+    src: "/images/photo-gallery/church-community-outreach-004.jpg",
+    alt: "Church community outreach",
+  },
+  {
+    src: "/images/photo-gallery/community-outreach-event-005.jpeg",
+    alt: "Community event",
+  },
+  {
+    src: "/images/photo-gallery/nonprofit-ministry-philippines-003.jpg",
+    alt: "Nonprofit ministry",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Where We Work",
@@ -61,8 +81,11 @@ export default function WhereWeWorkPage() {
         title="Where We Work"
         subtitle="Serving children and churches across the Philippines."
         variant="simple"
-        backgroundImage="/images/photo-gallery/community-outreach-event-001.jpg"
+        backgroundImage="/images/photo-gallery/community-outreach-event-003.jpeg"
       />
+
+      {/* Image Strip */}
+      <ImageStrip images={regionImages} />
 
       {/* Introduction Section */}
       <section className="section-padding bg-white">
@@ -81,8 +104,8 @@ export default function WhereWeWorkPage() {
             </p>
             <div className="relative aspect-video overflow-hidden rounded-2xl shadow-lg">
               <Image
-                src="https://static.wixstatic.com/media/6ebd37_7fb339cde52a41e597ad19cd339a2ada~mv2.jpg"
-                alt="Philippines landscape with church community"
+                src="/images/photo-gallery/nonprofit-ministry-philippines-001.jpg"
+                alt="Philippines ministry community"
                 fill
                 className="object-cover"
               />
@@ -288,44 +311,71 @@ export default function WhereWeWorkPage() {
               communities best.
             </p>
             <div className="grid gap-6 text-left md:grid-cols-3">
-              <div className="rounded-xl bg-white p-6">
-                <div className="mb-2 text-3xl font-bold text-accent-gold">
-                  1
+              <div className="overflow-hidden rounded-xl bg-white shadow-sm">
+                <div className="relative h-40">
+                  <Image
+                    src="/images/photo-gallery/church-worship-philippines-006.jpeg"
+                    alt="Partner churches"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="mb-2 font-bold text-gray-900">
-                  Partner with Churches
-                </h3>
-                <p className="text-sm text-gray-600">
-                  We identify and partner with established local churches led by
-                  dedicated pastors who share our vision for community
-                  transformation.
-                </p>
+                <div className="p-6">
+                  <div className="mb-2 text-2xl font-bold text-accent-gold">
+                    1
+                  </div>
+                  <h3 className="mb-2 font-bold text-gray-900">
+                    Partner with Churches
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    We partner with local churches led by pastors who share our
+                    vision.
+                  </p>
+                </div>
               </div>
-              <div className="rounded-xl bg-white p-6">
-                <div className="mb-2 text-3xl font-bold text-accent-gold">
-                  2
+              <div className="overflow-hidden rounded-xl bg-white shadow-sm">
+                <div className="relative h-40">
+                  <Image
+                    src="/images/photo-gallery/child-sponsorship-program-004.jpeg"
+                    alt="Children in need"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="mb-2 font-bold text-gray-900">
-                  Identify Children in Need
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Our church partners identify children in their communities who
-                  would benefit most from sponsorship support for education and
-                  development.
-                </p>
+                <div className="p-6">
+                  <div className="mb-2 text-2xl font-bold text-accent-gold">
+                    2
+                  </div>
+                  <h3 className="mb-2 font-bold text-gray-900">
+                    Identify Children in Need
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Church partners identify children who would benefit from
+                    sponsorship.
+                  </p>
+                </div>
               </div>
-              <div className="rounded-xl bg-white p-6">
-                <div className="mb-2 text-3xl font-bold text-accent-gold">
-                  3
+              <div className="overflow-hidden rounded-xl bg-white shadow-sm">
+                <div className="relative h-40">
+                  <Image
+                    src="/images/photo-gallery/feeding-ministry-children-002.jpeg"
+                    alt="Holistic support"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="mb-2 font-bold text-gray-900">
-                  Deliver Holistic Support
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Through the church, children receive educational assistance,
-                  spiritual guidance, and community belonging—all coordinated
-                  locally.
-                </p>
+                <div className="p-6">
+                  <div className="mb-2 text-2xl font-bold text-accent-gold">
+                    3
+                  </div>
+                  <h3 className="mb-2 font-bold text-gray-900">
+                    Deliver Holistic Support
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Children receive education, guidance, and community
+                    belonging.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

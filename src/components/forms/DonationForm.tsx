@@ -18,9 +18,97 @@ interface DonationFormProps {
 
 type Frequency = "once" | "monthly";
 
+// Wrapper component that safely uses the PayPal hook
+function PayPalButtonsWrapper({
+  isValid,
+  recurring,
+  createOrder,
+  onApprove,
+  createSubscription,
+  onSubscriptionApprove,
+  onError,
+}: {
+  isValid: boolean;
+  recurring: boolean;
+  createOrder: () => Promise<string>;
+  onApprove: (data: { orderID: string }) => Promise<void>;
+  createSubscription: (
+    data: Record<string, unknown>,
+    actions: {
+      subscription: {
+        create: (options: { plan_id: string }) => Promise<string>;
+      };
+    }
+  ) => Promise<string>;
+  onSubscriptionApprove: (data: {
+    subscriptionID?: string | null;
+  }) => Promise<void>;
+  onError: (err: Record<string, unknown>) => void;
+}) {
+  const [{ isPending, isResolved }] = usePayPalScriptReducer();
+
+  if (isPending) {
+    return (
+      <div className="flex h-12 items-center justify-center">
+        <div className="h-6 w-6 animate-spin rounded-full border-2 border-gray-300 border-t-primary-blue" />
+      </div>
+    );
+  }
+
+  if (!isResolved) {
+    return (
+      <div className="rounded-lg bg-yellow-50 p-4 text-center text-sm text-yellow-700">
+        PayPal is temporarily unavailable. Please{" "}
+        <a href="/contact" className="underline">
+          contact us
+        </a>{" "}
+        for alternative donation methods.
+      </div>
+    );
+  }
+
+  if (!isValid) {
+    return (
+      <div className="rounded-lg bg-gray-100 p-4 text-center text-sm text-gray-500">
+        Select a donation option or enter an amount to continue
+      </div>
+    );
+  }
+
+  if (recurring) {
+    return (
+      <PayPalButtons
+        style={{
+          layout: "vertical",
+          color: "blue",
+          shape: "rect",
+          label: "subscribe",
+        }}
+        createSubscription={createSubscription}
+        onApprove={onSubscriptionApprove}
+        onError={onError}
+      />
+    );
+  }
+
+  return (
+    <PayPalButtons
+      style={{
+        layout: "vertical",
+        color: "blue",
+        shape: "rect",
+        label: "donate",
+      }}
+      createOrder={createOrder}
+      onApprove={onApprove}
+      onError={onError}
+    />
+  );
+}
+
 export default function DonationForm({ options }: DonationFormProps) {
   const router = useRouter();
-  const [{ isPending }] = usePayPalScriptReducer();
+  const isPayPalConfigured = !!process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
 
   const [selectedOption, setSelectedOption] = useState<DonationOption | null>(
     null
@@ -263,39 +351,23 @@ export default function DonationForm({ options }: DonationFormProps) {
 
           {/* PayPal Buttons */}
           <div className="space-y-4">
-            {isPending ? (
-              <div className="flex h-12 items-center justify-center">
-                <div className="h-6 w-6 animate-spin rounded-full border-2 border-gray-300 border-t-primary-blue" />
-              </div>
-            ) : isValid ? (
-              recurring ? (
-                <PayPalButtons
-                  style={{
-                    layout: "vertical",
-                    color: "blue",
-                    shape: "rect",
-                    label: "subscribe",
-                  }}
-                  createSubscription={createSubscription}
-                  onApprove={onSubscriptionApprove}
-                  onError={onError}
-                />
-              ) : (
-                <PayPalButtons
-                  style={{
-                    layout: "vertical",
-                    color: "blue",
-                    shape: "rect",
-                    label: "donate",
-                  }}
-                  createOrder={createOrder}
-                  onApprove={onApprove}
-                  onError={onError}
-                />
-              )
+            {isPayPalConfigured ? (
+              <PayPalButtonsWrapper
+                isValid={isValid}
+                recurring={recurring}
+                createOrder={createOrder}
+                onApprove={onApprove}
+                createSubscription={createSubscription}
+                onSubscriptionApprove={onSubscriptionApprove}
+                onError={onError}
+              />
             ) : (
-              <div className="rounded-lg bg-gray-100 p-4 text-center text-sm text-gray-500">
-                Select a donation option or enter an amount to continue
+              <div className="rounded-lg bg-yellow-50 p-4 text-center text-sm text-yellow-700">
+                Online donations are temporarily unavailable. Please{" "}
+                <a href="/contact" className="underline">
+                  contact us
+                </a>{" "}
+                for alternative donation methods.
               </div>
             )}
           </div>

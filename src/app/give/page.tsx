@@ -1,8 +1,29 @@
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
 import ProgramCard from "@/components/cards/ProgramCard";
+import ImageStrip from "@/components/sections/ImageStrip";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+
+const giveImages = [
+  {
+    src: "/images/photo-gallery/feeding-ministry-children-003.jpeg",
+    alt: "Feeding ministry for children",
+  },
+  {
+    src: "/images/photo-gallery/child-education-support-001.jpg",
+    alt: "Child education support",
+  },
+  {
+    src: "/images/photo-gallery/pastor-training-philippines-006.jpg",
+    alt: "Pastor training",
+  },
+  {
+    src: "/images/photo-gallery/church-community-outreach-005.jpeg",
+    alt: "Church community outreach",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Make a Difference",
@@ -48,6 +69,8 @@ const campaigns = [
       "As many as 250 Filipino children living in poverty each receive a sturdy backpack filled with school supplies at the beginning of each school year.",
     impact:
       "Your support gives children from low-income families the head start they need to succeed.",
+    image: "/images/photo-gallery/children-learning-philippines-003.jpeg",
+    imageAlt: "Children with school supplies",
   },
   {
     title: "Feeding Outreach",
@@ -55,6 +78,8 @@ const campaigns = [
       "Once a week, 200 to 250 children eat a nutritious meal at our local churches.",
     impact:
       "This weekly children's feeding program is an opportunity for churches to reach out to children and their families with the love and hope found in Jesus.",
+    image: "/images/photo-gallery/feeding-ministry-children-004.jpg",
+    imageAlt: "Children eating nutritious meals",
   },
   {
     title: "Other Urgent Needs",
@@ -66,6 +91,8 @@ const campaigns = [
       "Vocational training for youth",
       "Disaster relief for affected families",
     ],
+    image: "/images/photo-gallery/church-community-service-003.jpg",
+    imageAlt: "Church community service",
   },
 ];
 
@@ -78,6 +105,9 @@ export default function GivePage() {
         variant="simple"
         backgroundImage="/images/photo-gallery/ministry-philippines-ccpi-001.jpg"
       />
+
+      {/* Image Strip */}
+      <ImageStrip images={giveImages} />
 
       {/* Main Sponsorship Options */}
       <section className="section-padding bg-white">
@@ -141,46 +171,58 @@ export default function GivePage() {
             {campaigns.map((campaign) => (
               <div
                 key={campaign.title}
-                className="rounded-2xl bg-white p-6 shadow-sm"
+                className="overflow-hidden rounded-2xl bg-white shadow-sm"
               >
-                <h3 className="mb-3 text-xl font-bold text-gray-900">
-                  {campaign.title}
-                </h3>
-                <p className="mb-4 text-gray-600">{campaign.description}</p>
-                {campaign.impact && (
-                  <p className="mb-4 text-sm font-medium text-primary-blue">
-                    {campaign.impact}
+                <div className="relative h-40">
+                  <Image
+                    src={campaign.image}
+                    alt={campaign.imageAlt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="mb-3 text-xl font-bold text-gray-900">
+                    {campaign.title}
+                  </h3>
+                  <p className="mb-4 text-sm text-gray-600">
+                    {campaign.description}
                   </p>
-                )}
-                {campaign.bulletPoints && (
-                  <ul className="mb-4 space-y-2">
-                    {campaign.bulletPoints.map((point) => (
-                      <li
-                        key={point}
-                        className="flex items-start gap-2 text-sm text-gray-600"
-                      >
-                        <svg
-                          className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent-gold"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
+                  {campaign.impact && (
+                    <p className="mb-4 text-sm font-medium text-primary-blue">
+                      {campaign.impact}
+                    </p>
+                  )}
+                  {campaign.bulletPoints && (
+                    <ul className="mb-4 space-y-2">
+                      {campaign.bulletPoints.map((point) => (
+                        <li
+                          key={point}
+                          className="flex items-start gap-2 text-sm text-gray-600"
                         >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                <Link
-                  href="/donate"
-                  className="font-medium text-primary-blue transition-colors hover:text-blue-700"
-                >
-                  Give Now &rarr;
-                </Link>
+                          <svg
+                            className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent-gold"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <Link
+                    href="/donate"
+                    className="font-medium text-primary-blue transition-colors hover:text-blue-700"
+                  >
+                    Give Now &rarr;
+                  </Link>
+                </div>
               </div>
             ))}
           </div>

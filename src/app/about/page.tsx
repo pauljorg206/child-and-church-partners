@@ -1,8 +1,28 @@
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
+import ImageStrip from "@/components/sections/ImageStrip";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+
+const aboutImages = [
+  {
+    src: "/images/photo-gallery/ministry-philippines-ccpi-003.jpg",
+    alt: "Ministry in the Philippines",
+  },
+  {
+    src: "/images/photo-gallery/church-community-outreach-006.jpeg",
+    alt: "Church community outreach",
+  },
+  {
+    src: "/images/photo-gallery/child-sponsorship-program-006.jpeg",
+    alt: "Child sponsorship program",
+  },
+  {
+    src: "/images/photo-gallery/feeding-program-philippines-002.jpeg",
+    alt: "Feeding program",
+  },
+];
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -16,18 +36,21 @@ const features = [
     description:
       "Meet Dani and Rez Sindac, who dedicated their lives to serving children and churches in the Philippines.",
     href: "/about/founders",
+    image: "/images/photo-gallery/volunteer-ministry-philippines-001.jpeg",
   },
   {
     title: "Our Inspiration",
     description:
       "Discover the heart behind our mission and what drives us to serve those in need.",
     href: "/about/inspiration",
+    image: "/images/photo-gallery/children-learning-philippines-006.jpeg",
   },
   {
     title: "I Believe in Sponsorship",
     description:
       "Learn why child sponsorship works and how it transforms lives.",
     href: "/about/sponsorship-works",
+    image: "/images/photo-gallery/sponsored-child-philippines-001.jpg",
   },
 ];
 
@@ -40,6 +63,9 @@ export default function AboutPage() {
         variant="simple"
         backgroundImage="/images/photo-gallery/child-church-partners-ministry-003.jpeg"
       />
+
+      {/* Image Strip */}
+      <ImageStrip images={aboutImages} />
 
       {/* Mission Section */}
       <section className="section-padding bg-white">
@@ -112,28 +138,40 @@ export default function AboutPage() {
               <Link
                 key={feature.title}
                 href={feature.href}
-                className="group rounded-2xl bg-neutral-off-white p-8 transition-all hover:shadow-lg"
+                className="group overflow-hidden rounded-2xl bg-neutral-off-white transition-all hover:shadow-lg"
               >
-                <h3 className="mb-3 text-xl font-bold text-gray-900 transition-colors group-hover:text-primary-blue">
-                  {feature.title}
-                </h3>
-                <p className="mb-4 text-gray-600">{feature.description}</p>
-                <span className="inline-flex items-center gap-1 font-medium text-primary-blue transition-all group-hover:gap-2">
-                  Learn More
-                  <svg
-                    className="h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
+                <div className="relative h-48">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="mb-2 text-xl font-bold text-gray-900 transition-colors group-hover:text-primary-blue">
+                    {feature.title}
+                  </h3>
+                  <p className="mb-4 text-sm text-gray-600">
+                    {feature.description}
+                  </p>
+                  <span className="inline-flex items-center gap-1 font-medium text-primary-blue transition-all group-hover:gap-2">
+                    Learn More
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
