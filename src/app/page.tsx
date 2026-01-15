@@ -38,11 +38,11 @@ const impactImages = [
     alt: "Church worship in the Philippines",
   },
   {
-    src: "/images/photo-gallery/feeding-program-philippines-001.jpg",
+    src: "/images/photo-gallery/feeding-program-philippines-001.jpeg",
     alt: "Feeding program for children",
   },
   {
-    src: "/images/photo-gallery/community-outreach-event-001.jpg",
+    src: "/images/photo-gallery/community-outreach-event-001.png",
     alt: "Community outreach event",
   },
 ];
@@ -213,7 +213,7 @@ export default function Home() {
       <section className="relative py-20">
         <div className="absolute inset-0">
           <Image
-            src="/images/photo-gallery/community-outreach-event-002.jpg"
+            src="/images/photo-gallery/community-outreach-event-002.png"
             alt="Community outreach"
             fill
             className="object-cover"

@@ -76,7 +76,12 @@ export default function Hero({
           </h1>
 
           {subtitle && (
-            <p className="mt-6 max-w-2xl text-lg text-gray-200 sm:text-xl">
+            <p
+              className={cn(
+                "mt-6 max-w-2xl text-lg text-gray-200 sm:text-xl",
+                variant === "centered" && "mx-auto"
+              )}
+            >
               {subtitle}
             </p>
           )}
