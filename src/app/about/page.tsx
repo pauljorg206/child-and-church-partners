@@ -36,7 +36,7 @@ const features = [
     description:
       "Meet Dani and Rez Sindac, who dedicated their lives to serving children and churches in the Philippines.",
     href: "/about/founders",
-    image: "/images/photo-gallery/volunteer-ministry-philippines-001.jpeg",
+    image: "/images/photo-gallery/ministry-philippines-ccpi-004.jpg",
   },
   {
     title: "Our Inspiration",
@@ -50,7 +50,7 @@ const features = [
     description:
       "Learn why child sponsorship works and how it transforms lives.",
     href: "/about/sponsorship-works",
-    image: "/images/photo-gallery/sponsored-child-philippines-001.jpg",
+    image: "/images/photo-gallery/sponsored-child-philippines-005.jpeg",
   },
 ];
 
