@@ -14,6 +14,7 @@ import {
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://childandchurchpartners.org"),
   title: {
     default: "Child & Church Partners | Overcome Barriers. Lead Change.",
     template: "%s | Child & Church Partners",
