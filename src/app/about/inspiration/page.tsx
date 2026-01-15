@@ -58,7 +58,7 @@ const inspirationImages = [
     alt: "Feeding program",
   },
   {
-    src: "/images/photo-gallery/youth-leadership-training-001.jpg",
+    src: "/images/photo-gallery/youth-leadership-training-001.jpeg",
     alt: "Youth leadership training",
   },
 ];
