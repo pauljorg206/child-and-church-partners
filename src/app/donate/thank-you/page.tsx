@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import DonationTracker from "@/components/analytics/DonationTracker";
 
 export const metadata: Metadata = {
   title: "Thank You for Your Donation",
@@ -36,6 +37,11 @@ export default async function ThankYouPage({
 
   return (
     <div className="min-h-screen bg-neutral-off-white">
+      <DonationTracker
+        amount={amount}
+        program={program}
+        isRecurring={isSubscription}
+      />
       <div className="container-site section-padding">
         <div className="mx-auto max-w-2xl text-center">
           {/* Success Icon */}
