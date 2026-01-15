@@ -1,6 +1,27 @@
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
+import ImageStrip from "@/components/sections/ImageStrip";
+import Image from "next/image";
 import type { Metadata } from "next";
+
+const equipImages = [
+  {
+    src: "/images/photo-gallery/pastor-training-philippines-002.jpg",
+    alt: "Pastor training session",
+  },
+  {
+    src: "/images/photo-gallery/bible-study-fellowship-004.jpeg",
+    alt: "Bible study fellowship",
+  },
+  {
+    src: "/images/photo-gallery/pastor-training-philippines-007.jpg",
+    alt: "Pastors learning together",
+  },
+  {
+    src: "/images/photo-gallery/bible-study-fellowship-006.jpeg",
+    alt: "Scripture study",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Give to Equip",
@@ -19,7 +40,11 @@ export default function GiveToEquipPage() {
         title="Give to Equip"
         subtitle="Building an equipping center for Filipino pastors serving the poor in the Philippines."
         variant="simple"
+        backgroundImage="/images/photo-gallery/pastor-training-philippines-008.jpeg"
       />
+
+      {/* Image Strip */}
+      <ImageStrip images={equipImages} />
 
       {/* Campaign Overview */}
       <section className="section-padding bg-white">
@@ -85,55 +110,71 @@ export default function GiveToEquipPage() {
       {/* Pastor Stories */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-4xl">
             <h2 className="mb-12 text-center text-3xl font-bold text-gray-900">
               Meet the Pastors
             </h2>
 
             <div className="space-y-8">
-              <div className="rounded-2xl bg-white p-8">
-                <h3 className="mb-2 text-xl font-bold text-gray-900">
-                  Pastor Ed Genotiva
-                </h3>
-                <p className="mb-4 font-medium text-accent-gold">
-                  Polillo Island, Quezon, Philippines
-                </p>
-                <p className="mb-4 text-gray-600">
-                  Pastor Ed leads a small church on remote Polillo Island, a
-                  place where reaching the mainland requires a long boat ride
-                  across often rough waters. There are no seminaries here. No
-                  Christian bookstores. No theological libraries.
-                </p>
-                <p className="mb-4 text-gray-600">
-                  Like many Filipino pastors, Pastor Ed never had the
-                  opportunity for formal Bible training. He works hard during
-                  the week to provide for his family, then faithfully shepherds
-                  his congregation on Sundays. He loves Jesus deeply and pours
-                  himself into his community.
-                </p>
-                <p className="text-gray-600">
-                  But he knows there&apos;s more to learn. He wants to
-                  understand Scripture more deeply so he can teach it more
-                  faithfully. Your support can help equip Pastor Ed—and hundreds
-                  of pastors like him—to preach God&apos;s Word with clarity,
-                  confidence, and integrity.
-                </p>
+              <div className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                <div className="grid md:grid-cols-5">
+                  <div className="relative h-64 md:col-span-2 md:h-auto">
+                    <Image
+                      src="/images/photo-gallery/pastor-training-philippines-009.jpeg"
+                      alt="Pastor Ed Genotiva"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-8 md:col-span-3">
+                    <h3 className="mb-2 text-xl font-bold text-gray-900">
+                      Pastor Ed Genotiva
+                    </h3>
+                    <p className="mb-4 font-medium text-accent-gold">
+                      Polillo Island, Quezon, Philippines
+                    </p>
+                    <p className="mb-4 text-gray-600">
+                      Pastor Ed leads a small church on remote Polillo Island, a
+                      place where reaching the mainland requires a long boat
+                      ride across often rough waters. There are no seminaries
+                      here. No Christian bookstores. No theological libraries.
+                    </p>
+                    <p className="text-gray-600">
+                      Like many Filipino pastors, Pastor Ed never had the
+                      opportunity for formal Bible training. Your support can
+                      help equip Pastor Ed—and hundreds of pastors like him—to
+                      preach God&apos;s Word with clarity and confidence.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="rounded-2xl bg-white p-8">
-                <blockquote className="mb-4 text-xl italic text-gray-700">
-                  &ldquo;I want to learn more how to rightly handle the word of
-                  God.&rdquo;
-                </blockquote>
-                <div className="font-semibold text-gray-900">
-                  — Pastor Jun Omboy
+              <div className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                <div className="grid md:grid-cols-5">
+                  <div className="relative h-64 md:col-span-2 md:h-auto">
+                    <Image
+                      src="/images/photo-gallery/bible-study-fellowship-008.jpeg"
+                      alt="Pastor Jun Omboy"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col justify-center p-8 md:col-span-3">
+                    <blockquote className="mb-4 text-xl italic text-gray-700">
+                      &ldquo;I want to learn more how to rightly handle the word
+                      of God.&rdquo;
+                    </blockquote>
+                    <div className="font-semibold text-gray-900">
+                      — Pastor Jun Omboy
+                    </div>
+                    <p className="mt-4 text-sm text-gray-600">
+                      Pastor Jun represents thousands of Filipino pastors who
+                      are hungry to grow in their understanding of Scripture.
+                      They serve faithfully with what they have, but they long
+                      for the training that will help them serve even better.
+                    </p>
+                  </div>
                 </div>
-                <p className="mt-4 text-sm text-gray-600">
-                  Pastor Jun represents thousands of Filipino pastors who are
-                  hungry to grow in their understanding of Scripture. They serve
-                  faithfully with what they have, but they long for the training
-                  that will help them serve even better.
-                </p>
               </div>
             </div>
           </div>
