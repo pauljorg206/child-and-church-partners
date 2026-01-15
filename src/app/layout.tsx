@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import PayPalProvider from "@/components/providers/PayPalProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,9 +54,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <PayPalProvider>
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </PayPalProvider>
         <Analytics />
       </body>
     </html>
