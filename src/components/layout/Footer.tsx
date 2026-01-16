@@ -94,10 +94,23 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-800 pt-8 sm:flex-row">
-          <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} Child & Church Partners
-            International. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center gap-2 sm:items-start">
+            <p className="text-sm text-gray-500">
+              &copy; {new Date().getFullYear()} Child & Church Partners
+              International. All rights reserved.
+            </p>
+            <p className="text-sm text-gray-500">
+              Made by{" "}
+              <a
+                href="https://www.naloseed.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-white"
+              >
+                Nalo Seed
+              </a>
+            </p>
+          </div>
           <div className="flex gap-6 text-sm">
             <Link
               href="/privacy"
