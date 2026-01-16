@@ -7,20 +7,20 @@ import type { Metadata } from "next";
 
 const aboutImages = [
   {
-    src: "/images/photo-gallery/ministry-philippines-ccpi-003.jpg",
-    alt: "Ministry in the Philippines",
+    src: "/images/photo-gallery/bible-study-fellowship-001.jpeg",
+    alt: "Bible study fellowship",
   },
   {
-    src: "/images/photo-gallery/church-community-outreach-006.jpeg",
-    alt: "Church community outreach",
+    src: "/images/photo-gallery/filipino-children-ministry-004.jpg",
+    alt: "Ministry with Filipino children",
   },
   {
-    src: "/images/photo-gallery/child-sponsorship-program-006.jpeg",
-    alt: "Child sponsorship program",
+    src: "/images/photo-gallery/volunteer-ministry-philippines-001.jpeg",
+    alt: "Volunteer ministry in the Philippines",
   },
   {
-    src: "/images/photo-gallery/feeding-program-philippines-002.jpeg",
-    alt: "Feeding program",
+    src: "/images/photo-gallery/youth-camp-philippines-001.jpeg",
+    alt: "Youth camp in the Philippines",
   },
 ];
 
@@ -36,21 +36,21 @@ const features = [
     description:
       "Meet Dani and Rez Sindac, who dedicated their lives to serving children and churches in the Philippines.",
     href: "/about/founders",
-    image: "/images/photo-gallery/ministry-philippines-ccpi-004.jpg",
+    image: "/images/photo-gallery/bible-study-fellowship-005.jpg",
   },
   {
     title: "Our Inspiration",
     description:
       "Discover the heart behind our mission and what drives us to serve those in need.",
     href: "/about/inspiration",
-    image: "/images/photo-gallery/children-learning-philippines-006.jpeg",
+    image: "/images/photo-gallery/filipino-children-ministry-003.jpeg",
   },
   {
     title: "I Believe in Sponsorship",
     description:
       "Learn why child sponsorship works and how it transforms lives.",
     href: "/about/sponsorship-works",
-    image: "/images/photo-gallery/sponsored-child-philippines-005.jpeg",
+    image: "/images/photo-gallery/sponsored-child-philippines-006.jpeg",
   },
 ];
 

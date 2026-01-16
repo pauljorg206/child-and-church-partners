@@ -30,7 +30,7 @@ const stats = [
 
 const impactImages = [
   {
-    src: "/images/photo-gallery/children-learning-philippines-001.jpg",
+    src: "/images/photo-gallery/child-education-support-001.jpg",
     alt: "Children learning in the Philippines",
   },
   {
@@ -42,7 +42,7 @@ const impactImages = [
     alt: "Feeding program for children",
   },
   {
-    src: "/images/photo-gallery/community-outreach-event-001.png",
+    src: "/images/photo-gallery/community-outreach-event-007.jpg",
     alt: "Community outreach event",
   },
 ];
@@ -52,7 +52,7 @@ export default function Home() {
     <>
       {/* Hero Section with Background */}
       <Hero
-        title="Overcome Barriers. Lead Change."
+        title="Be a Dream Releaser"
         subtitle="Transforming lives through education, faith, and community in the Philippines."
         primaryCta={{ label: "Make a Difference", href: "/donate" }}
         secondaryCta={{ label: "Our Story", href: "/about" }}
