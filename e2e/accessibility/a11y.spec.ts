@@ -85,10 +85,14 @@ test.describe("Accessibility", () => {
   test("FAQ accordions are accessible", async ({ page }) => {
     await page.goto("/faq");
 
-    // Wait for the FAQ section to load
-    await page.waitForSelector("button[aria-expanded]", { timeout: 10000 });
+    // Wait for the FAQ content section to load (not the header mobile menu)
+    const faqSection = page.locator("section").first();
+    await faqSection.waitFor({ state: "visible" });
 
-    const accordionButtons = page.locator("button[aria-expanded]");
+    // Target accordion buttons in the main content (exclude header's mobile menu button)
+    const accordionButtons = page.locator(
+      "section button[aria-expanded]:not([aria-controls='mobile-menu'])"
+    );
     const count = await accordionButtons.count();
 
     if (count > 0) {
@@ -99,7 +103,7 @@ test.describe("Accessibility", () => {
         expect(expanded === "true" || expanded === "false").toBeTruthy();
       }
 
-      // Test keyboard interaction - click first to ensure it's ready
+      // Test click interaction
       const firstButton = accordionButtons.first();
       await firstButton.waitFor({ state: "visible" });
       await firstButton.click();
