@@ -4,8 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useCallback, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
-import SearchButton from "@/components/search/SearchButton";
-import SearchModal from "@/components/search/SearchModal";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -33,6 +31,7 @@ const navigation = [
     children: [
       { name: "Make a Difference", href: "/give" },
       { name: "Give to Equip", href: "/give/equip" },
+      { name: "Contact Us", href: "/contact" },
     ],
   },
   { name: "Gallery", href: "/gallery" },
@@ -41,21 +40,7 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [searchOpen, setSearchOpen] = useState(false);
   const dropdownRefs = useRef<Map<string, HTMLDivElement>>(new Map());
-
-  // Global keyboard shortcut for search (Cmd/Ctrl + K)
-  useEffect(() => {
-    const handleGlobalKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
-        e.preventDefault();
-        setSearchOpen(true);
-      }
-    };
-
-    document.addEventListener("keydown", handleGlobalKeyDown);
-    return () => document.removeEventListener("keydown", handleGlobalKeyDown);
-  }, []);
 
   // Handle keyboard navigation for dropdowns
   const handleKeyDown = useCallback(
@@ -236,12 +221,8 @@ export default function Header() {
               ))}
             </div>
 
-            {/* Search and Donate */}
+            {/* Donate */}
             <div className="flex items-center gap-4">
-              <SearchButton
-                onClick={() => setSearchOpen(true)}
-                className="hidden lg:flex"
-              />
               <Link
                 href="/donate"
                 className="btn-primary px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base"
@@ -332,9 +313,6 @@ export default function Header() {
           </div>
         </nav>
       </header>
-
-      {/* Search Modal */}
-      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 }

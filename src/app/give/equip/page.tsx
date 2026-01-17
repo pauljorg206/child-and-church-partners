@@ -1,8 +1,10 @@
+"use client";
+
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
 import ImageStrip from "@/components/sections/ImageStrip";
 import Image from "next/image";
-import type { Metadata } from "next";
+import { useState } from "react";
 
 const equipImages = [
   {
@@ -23,22 +25,63 @@ const equipImages = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Give to Equip",
-  description:
-    "Help build an equipping center for Filipino pastors. Support pastor training and theological education.",
-};
-
 export default function GiveToEquipPage() {
-  const raised = 22000;
-  const goal = 35000;
+  const raised = 15000;
+  const goal = 32000;
   const percentage = Math.round((raised / goal) * 100);
+  const [shareMenuOpen, setShareMenuOpen] = useState(false);
+
+  const handleShare = async () => {
+    const shareData = {
+      title: "Training Leaders. Strengthening Faith.",
+      text: "Help us build an Equipping Center for pastors in the Philippines!",
+      url: typeof window !== "undefined" ? window.location.href : "",
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // User cancelled or error
+        console.log("Share cancelled");
+      }
+    } else {
+      setShareMenuOpen(!shareMenuOpen);
+    }
+  };
+
+  const shareToFacebook = () => {
+    const url = encodeURIComponent(window.location.href);
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+      "_blank"
+    );
+  };
+
+  const shareToTwitter = () => {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(
+      "Help build an Equipping Center for pastors in the Philippines! #ChildAndChurchPartners"
+    );
+    window.open(
+      `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
+      "_blank"
+    );
+  };
+
+  const shareToLinkedIn = () => {
+    const url = encodeURIComponent(window.location.href);
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+      "_blank"
+    );
+  };
 
   return (
     <>
       <Hero
-        title="Give to Equip"
-        subtitle="Building an equipping center for Filipino pastors serving the poor in the Philippines."
+        title="Training Leaders. Strengthening Faith."
+        subtitle="We're building an Equipping Center for pastors to have a space for proper training, equipping them to lead their communities."
         variant="simple"
         backgroundImage="/images/photo-gallery/pastor-training-philippines-008.jpeg"
       />
@@ -52,25 +95,28 @@ export default function GiveToEquipPage() {
           <div className="mx-auto max-w-3xl">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
-                In the Philippines, more than 35,000 pastors lead churches
-                without formal Bible training.
+                Training Pastors to Transform Lives
               </h2>
               <p className="text-lg text-gray-600">
-                They love Jesus. They work hard. But many were never trained to
-                preach or teach the Bible properly.
+                Funding for the Equipping Center will provide pastors and youth
+                leaders with a space to learn to teach and preach faithfully and
+                effectively. Through proper theological training, we equip them
+                to lead their communities, strengthen the church, and bring
+                people closer to God—grounded in sound, truthful teaching.
               </p>
             </div>
 
             {/* Progress Bar */}
             <div className="mb-12 rounded-2xl bg-neutral-off-white p-8">
+              <h3 className="mb-4 text-center text-xl font-bold text-gray-900">
+                Help Us Raise Funding for an Equipping Center!
+              </h3>
               <div className="mb-4 flex items-center justify-between">
                 <div>
                   <div className="text-3xl font-bold text-accent-gold">
-                    ${raised.toLocaleString()}
+                    $15K
                   </div>
-                  <div className="text-gray-600">
-                    raised of ${goal.toLocaleString()} goal
-                  </div>
+                  <div className="text-gray-600">raised of $32K goal</div>
                 </div>
                 <div className="text-4xl font-bold text-primary-blue">
                   {percentage}%
@@ -116,6 +162,7 @@ export default function GiveToEquipPage() {
             </h2>
 
             <div className="space-y-8">
+              {/* Pastor Ed - Image Left */}
               <div className="overflow-hidden rounded-2xl bg-white shadow-sm">
                 <div className="grid md:grid-cols-5">
                   <div className="relative h-64 md:col-span-2 md:h-auto">
@@ -133,13 +180,13 @@ export default function GiveToEquipPage() {
                     <p className="mb-4 font-medium text-accent-gold">
                       Polillo Island, Quezon, Philippines
                     </p>
-                    <p className="mb-4 text-gray-600">
+                    <p className="mb-4 text-gray-900">
                       Pastor Ed leads a small church on remote Polillo Island, a
                       place where reaching the mainland requires a long boat
                       ride across often rough waters. There are no seminaries
                       here. No Christian bookstores. No theological libraries.
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-gray-900">
                       Like many Filipino pastors, Pastor Ed never had the
                       opportunity for formal Bible training. Your support can
                       help equip Pastor Ed—and hundreds of pastors like him—to
@@ -149,30 +196,34 @@ export default function GiveToEquipPage() {
                 </div>
               </div>
 
+              {/* Pastor Jun - Image Right */}
               <div className="overflow-hidden rounded-2xl bg-white shadow-sm">
                 <div className="grid md:grid-cols-5">
-                  <div className="relative h-64 md:col-span-2 md:h-auto">
+                  <div className="p-8 md:col-span-3">
+                    <h3 className="mb-2 text-xl font-bold text-gray-900">
+                      Pastor Jun Omboy
+                    </h3>
+                    <p className="mb-4 font-medium text-accent-gold">
+                      Church Pastor, Philippines
+                    </p>
+                    <p className="mb-4 text-gray-900">
+                      Pastor Jun represents thousands of Filipino pastors who
+                      are hungry to grow in their understanding of Scripture.
+                      They serve faithfully with what they have, but they long
+                      for the training that will help them serve even better.
+                    </p>
+                    <blockquote className="border-l-4 border-accent-gold pl-4 text-xl italic text-gray-700">
+                      &ldquo;I want to learn more how to rightly handle the word
+                      of God.&rdquo;
+                    </blockquote>
+                  </div>
+                  <div className="relative h-64 md:order-last md:col-span-2 md:h-auto">
                     <Image
                       src="/images/photo-gallery/bible-study-fellowship-008.jpeg"
                       alt="Pastor Jun Omboy"
                       fill
                       className="object-cover"
                     />
-                  </div>
-                  <div className="flex flex-col justify-center p-8 md:col-span-3">
-                    <blockquote className="mb-4 text-xl italic text-gray-700">
-                      &ldquo;I want to learn more how to rightly handle the word
-                      of God.&rdquo;
-                    </blockquote>
-                    <div className="font-semibold text-gray-900">
-                      — Pastor Jun Omboy
-                    </div>
-                    <p className="mt-4 text-sm text-gray-600">
-                      Pastor Jun represents thousands of Filipino pastors who
-                      are hungry to grow in their understanding of Scripture.
-                      They serve faithfully with what they have, but they long
-                      for the training that will help them serve even better.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -208,7 +259,7 @@ export default function GiveToEquipPage() {
               Join the Movement
             </h2>
             <p className="mb-8 text-lg text-gray-600">
-              Your gift of any amount helps us reach our goal of $35,000 to
+              Your gift of any amount helps us reach our goal of $32,000 to
               build an equipping center for Filipino pastors.
             </p>
 
@@ -225,19 +276,64 @@ export default function GiveToEquipPage() {
             </div>
 
             <a href="/donate" className="btn-primary w-full text-lg sm:w-auto">
-              Give Now
+              Donate Now
             </a>
           </div>
         </div>
       </section>
 
-      <CTASection
-        title="Help Us Reach Our Goal"
-        description="Every dollar brings us closer to equipping pastors to faithfully preach God's Word."
-        primaryCta={{ label: "Donate Now", href: "/donate" }}
-        secondaryCta={{ label: "Share This Campaign", href: "#" }}
-        background="gold"
-      />
+      {/* Share CTA Section */}
+      <section className="section-padding bg-accent-gold">
+        <div className="container-site">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
+              Help Spread the Word
+            </h2>
+            <p className="mb-8 text-lg text-gray-800">
+              Every dollar brings us closer to equipping pastors to faithfully
+              preach God&apos;s Word.
+            </p>
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
+              <a
+                href="/donate"
+                className="btn bg-primary-blue text-white hover:bg-blue-700"
+              >
+                Donate Now
+              </a>
+              <div className="relative">
+                <button
+                  onClick={handleShare}
+                  className="btn border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
+                >
+                  Share This Campaign
+                </button>
+                {shareMenuOpen && (
+                  <div className="absolute left-1/2 top-full z-10 mt-2 -translate-x-1/2 rounded-lg bg-white py-2 shadow-lg">
+                    <button
+                      onClick={shareToFacebook}
+                      className="block w-full px-6 py-2 text-left text-gray-700 hover:bg-gray-100"
+                    >
+                      Facebook
+                    </button>
+                    <button
+                      onClick={shareToTwitter}
+                      className="block w-full px-6 py-2 text-left text-gray-700 hover:bg-gray-100"
+                    >
+                      X (Twitter)
+                    </button>
+                    <button
+                      onClick={shareToLinkedIn}
+                      className="block w-full px-6 py-2 text-left text-gray-700 hover:bg-gray-100"
+                    >
+                      LinkedIn
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

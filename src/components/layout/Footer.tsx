@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import NewsletterForm from "@/components/forms/NewsletterForm";
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
@@ -17,7 +18,7 @@ const getInvolved = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#2e2e2e] text-white">
       <div className="container-site section-padding">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo and Tagline */}
@@ -89,6 +90,17 @@ export default function Footer() {
               Child & Church Partners International is a 501(c)(3) nonprofit
               organization.
             </p>
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="mt-12 border-t border-gray-700 pt-8">
+          <div className="mx-auto max-w-xl text-center">
+            <h3 className="mb-2 text-lg font-semibold">Stay Connected</h3>
+            <p className="mb-4 text-sm text-gray-400">
+              Get Stories From the Field and Updates on Lives Changed
+            </p>
+            <NewsletterForm />
           </div>
         </div>
 

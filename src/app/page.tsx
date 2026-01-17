@@ -3,7 +3,6 @@ import StatsSection from "@/components/sections/StatsSection";
 import VideoSection from "@/components/sections/VideoSection";
 import CTASection from "@/components/sections/CTASection";
 import ImageStrip from "@/components/sections/ImageStrip";
-import NewsletterForm from "@/components/forms/NewsletterForm";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,9 +14,9 @@ const stats = [
     link: { label: "Learn More", href: "/children" },
   },
   {
-    number: "40,000",
+    number: "35K+",
     label: "Untrained Pastors",
-    description: "Filipino pastors lack formal theological education.",
+    description: "We provide resources for formal theological education.",
     link: { label: "Learn More", href: "/churches" },
   },
   {
@@ -52,8 +51,8 @@ export default function Home() {
     <>
       {/* Hero Section with Background */}
       <Hero
-        title="Be a Dream Releaser"
-        subtitle="Transforming lives through education, faith, and community in the Philippines."
+        title="Overcome Barriers. Lead Change."
+        subtitle="Transforming Lives Through Education, Faith, and Community in the Philippines"
         primaryCta={{ label: "Make a Difference", href: "/donate" }}
         secondaryCta={{ label: "Our Story", href: "/about" }}
         variant="centered"
@@ -66,7 +65,7 @@ export default function Home() {
       {/* Statistics Section */}
       <StatsSection
         title="The Reality"
-        subtitle="Millions need hope. Together, we can reach them."
+        subtitle="Millions Need Hope. Together, We Can Reach Them"
         stats={stats}
         background="white"
       />
@@ -76,10 +75,10 @@ export default function Home() {
         <div className="container-site">
           <div className="mb-12 text-center">
             <h2 className="mb-2 text-3xl font-bold text-white sm:text-4xl">
-              Be a Dream Releaser
+              Become Part of the Solution
             </h2>
             <p className="mx-auto max-w-xl text-gray-200">
-              Help children and churches overcome, thrive, and lead change.
+              Help Children and Churches Overcome, Thrive, and Lead Change
             </p>
           </div>
 
@@ -156,7 +155,7 @@ export default function Home() {
       {/* Video Section */}
       <VideoSection
         title="See the Impact"
-        description="Watch how generosity transforms lives."
+        description="Watch How Generosity Transforms Lives"
         videoId="3-yo0YX7OG4"
         quote={{
           text: "Through Child & Church Partners, we've seen lives transformed and communities changed forever.",
@@ -165,33 +164,10 @@ export default function Home() {
         }}
       />
 
-      {/* Newsletter Section - Moved Up */}
-      <section className="section-padding bg-neutral-off-white">
-        <div className="container-site">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-2 text-3xl font-bold text-gray-900 sm:text-4xl">
-              Stay Connected
-            </h2>
-            <p className="mb-8 text-gray-600">
-              Get stories from the field and updates on lives changed.
-            </p>
-            <NewsletterForm />
-          </div>
-        </div>
-      </section>
-
       {/* Founders Preview */}
       <section className="section-padding bg-white">
         <div className="container-site">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="relative h-80 overflow-hidden rounded-2xl lg:h-96">
-              <Image
-                src="/images/received_571220392093528.jpeg"
-                alt="Dani and Rez Sindac, Founders"
-                fill
-                className="object-cover"
-              />
-            </div>
             <div>
               <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
                 Our Story
@@ -205,27 +181,26 @@ export default function Home() {
                 Read Our Story
               </Link>
             </div>
+            <div className="relative h-80 overflow-hidden rounded-2xl lg:h-96">
+              <Image
+                src="/images/received_571220392093528.jpeg"
+                alt="Dani and Rez Sindac, Founders"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA with Background */}
-      <section className="relative py-20">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/photo-gallery/community-outreach-event-002.png"
-            alt="Community outreach"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-primary-blue/90" />
-        </div>
-        <div className="container-site relative z-10 text-center">
+      {/* Final CTA with Solid Blue Background */}
+      <section className="bg-primary-blue py-20">
+        <div className="container-site text-center">
           <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             Ready to Change Lives?
           </h2>
           <p className="mx-auto mb-8 max-w-xl text-lg text-gray-200">
-            Your generosity transforms futures and strengthens communities.
+            Your Generosity Transforms Futures and Strengthens Communities
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link

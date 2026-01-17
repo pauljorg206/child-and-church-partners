@@ -19,7 +19,7 @@ const stats = [
     description: "Rural congregations with limited resources.",
   },
   {
-    number: "40,000",
+    number: "35K",
     label: "Untrained Pastors",
     description: "Leaders without formal theological education.",
   },

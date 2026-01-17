@@ -224,7 +224,6 @@ export default function WhyChildrenPage() {
         title="Ready to Change a Life?"
         description="Your generosity transforms futures and breaks the cycle of poverty."
         primaryCta={{ label: "Donate Now", href: "/donate" }}
-        secondaryCta={{ label: "Learn More", href: "/give" }}
         background="gold"
       />
     </>

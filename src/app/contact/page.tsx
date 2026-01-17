@@ -1,7 +1,13 @@
 "use client";
 
 import Hero from "@/components/sections/Hero";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+function generateMathQuestion() {
+  const num1 = Math.floor(Math.random() * 10) + 1;
+  const num2 = Math.floor(Math.random() * 10) + 1;
+  return { num1, num2, answer: num1 + num2 };
+}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -14,11 +20,32 @@ export default function ContactPage() {
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [mathQuestion, setMathQuestion] = useState({
+    num1: 0,
+    num2: 0,
+    answer: 0,
+  });
+  const [captchaAnswer, setCaptchaAnswer] = useState("");
+  const [captchaError, setCaptchaError] = useState("");
+
+  useEffect(() => {
+    setMathQuestion(generateMathQuestion());
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
+    setCaptchaError("");
     setErrorMessage("");
+
+    // Validate CAPTCHA
+    if (parseInt(captchaAnswer, 10) !== mathQuestion.answer) {
+      setCaptchaError("Incorrect answer. Please try again.");
+      setMathQuestion(generateMathQuestion());
+      setCaptchaAnswer("");
+      return;
+    }
+
+    setStatus("loading");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -41,6 +68,8 @@ export default function ContactPage() {
       if (result.success) {
         setStatus("success");
         setFormData({ name: "", email: "", subject: "", message: "" });
+        setCaptchaAnswer("");
+        setMathQuestion(generateMathQuestion());
       } else {
         setStatus("error");
         setErrorMessage(
@@ -167,6 +196,29 @@ export default function ContactPage() {
                         className="w-full resize-none rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
                         placeholder="Your message..."
                       />
+                    </div>
+
+                    {/* Math CAPTCHA */}
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                        Security Check: What is {mathQuestion.num1} +{" "}
+                        {mathQuestion.num2}? *
+                      </label>
+                      <input
+                        type="number"
+                        required
+                        value={captchaAnswer}
+                        onChange={(e) => setCaptchaAnswer(e.target.value)}
+                        className={`w-full rounded-lg border px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold ${
+                          captchaError ? "border-red-500" : "border-gray-300"
+                        }`}
+                        placeholder="Your answer"
+                      />
+                      {captchaError && (
+                        <p className="mt-1 text-sm text-red-600">
+                          {captchaError}
+                        </p>
+                      )}
                     </div>
 
                     <button
