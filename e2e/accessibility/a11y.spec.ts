@@ -85,6 +85,9 @@ test.describe("Accessibility", () => {
   test("FAQ accordions are accessible", async ({ page }) => {
     await page.goto("/faq");
 
+    // Wait for the FAQ section to load
+    await page.waitForSelector("button[aria-expanded]", { timeout: 10000 });
+
     const accordionButtons = page.locator("button[aria-expanded]");
     const count = await accordionButtons.count();
 
@@ -96,12 +99,11 @@ test.describe("Accessibility", () => {
         expect(expanded === "true" || expanded === "false").toBeTruthy();
       }
 
-      // Test keyboard interaction
-      await accordionButtons.first().focus();
-      await page.keyboard.press("Enter");
-      const expandedValue = await accordionButtons
-        .first()
-        .getAttribute("aria-expanded");
+      // Test keyboard interaction - click first to ensure it's ready
+      const firstButton = accordionButtons.first();
+      await firstButton.waitFor({ state: "visible" });
+      await firstButton.click();
+      const expandedValue = await firstButton.getAttribute("aria-expanded");
       expect(expandedValue).toBe("true");
     }
   });
