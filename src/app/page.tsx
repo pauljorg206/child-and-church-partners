@@ -46,17 +46,25 @@ const impactImages = [
   },
 ];
 
+const heroImages = [
+  "/images/photo-gallery/child-church-partners-ministry-001.jpg",
+  "/images/photo-gallery/feeding-ministry-children-001.jpg",
+  "/images/photo-gallery/children-nutrition-outreach-009.jpeg",
+  "/images/photo-gallery/child-church-partners-ministry-002.jpg",
+  "/images/photo-gallery/church-worship-philippines-001.jpg",
+];
+
 export default function Home() {
   return (
     <>
-      {/* Hero Section with Background */}
+      {/* Hero Section with Carousel */}
       <Hero
         title="Overcome Barriers. Lead Change."
         subtitle="Transforming Lives Through Education, Faith, and Community in the Philippines"
         primaryCta={{ label: "Make a Difference", href: "/donate" }}
         secondaryCta={{ label: "Our Story", href: "/about" }}
         variant="centered"
-        backgroundImage="/images/photo-gallery/child-church-partners-ministry-001.jpg"
+        backgroundImages={heroImages}
       />
 
       {/* Impact Image Strip */}

@@ -1,11 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
 
 interface HeroProps {
   title: string;
   subtitle?: string;
   backgroundImage?: string;
+  backgroundImages?: string[];
   primaryCta?: {
     label: string;
     href: string;
@@ -16,17 +20,33 @@ interface HeroProps {
   };
   variant?: "default" | "simple" | "centered";
   overlayOpacity?: number;
+  carouselInterval?: number;
 }
 
 export default function Hero({
   title,
   subtitle,
   backgroundImage,
+  backgroundImages,
   primaryCta,
   secondaryCta,
   variant = "default",
   overlayOpacity = 0.5,
+  carouselInterval = 5000,
 }: HeroProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = backgroundImages || (backgroundImage ? [backgroundImage] : []);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, carouselInterval);
+
+    return () => clearInterval(interval);
+  }, [images.length, carouselInterval]);
+
   return (
     <section
       className={cn(
@@ -34,16 +54,22 @@ export default function Hero({
         variant === "simple" ? "py-16 sm:py-20" : "py-24 sm:py-32 lg:py-40"
       )}
     >
-      {/* Background Image */}
-      {backgroundImage && (
+      {/* Background Images with Carousel */}
+      {images.length > 0 && (
         <>
-          <Image
-            src={backgroundImage}
-            alt=""
-            fill
-            className="object-cover"
-            priority
-          />
+          {images.map((img, index) => (
+            <Image
+              key={img}
+              src={img}
+              alt=""
+              fill
+              className={cn(
+                "object-cover transition-opacity duration-1000",
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              )}
+              priority={index === 0}
+            />
+          ))}
           <div
             className="absolute inset-0 bg-gray-900"
             style={{ opacity: overlayOpacity }}
@@ -52,7 +78,7 @@ export default function Hero({
       )}
 
       {/* Fallback gradient background */}
-      {!backgroundImage && (
+      {images.length === 0 && (
         <div className="absolute inset-0 bg-gradient-to-br from-primary-blue to-blue-900" />
       )}
 
