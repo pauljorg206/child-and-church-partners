@@ -29,6 +29,10 @@ const stats = [
 
 const impactImages = [
   {
+    src: "/images/photo-gallery/sponsored-child-philippines-002.jpg",
+    alt: "Sponsored child in the Philippines",
+  },
+  {
     src: "/images/photo-gallery/church-worship-philippines-001.jpg",
     alt: "Church worship in the Philippines",
   },
