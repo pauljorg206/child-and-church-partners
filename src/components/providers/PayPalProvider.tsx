@@ -11,7 +11,9 @@ export default function PayPalProvider({ children }: PayPalProviderProps) {
   const clientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
 
   if (!clientId) {
-    console.warn("PayPal Client ID not configured");
+    if (process.env.NODE_ENV === "development") {
+      console.warn("PayPal Client ID not configured");
+    }
     return <>{children}</>;
   }
 
