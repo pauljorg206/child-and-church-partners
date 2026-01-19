@@ -1,205 +1,175 @@
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
-import ImageStrip from "@/components/sections/ImageStrip";
 import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Our Inspiration",
   description:
-    "Discover what inspires Child & Church Partners International - our biblical foundation, vision for transformation, and the stories that drive our mission.",
+    "The inspiring story of Zelma Houser, who at 63 left everything to serve children and churches in the Philippines.",
 };
-
-const coreValues = [
-  {
-    title: "Faith in Action",
-    description:
-      "We believe faith must be expressed through tangible acts of love and service.",
-    verse: "Faith by itself, if it does not have works, is dead.",
-    reference: "James 2:17",
-  },
-  {
-    title: "Dignity of Every Child",
-    description:
-      "Every child is created in God's image and deserves the opportunity to thrive.",
-    verse:
-      "Let the little children come to me... for the kingdom of heaven belongs to such as these.",
-    reference: "Matthew 19:14",
-  },
-  {
-    title: "Empowering the Local Church",
-    description:
-      "We believe the local church is God's plan for community transformation.",
-    verse:
-      "I will build my church, and the gates of hell shall not prevail against it.",
-    reference: "Matthew 16:18",
-  },
-  {
-    title: "Lasting Transformation",
-    description:
-      "We seek not just to meet immediate needs, but to break cycles of poverty.",
-    verse:
-      "And let us not grow weary of doing good, for in due season we will reap.",
-    reference: "Galatians 6:9",
-  },
-];
-
-const inspirationImages = [
-  {
-    src: "/images/photo-gallery/child-sponsorship-program-002.jpg",
-    alt: "Sponsored children in the Philippines",
-  },
-  {
-    src: "/images/photo-gallery/church-worship-philippines-003.jpeg",
-    alt: "Church worship service",
-  },
-  {
-    src: "/images/photo-gallery/feeding-program-philippines-003.jpg",
-    alt: "Feeding program",
-  },
-  {
-    src: "/images/photo-gallery/youth-leadership-training-001.jpeg",
-    alt: "Youth leadership training",
-  },
-];
 
 export default function InspirationPage() {
   return (
     <>
       <Hero
         title="Our Inspiration"
-        subtitle="The faith, calling, and vision that drive everything we do."
+        subtitle="The life and legacy of Zelma Houser (1924-2014)"
         variant="simple"
-        backgroundImage="/images/photo-gallery/children-learning-philippines-002.jpg"
+        backgroundImage="/images/photo-gallery/church-community-outreach-002.jpg"
       />
 
-      {/* Image Strip */}
-      <ImageStrip images={inspirationImages} />
-
-      {/* Opening Section */}
+      {/* Zelma Introduction */}
       <section className="section-padding bg-white">
         <div className="container-site">
           <div className="mx-auto max-w-4xl">
-            <div className="grid items-center gap-12 md:grid-cols-2">
-              <div>
-                <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
-                  A Calling Decades in the Making
-                </h2>
-                <p className="mb-4 text-gray-600">
-                  Child & Church Partners International didn&apos;t begin with a
-                  business plan—it began with a calling. Our founders Dani and
-                  Rez Sindac served alongside Filipino pastors for decades
-                  before officially founding the organization in 2017.
-                </p>
-                <p className="text-gray-600">
-                  They witnessed the challenges facing children in poverty and
-                  the transformative power of local churches. These experiences
-                  shaped a vision: connect sponsors with children and churches
-                  to create lasting partnerships that transform lives.
-                </p>
-              </div>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
-                <Image
-                  src="/images/photo-gallery/filipino-children-ministry-002.jpeg"
-                  alt="Filipino children in ministry"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+                Zelma Houser
+              </h2>
+              <p className="text-xl text-accent-gold">
+                &ldquo;Mommy Zelma&rdquo; (1924-2014)
+              </p>
+            </div>
+
+            <div className="prose prose-lg mx-auto max-w-3xl">
+              <p className="text-xl leading-relaxed text-gray-700">
+                We draw inspiration from the life example of a woman named{" "}
+                <strong>Zelma Houser</strong>.
+              </p>
+
+              <p className="text-gray-600">
+                &ldquo;Mommy Zelma,&rdquo; as everyone came to call her, was 63
+                years old when she felt led by God to leave the comforts of home
+                and the fellowship of family and friends in Phoenix, Arizona, to
+                live in one of the poorest towns in Cavite, Philippines.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Biblical Foundation */}
-      <section className="section-padding bg-primary-blue text-white">
-        <div className="container-site">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-              Our Biblical Foundation
-            </h2>
-            <p className="mb-8 text-xl text-blue-100">
-              Everything we do flows from Scripture and our commitment to live
-              out the Gospel through practical love.
-            </p>
-            <div className="rounded-2xl bg-white/10 p-8 md:p-12">
-              <blockquote className="mb-4 font-serif text-2xl italic md:text-3xl">
-                &ldquo;Religion that God our Father accepts as pure and
-                faultless is this: to look after orphans and widows in their
-                distress and to keep oneself from being polluted by the
-                world.&rdquo;
-              </blockquote>
-              <cite className="text-lg text-accent-gold">James 1:27 (NIV)</cite>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values */}
+      {/* A Walk of Faith */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              Values That Guide Us
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              These core values shape every decision, program, and partnership.
-            </p>
-          </div>
-
-          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
-            {coreValues.map((value, index) => (
-              <div key={index} className="rounded-2xl bg-white p-8 shadow-sm">
-                <h3 className="mb-3 text-xl font-bold text-gray-900">
-                  {value.title}
-                </h3>
-                <p className="mb-4 text-gray-600">{value.description}</p>
-                <div className="border-l-4 border-accent-gold pl-4">
-                  <p className="mb-1 italic text-gray-700">
-                    &ldquo;{value.verse}&rdquo;
-                  </p>
-                  <p className="text-sm font-medium text-accent-gold">
-                    {value.reference}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Vision Section with Images */}
-      <section className="section-padding bg-white">
-        <div className="container-site">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              Our Vision for Transformation
-            </h2>
-          </div>
-
-          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
-            <div className="overflow-hidden rounded-2xl bg-neutral-off-white">
-              <div className="relative h-48">
+          <div className="mx-auto max-w-4xl">
+            <div className="grid items-center gap-12 md:grid-cols-2">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="/images/photo-gallery/children-learning-philippines-004.jpg"
-                  alt="Children in classroom"
+                  src="/images/photo-gallery/ministry-philippines-ccpi-002.jpg"
+                  alt="Ministry in the Philippines"
                   fill
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-lg font-bold text-gray-900">
-                  Educated Children
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Every sponsored child completing their education and building
-                  a better future.
+              <div>
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">
+                  A Walk of Faith
+                </h2>
+                <p className="mb-4 text-gray-600">
+                  Imagine moving to a new country by yourself at retirement age.
+                  You had no clue about the country&apos;s culture; you could
+                  never pronounce correctly a single local word; you didn&apos;t
+                  have much to live comfortably; and you didn&apos;t know
+                  anybody.
+                </p>
+                <p className="text-gray-600">
+                  It does sound like Abraham&apos;s walk of faith—when God told
+                  him to{" "}
+                  <em>
+                    &ldquo;Depart from your country and your relatives, and come
+                    into the land that I will show you.&rdquo;
+                  </em>
+                </p>
+                <p className="mt-4 font-medium text-primary-blue">
+                  And, like Abraham, Mommy Zelma held on to God&apos;s call.
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="overflow-hidden rounded-2xl bg-neutral-off-white">
-              <div className="relative h-48">
+      {/* The Early Years */}
+      <section className="section-padding bg-white">
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-8 text-center text-2xl font-bold text-gray-900 md:text-3xl">
+              The Early Years
+            </h2>
+            <div className="prose prose-lg mx-auto">
+              <p className="text-gray-600">
+                The first three years saw her living in run-down houses infested
+                with roaches, riding overcrowded public transportation to go
+                places, and caring for babies abandoned by their parents. She
+                eventually met a Filipino couple, Pete and Lita, who became her
+                most trusted ministry partners and friends.
+              </p>
+              <p className="text-gray-600">
+                Mommy Zelma&apos;s daughter, Jan, said that if Pete and Lita
+                hadn&apos;t been there for her, she might have returned to
+                Phoenix.
+              </p>
+              <p className="text-gray-600">
+                Eventually, Mommy Zelma&apos;s friends and church family started
+                sending her financial support. Her mother church in Phoenix
+                donated funds to buy a property in Naic, Cavite. On this piece
+                of land, they built an orphanage, administrative offices, and
+                apartments for Mommy Zelma, Pete and Lita, and visiting
+                missionaries and friends.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bible School & Prison Ministry */}
+      <section className="section-padding bg-primary-blue text-white">
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+              Transforming Lives Through God&apos;s Word
+            </h2>
+            <p className="mb-6 text-lg text-gray-200">
+              Early on, Mommy Zelma discovered that many of the abandoned
+              children had fathers who were in prison. So she started a Bible
+              school inside the maximum security prison in a city outside of
+              Manila.
+            </p>
+            <p className="text-lg text-gray-200">
+              Her hope was that God&apos;s Word would change the hearts and
+              minds of these men and that they would become better husbands,
+              fathers, and neighbors.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Hope Did Not Disappoint */}
+      <section className="section-padding bg-neutral-off-white">
+        <div className="container-site">
+          <div className="mx-auto max-w-4xl">
+            <div className="grid items-center gap-12 md:grid-cols-2">
+              <div className="order-2 md:order-1">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">
+                  Hope Did Not Disappoint
+                </h2>
+                <p className="mb-4 text-gray-600">
+                  Some of the men who graduated from the Bible school and in the
+                  end got released from prison started their own churches and
+                  became Valley Cathedral pastors.
+                </p>
+                <p className="mb-4 text-gray-600">
+                  Mommy Zelma came to the Philippines not knowing what God had
+                  in mind for her to do. She did not plan to start an orphanage
+                  or a Bible school or build churches.
+                </p>
+                <p className="font-medium text-primary-blue">
+                  She just walked in faith one step at a time and trusted God
+                  for the journey.
+                </p>
+              </div>
+              <div className="relative order-1 aspect-square overflow-hidden rounded-2xl shadow-lg md:order-2">
                 <Image
                   src="/images/photo-gallery/pastor-training-philippines-003.jpeg"
                   alt="Pastor training"
@@ -207,84 +177,36 @@ export default function InspirationPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-lg font-bold text-gray-900">
-                  Thriving Churches
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Local churches equipped with trained pastors to serve their
-                  communities.
-                </p>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-2xl bg-neutral-off-white">
-              <div className="relative h-48">
-                <Image
-                  src="/images/photo-gallery/community-outreach-event-004.jpg"
-                  alt="Community gathering"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-lg font-bold text-gray-900">
-                  Transformed Communities
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Communities where children thrive and cycles of poverty are
-                  broken.
-                </p>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Story of Hope */}
-      <section className="section-padding bg-neutral-off-white">
+      {/* Her Legacy */}
+      <section className="section-padding bg-white">
         <div className="container-site">
-          <div className="mx-auto max-w-5xl">
-            <div className="grid items-center gap-12 md:grid-cols-2">
-              <div className="relative aspect-square overflow-hidden rounded-2xl shadow-lg">
-                <Image
-                  src="/images/photo-gallery/child-sponsorship-program-005.jpg"
-                  alt="Sponsored child success story"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <h2 className="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">
-                  Stories That Inspire Us
-                </h2>
-                <p className="mb-4 text-gray-600">
-                  Every day, we&apos;re inspired by children overcoming
-                  obstacles and pastors serving sacrificially. Like the young
-                  girl who, through sponsorship, stayed in school and is now
-                  pursuing her dream of becoming a teacher.
-                </p>
-                <p className="mb-4 text-gray-600">
-                  Or the small rural church that started a feeding program now
-                  serving dozens of children each week.
-                </p>
-                <p className="font-medium text-gray-700">
-                  Each sponsored child represents a life full of potential. Each
-                  supported church represents a community touched by God&apos;s
-                  love.
-                </p>
-              </div>
+          <div className="mx-auto max-w-3xl text-center">
+            <blockquote className="mb-8 text-2xl italic text-gray-700 md:text-3xl">
+              &ldquo;She wanted her life to account for something.&rdquo;
+            </blockquote>
+            <div className="prose prose-lg mx-auto text-left">
+              <p className="text-gray-600">
+                On December 13, 2014, God was pleased to take Mommy Zelma into
+                her eternal home. She was 90 years old. Per her request, she was
+                buried on the property under a mango tree—to be near her people
+                whom she loved dearly.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Be Part of the Story - with background image */}
+      {/* Continuing Her Legacy */}
       <section className="relative py-20">
         <div className="absolute inset-0">
           <Image
-            src="/images/photo-gallery/church-community-outreach-002.jpg"
-            alt="Community"
+            src="/images/photo-gallery/church-community-outreach-007.jpeg"
+            alt="Community outreach"
             fill
             className="object-cover"
           />
@@ -293,25 +215,26 @@ export default function InspirationPage() {
         <div className="container-site relative z-10">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
-              Be Part of the Story
+              Continuing Her Legacy
             </h2>
             <p className="mb-4 text-lg text-gray-200">
-              A future where every child thrives, every church is equipped, and
-              communities are transformed by hope.
+              Today, Child & Church Partners International continues the work
+              that Mommy Zelma began—caring for children, equipping pastors, and
+              strengthening churches throughout the Philippines.
             </p>
             <p className="text-xl font-medium text-accent-gold">
-              Will you join us?
+              Her faith inspires us to step out and trust God for the journey.
             </p>
           </div>
         </div>
       </section>
 
       <CTASection
-        title="Let Your Faith Become Action"
-        description="Transform lives through the power of consistent, caring support. Your sponsorship creates lasting change."
-        primaryCta={{ label: "Sponsor a Child", href: "/children" }}
+        title="Be Part of Her Legacy"
+        description="Join us in continuing Mommy Zelma's mission to transform lives through faith, hope, and love."
+        primaryCta={{ label: "Make a Difference", href: "/donate" }}
         secondaryCta={{ label: "Learn About Our Work", href: "/about" }}
-        background="blue"
+        background="gold"
       />
     </>
   );
