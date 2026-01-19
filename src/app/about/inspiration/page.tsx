@@ -23,27 +23,34 @@ export default function InspirationPage() {
       <section className="section-padding bg-white">
         <div className="container-site">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-                Zelma Houser
-              </h2>
-              <p className="text-xl text-accent-gold">
-                &ldquo;Mommy Zelma&rdquo; (1924-2014)
-              </p>
-            </div>
-
-            <div className="prose prose-lg mx-auto max-w-3xl">
-              <p className="text-xl leading-relaxed text-gray-700">
-                We draw inspiration from the life example of a woman named{" "}
-                <strong>Zelma Houser</strong>.
-              </p>
-
-              <p className="text-gray-600">
-                &ldquo;Mommy Zelma,&rdquo; as everyone came to call her, was 63
-                years old when she felt led by God to leave the comforts of home
-                and the fellowship of family and friends in Phoenix, Arizona, to
-                live in one of the poorest towns in Cavite, Philippines.
-              </p>
+            <div className="grid items-center gap-12 md:grid-cols-2">
+              <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-2xl shadow-lg">
+                <Image
+                  src="/images/zelma-houser.avif"
+                  alt="Zelma Houser - Mommy Zelma"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-4xl">
+                  Zelma Houser
+                </h2>
+                <p className="mb-6 text-xl text-accent-gold">
+                  &ldquo;Mommy Zelma&rdquo; (1924-2014)
+                </p>
+                <p className="mb-4 text-xl leading-relaxed text-gray-700">
+                  We draw inspiration from the life example of a woman named{" "}
+                  <strong>Zelma Houser</strong>.
+                </p>
+                <p className="text-gray-600">
+                  &ldquo;Mommy Zelma,&rdquo; as everyone came to call her, was
+                  63 years old when she felt led by God to leave the comforts of
+                  home and the fellowship of family and friends in Phoenix,
+                  Arizona, to live in one of the poorest towns in Cavite,
+                  Philippines.
+                </p>
+              </div>
             </div>
           </div>
         </div>
