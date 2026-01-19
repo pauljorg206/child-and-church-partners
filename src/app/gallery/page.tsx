@@ -52,6 +52,12 @@ function generateCaption(filename: string): string {
     .join(" ");
 }
 
+// Generate SEO-friendly alt text from filename
+function generateAltText(filename: string): string {
+  const caption = generateCaption(filename);
+  return `${caption} - Filipino non-profit Child & Church Partners International`;
+}
+
 // Get category from filename
 function getCategory(filename: string): string {
   for (const [prefix, category] of Object.entries(categoryMapping)) {
@@ -307,10 +313,22 @@ const galleryImages = [
   "child-church-partners-ministry-009.jpg",
 ].map((filename) => ({
   src: `/images/photo-gallery/${filename}`,
-  alt: generateCaption(filename),
+  alt: generateAltText(filename),
   category: getCategory(filename),
   caption: generateCaption(filename),
 }));
+
+// Insert the CCPI logo in the middle of the gallery
+const logoImage = {
+  src: "/images/Child & Church Partners LOGO TRANSPARENT.png",
+  alt: "Child & Church Partners International Logo - Filipino non-profit organization helping children and churches in the Philippines",
+  category: "All",
+  caption: "Child & Church Partners International",
+};
+
+// Insert logo in the middle position
+const middleIndex = Math.floor(galleryImages.length / 2);
+galleryImages.splice(middleIndex, 0, logoImage);
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("All");

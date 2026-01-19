@@ -141,7 +141,7 @@ export default function Header() {
                 className="h-12 w-auto"
               />
               <span className="hidden text-lg font-bold text-primary-blue sm:block">
-                Child & Church Partners
+                CHILD & CHURCH PARTNERS INTERNATIONAL
               </span>
             </Link>
 

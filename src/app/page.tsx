@@ -29,10 +29,6 @@ const stats = [
 
 const impactImages = [
   {
-    src: "/images/photo-gallery/child-education-support-001.jpg",
-    alt: "Children learning in the Philippines",
-  },
-  {
     src: "/images/photo-gallery/church-worship-philippines-001.jpg",
     alt: "Church worship in the Philippines",
   },
@@ -60,7 +56,7 @@ export default function Home() {
       {/* Hero Section with Carousel */}
       <Hero
         title="Overcome Barriers. Lead Change."
-        subtitle="Transforming Lives Through Education, Faith, and Community in the Philippines"
+        subtitle="Child & Church Partners International is Transforming Lives Through Education, Faith, and Community in the Philippines"
         primaryCta={{ label: "Make a Difference", href: "/donate" }}
         secondaryCta={{ label: "Our Story", href: "/about" }}
         variant="centered"

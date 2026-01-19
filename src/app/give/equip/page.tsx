@@ -26,8 +26,8 @@ const equipImages = [
 ];
 
 export default function GiveToEquipPage() {
-  const raised = 15000;
-  const goal = 32000;
+  const raised = 18000;
+  const goal = 40000;
   const percentage = Math.round((raised / goal) * 100);
   const [shareMenuOpen, setShareMenuOpen] = useState(false);
 
@@ -114,9 +114,9 @@ export default function GiveToEquipPage() {
               <div className="mb-4 flex items-center justify-between">
                 <div>
                   <div className="text-3xl font-bold text-accent-gold">
-                    $15K
+                    $18K
                   </div>
-                  <div className="text-gray-600">raised of $32K goal</div>
+                  <div className="text-gray-600">raised of $40K goal</div>
                 </div>
                 <div className="text-4xl font-bold text-primary-blue">
                   {percentage}%
@@ -259,7 +259,7 @@ export default function GiveToEquipPage() {
               Join the Movement
             </h2>
             <p className="mb-8 text-lg text-gray-600">
-              Your gift of any amount helps us reach our goal of $32,000 to
+              Your gift of any amount helps us reach our goal of $40,000 to
               build an equipping center for Filipino pastors.
             </p>
 

@@ -28,7 +28,7 @@ const giveImages = [
 export const metadata: Metadata = {
   title: "Make a Difference",
   description:
-    "Explore the many ways you can help children and churches in the Philippines through Child & Church Partners.",
+    "Explore the many ways you can help children and churches in the Philippines through Child & Church Partners International.",
 };
 
 const programs = [
@@ -101,7 +101,7 @@ export default function GivePage() {
     <>
       <Hero
         title="Make a Difference"
-        subtitle="Be a dream releaser. Help children and churches overcome and thrive."
+        subtitle="Help children and churches overcome and thrive."
         variant="simple"
         backgroundImage="/images/photo-gallery/ministry-philippines-ccpi-001.jpg"
       />
@@ -143,7 +143,7 @@ export default function GivePage() {
               Give to Equip
             </h2>
             <p className="mb-4 text-xl font-semibold text-accent-gold">
-              Goal: $35,000
+              Goal: $40,000
             </p>
             <p className="mb-8 text-lg text-gray-200">
               Help build an equipping center for Filipino pastors. In the
@@ -225,6 +225,94 @@ export default function GivePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Join Us on a Mission Section */}
+      <section className="section-padding bg-white">
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl">
+            <div className="rounded-2xl bg-neutral-off-white p-8">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                Join Us on a Mission
+              </h2>
+              <p className="mb-4 text-xl font-semibold text-accent-gold">
+                Cost: $5,000
+              </p>
+              <p className="mb-4 text-gray-600">
+                Our missions in the Philippines last two weeks and are designed
+                to immerse you in meaningful service. The mission cost covers
+                your round-trip airfare, housing, meals, and accommodations for
+                the full two weeks. Nearly half of the mission cost goes
+                directly to supporting the children we serve.
+              </p>
+              <p className="mb-4 text-gray-600">
+                During your time with us, you&apos;ll have the opportunity to
+                meet the children, serve alongside the community, and live out
+                the Lord&apos;s calling to be His hands and feet.
+              </p>
+              <p className="mb-6 text-sm text-gray-500">
+                Mission costs do not include personal spending money or any
+                food, lodging, or expenses incurred in the city before or after
+                the mission dates.
+              </p>
+              <Link href="/contact" className="btn-primary">
+                Contact Us About Upcoming Missions
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CFC Section */}
+      <section className="section-padding bg-primary-blue">
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-4 text-2xl font-bold text-white">
+              Federal Employees: Give Through the CFC
+            </h2>
+            <p className="mb-6 text-gray-200">
+              Support our mission through the Combined Federal Campaign (CFC),
+              the official workplace giving program. Give through easy,
+              recurring payroll deductions or make a one-time gift using{" "}
+              <strong className="text-accent-gold">CFC #53160</strong>.
+            </p>
+            <a
+              href="https://cfcgiving.opm.gov/welcome"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn bg-accent-gold text-gray-900 hover:bg-yellow-400"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Tax Deductible Notice */}
+      <section className="bg-neutral-off-white py-8">
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="flex flex-col items-center gap-2 text-gray-600">
+              <svg
+                className="h-6 w-6 text-accent-gold"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <p className="text-sm">
+                Child & Church Partners International is a 501(c)(3) nonprofit
+                organization. All donations are tax-deductible to the extent
+                allowed by law.
+              </p>
+              <p className="text-sm font-medium">EIN: 82-2285185</p>
+            </div>
           </div>
         </div>
       </section>

@@ -100,15 +100,15 @@ export default function DonatePage() {
                   <br />
                   USA
                 </address>
-                <p className="text-xs text-gray-500">
-                  <a
-                    href="/contact"
-                    className="text-primary-blue transition-colors hover:text-blue-700"
-                  >
-                    Contact us
-                  </a>{" "}
+                <a
+                  href="/contact"
+                  className="text-lg font-semibold text-primary-blue transition-colors hover:text-blue-700"
+                >
+                  Contact Us
+                </a>{" "}
+                <span className="text-sm text-gray-500">
                   for our complete mailing address.
-                </p>
+                </span>
               </div>
 
               <div className="rounded-xl bg-white p-6">
@@ -126,6 +126,37 @@ export default function DonatePage() {
                   Contact Us &rarr;
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CFC Section */}
+      <section className="section-padding bg-white">
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl">
+            <div className="rounded-2xl bg-primary-blue p-8 text-center">
+              <h2 className="mb-4 text-2xl font-bold text-white">
+                Set Up Monthly Donations Through the CFC
+              </h2>
+              <p className="mb-6 text-gray-200">
+                If you&apos;re a federal employee, you can support our mission
+                through the Combined Federal Campaign (CFC), the official
+                workplace giving program. CFC allows donors to give through
+                easy, recurring payroll deductions or make a one-time gift.
+                Simply search our name or use{" "}
+                <strong className="text-accent-gold">CFC #53160</strong> when
+                making your donation. Your support helps us create lasting
+                impact.
+              </p>
+              <a
+                href="https://cfcgiving.opm.gov/welcome"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn bg-accent-gold text-gray-900 hover:bg-yellow-400"
+              >
+                Learn More
+              </a>
             </div>
           </div>
         </div>
