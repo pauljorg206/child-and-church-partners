@@ -70,7 +70,7 @@ export default function FoundersPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative h-80 overflow-hidden rounded-2xl lg:h-[500px]">
               <Image
-                src="/images/received_571220392093528.jpeg"
+                src="/images/dani-rez.avif"
                 alt="Dani and Rez Sindac, Founders"
                 fill
                 className="object-cover"
