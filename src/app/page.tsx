@@ -47,7 +47,7 @@ const impactImages = [
 ];
 
 const heroImages = [
-  "/images/photo-gallery/child-church-partners-ministry-001.jpg",
+  "/images/photo-gallery/filipino-children-ministry-006.jpg",
   "/images/photo-gallery/feeding-ministry-children-001.jpg",
   "/images/photo-gallery/children-nutrition-outreach-009.jpeg",
   "/images/photo-gallery/child-church-partners-ministry-002.jpg",
