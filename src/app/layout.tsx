@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/photo-gallery/sponsored-child-philippines-002.jpg",
+        url: "/images/meta-image.png",
         width: 1200,
         height: 630,
         alt: "Child & Church Partners - Helping children and churches in the Philippines",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Child & Church Partners | Overcome Barriers. Lead Change.",
     description:
       "Helping poor children and small churches in the Philippines overcome barriers and lead change.",
-    images: ["/images/photo-gallery/sponsored-child-philippines-002.jpg"],
+    images: ["/images/meta-image.png"],
   },
   robots: {
     index: true,
