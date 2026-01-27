@@ -31,15 +31,16 @@ const donationOptions = [
   {
     id: "backpack",
     title: "Back-to-School Backpack",
-    amount: 25,
-    description: "Provide school supplies for a child.",
+    amount: 20,
+    description:
+      "Provide a backpack and school supplies for a child at the start of the school year, for distribution in May.",
     recurring: false,
   },
   {
     id: "feeding",
-    title: "Feeding Program",
-    amount: 15,
-    description: "Feed a child for a month.",
+    title: "Weekly Feeding Program",
+    amount: 25,
+    description: "Provide four nutritious meals for a child each month.",
     recurring: false,
   },
   {
@@ -51,9 +52,10 @@ const donationOptions = [
   },
   {
     id: "general",
-    title: "Where Most Needed",
+    title: "Other Urgent Needs",
     amount: null,
-    description: "Support urgent needs and general operations.",
+    description:
+      "Your gift helps communities thrive even in the midst of many challenges: church repairs/construction, livelihood opportunities, vocational training, and disaster relief.",
     recurring: false,
   },
 ];
@@ -91,15 +93,8 @@ export default function DonatePage() {
                 </h3>
                 <p className="mb-4 text-sm text-gray-600">
                   Make checks payable to &quot;Child & Church Partners
-                  International&quot; and mail to:
+                  International&quot;.
                 </p>
-                <address className="mb-4 text-sm not-italic text-gray-600">
-                  Child & Church Partners International
-                  <br />
-                  Austin, TX 78750
-                  <br />
-                  USA
-                </address>
                 <a
                   href="/contact"
                   className="text-lg font-semibold text-primary-blue transition-colors hover:text-blue-700"
@@ -107,7 +102,7 @@ export default function DonatePage() {
                   Contact Us
                 </a>{" "}
                 <span className="text-sm text-gray-500">
-                  for our complete mailing address.
+                  for our mailing address.
                 </span>
               </div>
 

@@ -36,21 +36,21 @@ const features = [
     description:
       "Meet Dani and Rez Sindac, who dedicated their lives to serving children and churches in the Philippines.",
     href: "/about/founders",
-    image: "/images/photo-gallery/bible-study-fellowship-005.jpg",
+    image: "/images/photo-gallery/pastor-training-philippines-005.jpg",
   },
   {
     title: "Our Inspiration",
     description:
       "Discover the heart behind our mission and what drives us to serve those in need.",
     href: "/about/inspiration",
-    image: "/images/photo-gallery/filipino-children-ministry-003.jpeg",
+    image: "/images/photo-gallery/feeding-ministry-children-006.jpg",
   },
   {
     title: "I Believe in Sponsorship",
     description:
       "Learn why child sponsorship works and how it transforms lives.",
     href: "/about/sponsorship-works",
-    image: "/images/photo-gallery/sponsored-child-philippines-006.jpeg",
+    image: "/images/photo-gallery/child-sponsorship-program-007.jpeg",
   },
 ];
 

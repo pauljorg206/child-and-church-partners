@@ -29,51 +29,6 @@ export const metadata: Metadata = {
     "Child & Church Partners International serves children and churches across the Philippines, focusing on communities where support is needed most.",
 };
 
-const regions = [
-  {
-    name: "Metro Manila",
-    description:
-      "The capital region where urban poverty creates significant challenges for children and families. We partner with churches serving in densely populated communities.",
-    children: 45,
-    churches: 8,
-  },
-  {
-    name: "Central Luzon",
-    description:
-      "Agricultural communities north of Manila where many families depend on farming. Our partners here focus on rural children who often lack educational resources.",
-    children: 62,
-    churches: 12,
-  },
-  {
-    name: "Calabarzon",
-    description:
-      "The rapidly growing region south of Manila with both urban and rural communities. Churches here serve families transitioning between agricultural and industrial work.",
-    children: 38,
-    churches: 6,
-  },
-  {
-    name: "Visayas",
-    description:
-      "The central island region including Cebu and surrounding areas. Many communities here were affected by natural disasters and continue rebuilding.",
-    children: 54,
-    churches: 15,
-  },
-  {
-    name: "Mindanao",
-    description:
-      "The southern region with diverse communities and unique challenges. Our partners serve in areas where peace-building and community development go hand in hand.",
-    children: 41,
-    churches: 9,
-  },
-];
-
-const impactStats = [
-  { number: "240+", label: "Children Served" },
-  { number: "50+", label: "Partner Churches" },
-  { number: "5", label: "Major Regions" },
-  { number: "30+", label: "Years of Ministry" },
-];
-
 export default function WhereWeWorkPage() {
   return (
     <>
@@ -110,22 +65,6 @@ export default function WhereWeWorkPage() {
                 className="object-cover"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="section-padding bg-primary-blue text-white">
-        <div className="container-site">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {impactStats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="mb-2 text-4xl font-bold text-accent-gold md:text-5xl">
-                  {stat.number}
-                </div>
-                <div className="text-lg text-blue-100">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -247,53 +186,6 @@ export default function WhereWeWorkPage() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Regions Section */}
-      <section className="section-padding bg-white">
-        <div className="container-site">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              Regions We Serve
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              Our ministry spans five major regions of the Philippines, each
-              with unique communities and needs.
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {regions.map((region, index) => (
-              <div
-                key={index}
-                className="rounded-2xl bg-neutral-off-white p-6 md:p-8"
-              >
-                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                  <div className="flex-1">
-                    <h3 className="mb-2 text-xl font-bold text-gray-900">
-                      {region.name}
-                    </h3>
-                    <p className="text-gray-600">{region.description}</p>
-                  </div>
-                  <div className="flex gap-6 md:gap-8">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-primary-blue">
-                        {region.children}
-                      </div>
-                      <div className="text-sm text-gray-500">Children</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-accent-gold">
-                        {region.churches}
-                      </div>
-                      <div className="text-sm text-gray-500">Churches</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

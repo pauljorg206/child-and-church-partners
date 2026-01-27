@@ -69,7 +69,7 @@ const campaigns = [
       "As many as 250 Filipino children living in poverty each receive a sturdy backpack filled with school supplies at the beginning of each school year.",
     impact:
       "Your support gives children from low-income families the head start they need to succeed.",
-    image: "/images/photo-gallery/children-learning-philippines-003.jpeg",
+    image: "/images/photo-gallery/child-education-support-002.jpg",
     imageAlt: "Children with school supplies",
   },
   {
@@ -78,7 +78,7 @@ const campaigns = [
       "Once a week, 200 to 250 children eat a nutritious meal at our local churches.",
     impact:
       "This weekly children's feeding program is an opportunity for churches to reach out to children and their families with the love and hope found in Jesus.",
-    image: "/images/photo-gallery/feeding-ministry-children-004.jpg",
+    image: "/images/photo-gallery/feeding-program-philippines-003.jpeg",
     imageAlt: "Children eating nutritious meals",
   },
   {
@@ -91,7 +91,7 @@ const campaigns = [
       "Vocational training for youth",
       "Disaster relief for affected families",
     ],
-    image: "/images/photo-gallery/church-community-service-003.jpg",
+    image: "/images/photo-gallery/church-community-service-005.jpg",
     imageAlt: "Church community service",
   },
 ];

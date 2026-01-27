@@ -32,16 +32,16 @@ const stats = [
 
 const childImages = [
   {
-    src: "/images/photo-gallery/children-learning-philippines-005.jpeg",
-    alt: "Children learning",
+    src: "/images/photo-gallery/feeding-ministry-children-005.jpg",
+    alt: "Feeding ministry",
   },
   {
-    src: "/images/photo-gallery/child-education-support-003.jpg",
-    alt: "Education support",
+    src: "/images/photo-gallery/church-worship-philippines-004.jpg",
+    alt: "Church worship",
   },
   {
-    src: "/images/photo-gallery/child-sponsorship-program-003.jpeg",
-    alt: "Sponsored children",
+    src: "/images/photo-gallery/child-education-support-005.jpg",
+    alt: "School supplies",
   },
 ];
 

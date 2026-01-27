@@ -247,18 +247,8 @@ export default function ContactPage() {
                   <p className="text-gray-600">
                     Child & Church Partners International
                     <br />
-                    Austin, Texas, USA
+                    Cedar Park, Texas, USA
                   </p>
-                </div>
-
-                <div className="rounded-xl bg-neutral-off-white p-6">
-                  <h3 className="mb-2 font-semibold text-gray-900">Email</h3>
-                  <a
-                    href="mailto:info@childandchurchpartners.org"
-                    className="text-primary-blue transition-colors hover:text-blue-700"
-                  >
-                    info@childandchurchpartners.org
-                  </a>
                 </div>
 
                 <div className="rounded-xl bg-primary-blue p-6 text-white">
