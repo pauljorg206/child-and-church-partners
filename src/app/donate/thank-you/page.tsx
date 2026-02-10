@@ -1,21 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import type { Metadata } from "next";
 import DonationTracker from "@/components/analytics/DonationTracker";
-
-export const metadata: Metadata = {
-  title: "Thank You for Your Donation",
-  description:
-    "Thank you for supporting children and churches in the Philippines.",
-};
-
-interface ThankYouPageProps {
-  searchParams: Promise<{
-    type?: string;
-    amount?: string;
-    program?: string;
-    subscriptionId?: string;
-  }>;
-}
+import { useEffect, useState } from "react";
 
 const programLabels: Record<string, string> = {
   child: "Child Sponsorship",
@@ -26,19 +13,36 @@ const programLabels: Record<string, string> = {
   general: "Where Most Needed",
 };
 
-export default async function ThankYouPage({
-  searchParams,
-}: ThankYouPageProps) {
-  const params = await searchParams;
-  const isSubscription = params.type === "subscription";
-  const amount = params.amount;
-  const program = params.program || "general";
+interface DonationResult {
+  type?: string;
+  amount?: number;
+  program?: string;
+}
+
+export default function ThankYouPage() {
+  const [donation, setDonation] = useState<DonationResult>({});
+
+  useEffect(() => {
+    try {
+      const stored = sessionStorage.getItem("donationResult");
+      if (stored) {
+        setDonation(JSON.parse(stored));
+        sessionStorage.removeItem("donationResult");
+      }
+    } catch {
+      // ignore parse errors
+    }
+  }, []);
+
+  const isSubscription = donation.type === "subscription";
+  const amount = donation.amount;
+  const program = donation.program || "general";
   const programLabel = programLabels[program] || "Donation";
 
   return (
     <div className="min-h-screen bg-neutral-off-white">
       <DonationTracker
-        amount={amount}
+        amount={amount ? String(amount) : undefined}
         program={program}
         isRecurring={isSubscription}
       />
@@ -52,6 +56,7 @@ export default async function ThankYouPage({
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -88,7 +93,7 @@ export default async function ThankYouPage({
                 <div className="flex justify-between border-b border-gray-100 pb-2">
                   <span className="text-gray-600">Amount:</span>
                   <span className="font-medium">
-                    ${parseFloat(amount).toFixed(2)}
+                    ${Number(amount).toFixed(2)}
                     {isSubscription && "/month"}
                   </span>
                 </div>
@@ -109,6 +114,7 @@ export default async function ThankYouPage({
                 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-blue"
                 fill="currentColor"
                 viewBox="0 0 20 20"
+                aria-hidden="true"
               >
                 <path
                   fillRule="evenodd"
@@ -134,7 +140,7 @@ export default async function ThankYouPage({
             </h2>
             <ul className="space-y-3 text-gray-600">
               <li className="flex items-start gap-3">
-                <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent-gold text-sm font-medium text-white">
+                <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent-gold text-sm font-medium text-gray-900">
                   1
                 </span>
                 <span>
@@ -143,7 +149,7 @@ export default async function ThankYouPage({
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent-gold text-sm font-medium text-white">
+                <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent-gold text-sm font-medium text-gray-900">
                   2
                 </span>
                 <span>
@@ -153,7 +159,7 @@ export default async function ThankYouPage({
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent-gold text-sm font-medium text-white">
+                <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent-gold text-sm font-medium text-gray-900">
                   3
                 </span>
                 <span>
@@ -184,11 +190,13 @@ export default async function ThankYouPage({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-gray-100 p-3 text-gray-600 transition-colors hover:bg-blue-100 hover:text-blue-600"
+                aria-label="Share on Facebook"
               >
                 <svg
                   className="h-5 w-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
@@ -198,11 +206,13 @@ export default async function ThankYouPage({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-gray-100 p-3 text-gray-600 transition-colors hover:bg-blue-100 hover:text-blue-400"
+                aria-label="Share on X"
               >
                 <svg
                   className="h-5 w-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
@@ -210,12 +220,14 @@ export default async function ThankYouPage({
               <a
                 href="mailto:?subject=Support%20Children%20and%20Churches%20in%20the%20Philippines&body=I%20just%20donated%20to%20Child%20%26%20Church%20Partners.%20Check%20them%20out%3A%20https%3A%2F%2Fchildandchurchpartners.org%2Fdonate"
                 className="rounded-full bg-gray-100 p-3 text-gray-600 transition-colors hover:bg-gray-200"
+                aria-label="Share via email"
               >
                 <svg
                   className="h-5 w-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"

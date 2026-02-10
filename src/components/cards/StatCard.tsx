@@ -46,7 +46,7 @@ export default function StatCard({
         isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
     >
-      <div className="mb-2 text-4xl font-bold text-accent-gold sm:text-5xl lg:text-6xl">
+      <div className="mb-2 text-4xl font-bold text-accent-gold-dark sm:text-5xl lg:text-6xl">
         {number}
       </div>
       <div className="mb-2 text-lg font-semibold text-gray-900 sm:text-xl">

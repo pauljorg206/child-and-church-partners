@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import {
   galleryImages,
@@ -13,6 +13,8 @@ export default function GalleryClient() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState(24);
+  const lightboxRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
 
   const filteredImages = useMemo(() => {
     return activeCategory === "All"
@@ -31,6 +33,28 @@ export default function GalleryClient() {
     setActiveCategory(category);
     setVisibleCount(24);
   };
+
+  const goNext = useCallback(() => {
+    setSelectedImage((prev) =>
+      prev !== null ? (prev < visibleImages.length - 1 ? prev + 1 : 0) : null
+    );
+  }, []);
+
+  const goPrev = useCallback(() => {
+    setSelectedImage((prev) =>
+      prev !== null ? (prev > 0 ? prev - 1 : visibleImages.length - 1) : null
+    );
+  }, []);
+
+  // Focus management for lightbox
+  useEffect(() => {
+    if (selectedImage !== null) {
+      triggerRef.current = document.activeElement as HTMLElement;
+      lightboxRef.current?.focus();
+    } else {
+      triggerRef.current?.focus();
+    }
+  }, [selectedImage !== null]);
 
   return (
     <section className="section-padding bg-white">
@@ -63,10 +87,12 @@ export default function GalleryClient() {
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {visibleImages.map((image, index) => (
-            <div
+            <button
+              type="button"
               key={`${image.src}-${index}`}
-              className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl"
+              className="group relative aspect-square overflow-hidden rounded-xl focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2"
               onClick={() => setSelectedImage(index)}
+              aria-label={`View ${image.caption || image.alt}`}
             >
               <Image
                 src={image.src}
@@ -80,7 +106,7 @@ export default function GalleryClient() {
                   {image.caption}
                 </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
@@ -107,11 +133,21 @@ export default function GalleryClient() {
       {/* Lightbox */}
       {selectedImage !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          ref={lightboxRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Image ${selectedImage + 1} of ${visibleImages.length}: ${visibleImages[selectedImage].caption}`}
+          tabIndex={-1}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 outline-none"
           onClick={() => setSelectedImage(null)}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setSelectedImage(null);
+            if (e.key === "ArrowRight") goNext();
+            if (e.key === "ArrowLeft") goPrev();
+          }}
         >
           <button
-            className="absolute right-4 top-4 z-10 text-4xl text-white hover:text-gray-300"
+            className="absolute right-4 top-4 z-10 text-4xl text-white hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             onClick={() => setSelectedImage(null)}
             aria-label="Close lightbox"
           >
@@ -120,12 +156,10 @@ export default function GalleryClient() {
 
           {/* Previous Button */}
           <button
-            className="absolute left-4 z-10 hidden text-6xl text-white hover:text-gray-300 md:block"
+            className="absolute left-4 z-10 rounded-full p-2 text-6xl text-white hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-white"
             onClick={(e) => {
               e.stopPropagation();
-              setSelectedImage(
-                selectedImage > 0 ? selectedImage - 1 : visibleImages.length - 1
-              );
+              goPrev();
             }}
             aria-label="Previous image"
           >
@@ -148,12 +182,10 @@ export default function GalleryClient() {
 
           {/* Next Button */}
           <button
-            className="absolute right-4 z-10 mr-8 hidden text-6xl text-white hover:text-gray-300 md:block"
+            className="absolute right-4 z-10 mr-8 rounded-full p-2 text-6xl text-white hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-white"
             onClick={(e) => {
               e.stopPropagation();
-              setSelectedImage(
-                selectedImage < visibleImages.length - 1 ? selectedImage + 1 : 0
-              );
+              goNext();
             }}
             aria-label="Next image"
           >

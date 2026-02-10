@@ -32,11 +32,12 @@ export async function POST(request: NextRequest) {
   try {
     const { orderID } = await request.json();
 
-    if (!orderID) {
-      return NextResponse.json(
-        { error: "Order ID is required" },
-        { status: 400 }
-      );
+    if (
+      !orderID ||
+      typeof orderID !== "string" ||
+      !/^[A-Z0-9]{10,20}$/.test(orderID)
+    ) {
+      return NextResponse.json({ error: "Invalid order ID" }, { status: 400 });
     }
 
     const accessToken = await getAccessToken();
@@ -62,23 +63,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Log successful donation (you could store this in a database)
     console.log("Donation captured:", {
       orderId: captureData.id,
       status: captureData.status,
       amount:
         captureData.purchase_units?.[0]?.payments?.captures?.[0]?.amount?.value,
       programType: captureData.purchase_units?.[0]?.custom_id,
-      payerEmail: captureData.payer?.email_address,
     });
 
     return NextResponse.json({
       id: captureData.id,
       status: captureData.status,
-      payer: {
-        email: captureData.payer?.email_address,
-        name: captureData.payer?.name?.given_name,
-      },
     });
   } catch (error) {
     console.error("Capture order error:", error);

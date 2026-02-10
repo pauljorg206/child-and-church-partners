@@ -34,8 +34,8 @@ async function verifyWebhookSignature(
 ): Promise<boolean> {
   const webhookId = process.env.PAYPAL_WEBHOOK_ID;
   if (!webhookId) {
-    console.warn("PAYPAL_WEBHOOK_ID not configured, skipping verification");
-    return true;
+    console.error("PAYPAL_WEBHOOK_ID not configured -- rejecting webhook");
+    return false;
   }
 
   const accessToken = await getAccessToken();
@@ -71,16 +71,11 @@ export async function POST(request: NextRequest) {
     const body = await request.text();
     const event = JSON.parse(body);
 
-    // Verify webhook signature in production
-    if (process.env.NODE_ENV === "production") {
-      const isValid = await verifyWebhookSignature(request, body);
-      if (!isValid) {
-        console.error("Invalid webhook signature");
-        return NextResponse.json(
-          { error: "Invalid signature" },
-          { status: 401 }
-        );
-      }
+    // Always verify webhook signature
+    const isValid = await verifyWebhookSignature(request, body);
+    if (!isValid) {
+      console.error("Invalid webhook signature");
+      return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
     }
 
     const eventType = event.event_type;

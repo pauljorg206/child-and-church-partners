@@ -4,8 +4,12 @@ import Hero from "@/components/sections/Hero";
 const DonationFormWithPayPal = dynamic(() => import("./DonationFormWrapper"), {
   ssr: false,
   loading: () => (
-    <div className="flex h-64 items-center justify-center">
-      <div className="h-8 w-8 animate-spin rounded-full border-2 border-gray-300 border-t-primary-blue" />
+    <div className="flex h-64 items-center justify-center" role="status">
+      <div
+        className="h-8 w-8 animate-spin rounded-full border-2 border-gray-300 border-t-primary-blue"
+        aria-hidden="true"
+      />
+      <span className="sr-only">Loading donation form</span>
     </div>
   ),
 });
@@ -164,6 +168,7 @@ export default function DonatePage() {
                 className="h-6 w-6 text-accent-gold"
                 fill="currentColor"
                 viewBox="0 0 20 20"
+                aria-hidden="true"
               >
                 <path
                   fillRule="evenodd"

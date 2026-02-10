@@ -225,7 +225,7 @@ export default function Header() {
                           <Link
                             key={child.name}
                             href={child.href}
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-blue focus:bg-gray-50 focus:outline-none"
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-blue focus-visible:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-gold"
                             role="menuitem"
                             onClick={() => setOpenDropdown(null)}
                           >
@@ -308,6 +308,7 @@ export default function Header() {
                     href={item.href}
                     className="block rounded-lg px-4 py-2 font-medium text-gray-700 hover:bg-gray-50"
                     onClick={() => setMobileMenuOpen(false)}
+                    tabIndex={mobileMenuOpen ? 0 : -1}
                   >
                     {item.name}
                   </Link>
@@ -319,6 +320,7 @@ export default function Header() {
                           href={child.href}
                           className="block rounded-lg px-4 py-2 text-sm text-gray-600 hover:bg-gray-50"
                           onClick={() => setMobileMenuOpen(false)}
+                          tabIndex={mobileMenuOpen ? 0 : -1}
                         >
                           {child.name}
                         </Link>

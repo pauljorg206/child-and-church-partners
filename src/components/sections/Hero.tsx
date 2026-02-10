@@ -61,7 +61,7 @@ export default function Hero({
             muted
             loop
             playsInline
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
           >
             <source src={backgroundVideo} type="video/mp4" />
           </video>

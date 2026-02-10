@@ -1,7 +1,7 @@
 "use client";
 
 import Hero from "@/components/sections/Hero";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useId } from "react";
 
 function generateMathQuestion() {
   const num1 = Math.floor(Math.random() * 10) + 1;
@@ -27,6 +27,7 @@ export default function ContactPage() {
   });
   const [captchaAnswer, setCaptchaAnswer] = useState("");
   const [captchaError, setCaptchaError] = useState("");
+  const formId = useId();
 
   useEffect(() => {
     setMathQuestion(generateMathQuestion());
@@ -100,12 +101,17 @@ export default function ContactPage() {
               </h2>
 
               {status === "success" ? (
-                <div className="rounded-xl border border-green-200 bg-green-50 p-6 text-center">
+                <div
+                  role="status"
+                  aria-live="polite"
+                  className="rounded-xl border border-green-200 bg-green-50 p-6 text-center"
+                >
                   <svg
                     className="mx-auto mb-4 h-12 w-12 text-green-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -130,18 +136,26 @@ export default function ContactPage() {
               ) : (
                 <>
                   {status === "error" && (
-                    <div className="mb-6 rounded-xl border border-red-200 bg-red-50 p-4 text-center">
+                    <div
+                      role="alert"
+                      className="mb-6 rounded-xl border border-red-200 bg-red-50 p-4 text-center"
+                    >
                       <p className="text-red-600">{errorMessage}</p>
                     </div>
                   )}
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor={`${formId}-name`}
+                        className="mb-2 block text-sm font-medium text-gray-700"
+                      >
                         Your Name *
                       </label>
                       <input
+                        id={`${formId}-name`}
                         type="text"
                         required
+                        aria-required="true"
                         value={formData.name}
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
@@ -152,12 +166,17 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor={`${formId}-email`}
+                        className="mb-2 block text-sm font-medium text-gray-700"
+                      >
                         Email Address *
                       </label>
                       <input
+                        id={`${formId}-email`}
                         type="email"
                         required
+                        aria-required="true"
                         value={formData.email}
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
@@ -168,10 +187,14 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor={`${formId}-subject`}
+                        className="mb-2 block text-sm font-medium text-gray-700"
+                      >
                         Subject
                       </label>
                       <input
+                        id={`${formId}-subject`}
                         type="text"
                         value={formData.subject}
                         onChange={(e) =>
@@ -183,11 +206,16 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor={`${formId}-message`}
+                        className="mb-2 block text-sm font-medium text-gray-700"
+                      >
                         Message *
                       </label>
                       <textarea
+                        id={`${formId}-message`}
                         required
+                        aria-required="true"
                         rows={5}
                         value={formData.message}
                         onChange={(e) =>
@@ -200,13 +228,21 @@ export default function ContactPage() {
 
                     {/* Math CAPTCHA */}
                     <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor={`${formId}-captcha`}
+                        className="mb-2 block text-sm font-medium text-gray-700"
+                      >
                         Security Check: What is {mathQuestion.num1} +{" "}
                         {mathQuestion.num2}? *
                       </label>
                       <input
+                        id={`${formId}-captcha`}
                         type="number"
                         required
+                        aria-required="true"
+                        aria-describedby={
+                          captchaError ? `${formId}-captcha-error` : undefined
+                        }
                         value={captchaAnswer}
                         onChange={(e) => setCaptchaAnswer(e.target.value)}
                         className={`w-full rounded-lg border px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold ${
@@ -215,7 +251,11 @@ export default function ContactPage() {
                         placeholder="Your answer"
                       />
                       {captchaError && (
-                        <p className="mt-1 text-sm text-red-600">
+                        <p
+                          id={`${formId}-captcha-error`}
+                          role="alert"
+                          className="mt-1 text-sm text-red-600"
+                        >
                           {captchaError}
                         </p>
                       )}

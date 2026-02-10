@@ -169,7 +169,11 @@ export default function NewsletterForm({
           </div>
         )}
 
-        {errorMessage && <p className="text-sm text-red-600">{errorMessage}</p>}
+        {errorMessage && (
+          <p role="alert" className="text-sm text-red-600">
+            {errorMessage}
+          </p>
+        )}
 
         <button
           type="submit"
@@ -237,7 +241,9 @@ export default function NewsletterForm({
         {status === "loading" ? "..." : "Subscribe"}
       </button>
       {errorMessage && (
-        <p className="w-full text-sm text-red-600">{errorMessage}</p>
+        <p role="alert" className="w-full text-sm text-red-600">
+          {errorMessage}
+        </p>
       )}
     </form>
   );

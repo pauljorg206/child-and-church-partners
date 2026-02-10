@@ -37,6 +37,9 @@ export default function HeroCarousel({
   useEffect(() => {
     if (backgroundImages.length <= 1) return;
 
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) return;
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
     }, carouselInterval);

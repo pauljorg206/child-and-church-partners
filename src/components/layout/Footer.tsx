@@ -32,53 +32,53 @@ export default function Footer() {
                 className="h-12 w-auto"
               />
             </Link>
-            <p className="mb-4 text-sm text-gray-400">
+            <p className="mb-4 text-sm text-gray-300">
               Overcome Barriers. Lead Change.
             </p>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-300">
               We walk alongside Filipino children in poverty and small churches
               serving struggling communities in the Philippines.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
+          <nav aria-label="Quick links">
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 transition-colors hover:text-white"
+                    className="text-gray-300 transition-colors hover:text-white"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Get Involved */}
-          <div>
+          <nav aria-label="Get involved">
             <h3 className="mb-4 text-lg font-semibold">Get Involved</h3>
             <ul className="space-y-2">
               {getInvolved.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 transition-colors hover:text-white"
+                    className="text-gray-300 transition-colors hover:text-white"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Contact */}
           <div>
             <h3 className="mb-4 text-lg font-semibold">Contact</h3>
-            <p className="mb-4 text-sm text-gray-400">
+            <p className="mb-4 text-sm text-gray-300">
               <a
                 href="mailto:info@childandchurchpartners.org"
                 className="transition-colors hover:text-white"
@@ -86,7 +86,7 @@ export default function Footer() {
                 info@childandchurchpartners.org
               </a>
             </p>
-            <p className="mb-4 text-sm text-gray-400">
+            <p className="mb-4 text-sm text-gray-300">
               We are a 501(c)(3) nonprofit organization. Your donations are
               tax-deductible to the extent allowed by law.
             </p>
@@ -96,7 +96,7 @@ export default function Footer() {
                 href="https://www.facebook.com/ilovechildandchurchpartners"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 transition-colors hover:text-white"
+                className="text-gray-300 transition-colors hover:text-white"
                 aria-label="Follow us on Facebook"
               >
                 <svg
@@ -120,7 +120,7 @@ export default function Footer() {
         <div className="mt-12 border-t border-gray-700 pt-8">
           <div className="mx-auto max-w-xl text-center">
             <h3 className="mb-2 text-lg font-semibold">Stay Connected</h3>
-            <p className="mb-4 text-sm text-gray-400">
+            <p className="mb-4 text-sm text-gray-300">
               Get Stories From the Field and Updates on Lives Changed
             </p>
             <NewsletterForm />
@@ -130,11 +130,11 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-800 pt-8 sm:flex-row">
           <div className="flex flex-col items-center gap-2 sm:items-start">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-400">
               &copy; {new Date().getFullYear()} Child & Church Partners
               International. All rights reserved.
             </p>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-400">
               Made by{" "}
               <a
                 href="https://www.naloseed.com"
@@ -149,13 +149,13 @@ export default function Footer() {
           <div className="flex gap-6 text-sm">
             <Link
               href="/privacy"
-              className="text-gray-500 transition-colors hover:text-white"
+              className="text-gray-400 transition-colors hover:text-white"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-gray-500 transition-colors hover:text-white"
+              className="text-gray-400 transition-colors hover:text-white"
             >
               Terms of Service
             </Link>

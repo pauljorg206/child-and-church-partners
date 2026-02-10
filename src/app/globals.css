@@ -22,11 +22,11 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold transition-all duration-200;
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2;
   }
 
   .btn-primary {
-    @apply btn bg-accent-gold text-white hover:bg-accent-gold-light hover:text-gray-900;
+    @apply btn bg-accent-gold text-gray-900 hover:bg-accent-gold-light;
   }
 
   .btn-secondary {
@@ -41,5 +41,19 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

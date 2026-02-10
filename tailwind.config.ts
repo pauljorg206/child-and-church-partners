@@ -17,6 +17,7 @@ const config: Config = {
         accent: {
           gold: "#EFAB05",
           "gold-light": "#FFD570",
+          "gold-dark": "#B07C00",
         },
         neutral: {
           "off-white": "#FAFAFA",

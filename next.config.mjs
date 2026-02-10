@@ -40,11 +40,30 @@ const nextConfig = {
           },
           {
             key: "X-XSS-Protection",
-            value: "1; mode=block",
+            value: "0",
           },
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.paypal.com https://*.paypal.com https://www.googletagmanager.com https://www.google-analytics.com https://va.vercel-scripts.com",
+              "style-src 'self' 'unsafe-inline'",
+              "font-src 'self'",
+              "img-src 'self' data: https://static.wixstatic.com https://i.ytimg.com https://www.paypalobjects.com https://www.google-analytics.com",
+              "connect-src 'self' https://api-m.paypal.com https://api-m.sandbox.paypal.com https://www.google-analytics.com https://vitals.vercel-insights.com",
+              "frame-src https://www.youtube.com https://www.paypal.com https://*.paypal.com",
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self' https://api.web3forms.com",
+            ].join("; "),
           },
         ],
       },

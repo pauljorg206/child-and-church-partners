@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useId } from "react";
 import { cn } from "@/lib/utils";
 
 interface FAQAccordionProps {
@@ -15,14 +15,18 @@ export default function FAQAccordion({
   defaultOpen = false,
 }: FAQAccordionProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
+  const panelId = useId();
+  const buttonId = useId();
 
   return (
     <div className="border-b border-gray-200">
       <button
         type="button"
+        id={buttonId}
         className="flex w-full items-center justify-between rounded-lg py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
+        aria-controls={panelId}
       >
         <span className="pr-4 text-lg font-medium text-gray-900">
           {question}
@@ -32,6 +36,7 @@ export default function FAQAccordion({
             "h-6 w-6 flex-shrink-0 text-accent-gold transition-transform duration-200",
             isOpen && "rotate-180"
           )}
+          aria-hidden="true"
         >
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path
@@ -44,10 +49,14 @@ export default function FAQAccordion({
         </span>
       </button>
       <div
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
         className={cn(
           "overflow-hidden transition-all duration-300 ease-in-out",
           isOpen ? "max-h-96 pb-5" : "max-h-0"
         )}
+        hidden={!isOpen}
       >
         <div className="leading-relaxed text-gray-600">{answer}</div>
       </div>

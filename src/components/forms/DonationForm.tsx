@@ -185,9 +185,11 @@ export default function DonationForm({ options }: DonationFormProps) {
       throw new Error(result.error || "Failed to capture payment");
     }
 
-    router.push(
-      `/donate/thank-you?type=one-time&amount=${amount}&program=${getProgramType()}`
+    sessionStorage.setItem(
+      "donationResult",
+      JSON.stringify({ type: "one-time", amount, program: getProgramType() })
     );
+    router.push("/donate/thank-you");
   };
 
   const createSubscription = async (
@@ -224,9 +226,11 @@ export default function DonationForm({ options }: DonationFormProps) {
       setError("Subscription was not created. Please try again.");
       return;
     }
-    router.push(
-      `/donate/thank-you?type=subscription&subscriptionId=${data.subscriptionID}&program=${getProgramType()}`
+    sessionStorage.setItem(
+      "donationResult",
+      JSON.stringify({ type: "subscription", program: getProgramType() })
     );
+    router.push("/donate/thank-you");
   };
 
   const onError = (err: Record<string, unknown>) => {
@@ -248,6 +252,7 @@ export default function DonationForm({ options }: DonationFormProps) {
               key={option.id}
               type="button"
               onClick={() => handleOptionSelect(option)}
+              aria-pressed={selectedOption?.id === option.id}
               className={`w-full cursor-pointer rounded-xl border p-4 text-left transition-colors ${
                 selectedOption?.id === option.id
                   ? "border-accent-gold bg-yellow-50"
@@ -266,7 +271,7 @@ export default function DonationForm({ options }: DonationFormProps) {
                 <div className="text-right">
                   {option.amount ? (
                     <>
-                      <div className="text-xl font-bold text-accent-gold">
+                      <div className="text-xl font-bold text-accent-gold-dark">
                         ${option.amount}
                       </div>
                       {option.recurring && (
@@ -284,21 +289,29 @@ export default function DonationForm({ options }: DonationFormProps) {
 
         {/* Custom Amount */}
         <div className="mt-6">
-          <label className="mb-2 block text-sm font-medium text-gray-700">
+          <label
+            htmlFor="custom-amount"
+            className="mb-2 block text-sm font-medium text-gray-700"
+          >
             Or enter a custom amount
           </label>
           <div className="flex items-center gap-4">
             <div className="relative flex-1">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+              <span
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
+                aria-hidden="true"
+              >
                 $
               </span>
               <input
+                id="custom-amount"
                 type="number"
                 min="1"
                 step="0.01"
                 value={customAmount}
                 onChange={(e) => handleCustomAmountChange(e.target.value)}
                 placeholder="0.00"
+                aria-label="Custom donation amount in dollars"
                 className="w-full rounded-lg border border-gray-300 py-3 pl-8 pr-4 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold"
               />
             </div>
@@ -306,6 +319,7 @@ export default function DonationForm({ options }: DonationFormProps) {
               value={frequency}
               onChange={(e) => setFrequency(e.target.value as Frequency)}
               disabled={selectedOption?.recurring}
+              aria-label="Donation frequency"
               className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-transparent focus:ring-2 focus:ring-accent-gold disabled:bg-gray-100"
             >
               <option value="once">One-time</option>
@@ -344,7 +358,10 @@ export default function DonationForm({ options }: DonationFormProps) {
           )}
 
           {error && (
-            <div className="mb-4 rounded-lg bg-red-50 p-3 text-sm text-red-600">
+            <div
+              role="alert"
+              className="mb-4 rounded-lg bg-red-50 p-3 text-sm text-red-600"
+            >
               {error}
             </div>
           )}
@@ -379,6 +396,7 @@ export default function DonationForm({ options }: DonationFormProps) {
                 className="h-5 w-5 text-green-600"
                 fill="currentColor"
                 viewBox="0 0 20 20"
+                aria-hidden="true"
               >
                 <path
                   fillRule="evenodd"
@@ -405,6 +423,7 @@ export default function DonationForm({ options }: DonationFormProps) {
                   className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent-gold"
                   fill="currentColor"
                   viewBox="0 0 20 20"
+                  aria-hidden="true"
                 >
                   <path
                     fillRule="evenodd"

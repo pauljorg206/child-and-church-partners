@@ -32,9 +32,23 @@ export async function POST(request: NextRequest) {
   try {
     const { amount, programType } = await request.json();
 
-    if (!amount || amount < 1) {
+    const parsedAmount =
+      typeof amount === "number" ? amount : parseFloat(amount);
+    if (
+      !parsedAmount ||
+      isNaN(parsedAmount) ||
+      parsedAmount < 1 ||
+      parsedAmount > 100000
+    ) {
       return NextResponse.json(
         { error: "Invalid donation amount" },
+        { status: 400 }
+      );
+    }
+
+    if (typeof programType !== "string" || programType.length > 50) {
+      return NextResponse.json(
+        { error: "Invalid program type" },
         { status: 400 }
       );
     }
@@ -47,7 +61,7 @@ export async function POST(request: NextRequest) {
         {
           amount: {
             currency_code: "USD",
-            value: amount.toFixed(2),
+            value: parsedAmount.toFixed(2),
           },
           description: `Child & Church Partners - ${programType}`,
           custom_id: programType,
