@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import NewsletterForm from "./NewsletterForm";
@@ -39,8 +39,12 @@ describe("NewsletterForm", () => {
   });
 
   it("shows success message after form submission", async () => {
-    const user = userEvent.setup();
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
     render(<NewsletterForm />);
+
+    // Advance past the 3s spam protection window
+    vi.advanceTimersByTime(3100);
 
     const nameInput = screen.getByPlaceholderText("Your Name");
     const emailInput = screen.getByPlaceholderText("Your Email");
@@ -50,13 +54,14 @@ describe("NewsletterForm", () => {
     await user.type(emailInput, "john@example.com");
     await user.click(button);
 
-    // Wait for the success message (form has 1s timeout)
-    await waitFor(
-      () => {
-        expect(screen.getByText(/thanks for subscribing/i)).toBeInTheDocument();
-      },
-      { timeout: 2000 }
-    );
+    // Advance past the simulated 1s network delay
+    vi.advanceTimersByTime(1100);
+
+    await waitFor(() => {
+      expect(screen.getByText(/thanks for subscribing/i)).toBeInTheDocument();
+    });
+
+    vi.useRealTimers();
   });
 
   it("renders correct button text for stacked variant", () => {
