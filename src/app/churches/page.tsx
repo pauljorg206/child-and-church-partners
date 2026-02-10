@@ -1,9 +1,8 @@
 import Hero from "@/components/sections/Hero";
 import StatsSection from "@/components/sections/StatsSection";
 import CTASection from "@/components/sections/CTASection";
-import ImageGrid from "@/components/sections/ImageGrid";
 import Image from "next/image";
-import Link from "next/link";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -30,21 +29,6 @@ const stats = [
   },
 ];
 
-const churchImages = [
-  {
-    src: "/images/photo-gallery/church-worship-philippines-005.jpg",
-    alt: "Church worship",
-  },
-  {
-    src: "/images/photo-gallery/bible-study-fellowship-003.jpeg",
-    alt: "Bible study",
-  },
-  {
-    src: "/images/photo-gallery/pastor-training-philippines-004.jpg",
-    alt: "Pastor training",
-  },
-];
-
 export default function WhyChurchesPage() {
   return (
     <>
@@ -64,6 +48,7 @@ export default function WhyChurchesPage() {
                 src="/images/photo-gallery/church-community-service-001.jpeg"
                 alt="Church community in the Philippines"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -92,16 +77,6 @@ export default function WhyChurchesPage() {
         background="off-white"
       />
 
-      {/* Image Grid */}
-      <section className="section-padding bg-white">
-        <div className="container-site">
-          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
-            Churches Making a Difference
-          </h2>
-          <ImageGrid images={churchImages} columns={3} />
-        </div>
-      </section>
-
       {/* Hope Section with Photos */}
       <section className="section-padding bg-primary-blue">
         <div className="container-site">
@@ -117,9 +92,10 @@ export default function WhyChurchesPage() {
               <div className="overflow-hidden rounded-xl bg-white">
                 <div className="relative h-40">
                   <Image
-                    src="/images/photo-gallery/bible-study-fellowship-002.jpeg"
-                    alt="Bible training"
+                    src="/images/pastors-training.jpeg"
+                    alt="Pastors receiving training certificates"
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
                 </div>
@@ -138,6 +114,7 @@ export default function WhyChurchesPage() {
                     src="/images/photo-gallery/youth-leadership-training-002.jpg"
                     alt="Leadership development"
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
                 </div>
@@ -151,9 +128,10 @@ export default function WhyChurchesPage() {
               <div className="overflow-hidden rounded-xl bg-white">
                 <div className="relative h-40">
                   <Image
-                    src="/images/photo-gallery/church-community-outreach-003.jpg"
-                    alt="Community outreach"
+                    src="/images/water-baptism.jpeg"
+                    alt="Water baptism in the Philippines"
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
                 </div>
@@ -176,9 +154,10 @@ export default function WhyChurchesPage() {
             <div className="grid md:grid-cols-2">
               <div className="relative h-64 md:h-auto">
                 <Image
-                  src="/images/photo-gallery/pastor-training-philippines-005.jpg"
-                  alt="Pastor Jun Omboy"
+                  src="/images/pastors.jpg"
+                  alt="Filipino pastors with training resources"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -200,93 +179,10 @@ export default function WhyChurchesPage() {
         </div>
       </section>
 
-      {/* Sponsorship CTA */}
-      <section className="relative py-20">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/photo-gallery/church-worship-philippines-002.jpg"
-            alt="Church worship"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-accent-gold/95" />
-        </div>
-        <div className="container-site relative z-10">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
-              Equip a Pastor Today
-            </h2>
-            <p className="mb-8 text-lg text-gray-800">
-              Help small rural churches serve their communities in lasting ways.
-            </p>
-            <div className="inline-block rounded-2xl bg-white p-8 text-left shadow-xl">
-              <div className="mb-4 flex items-baseline justify-between">
-                <h3 className="text-xl font-bold text-gray-900">
-                  Sponsor a Church
-                </h3>
-                <span className="text-2xl font-bold text-accent-gold">
-                  $50/mo
-                </span>
-              </div>
-              <ul className="mb-6 space-y-2 text-gray-600">
-                <li className="flex items-center gap-2">
-                  <svg
-                    className="h-5 w-5 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Pastor training & resources
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg
-                    className="h-5 w-5 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Ministry equipment & materials
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg
-                    className="h-5 w-5 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Outreach & community impact
-                </li>
-              </ul>
-              <Link
-                href="/donate"
-                className="btn btn-primary w-full text-center"
-              >
-                Sponsor a Church Today
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <CTASection
         title="Ready to Support a Church?"
         description="Help pastors access training and lead their communities with truth."
-        primaryCta={{ label: "Donate Now", href: "/donate" }}
+        primaryCta={{ label: "See How to Help", href: "/give" }}
         secondaryCta={{ label: "Give to Equip", href: "/give/equip" }}
         background="blue"
       />

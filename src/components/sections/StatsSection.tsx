@@ -55,7 +55,9 @@ export default function StatsSection({
           </div>
         )}
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3">
+        <div
+          className={`mx-auto grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-12 ${stats.length > 2 ? "max-w-none lg:grid-cols-3" : ""}`}
+        >
           {stats.map((stat, index) => (
             <StatCard
               key={index}

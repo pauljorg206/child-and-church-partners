@@ -2,28 +2,8 @@
 
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
-import ImageStrip from "@/components/sections/ImageStrip";
 import Image from "next/image";
 import { useState } from "react";
-
-const equipImages = [
-  {
-    src: "/images/photo-gallery/pastor-training-philippines-002.jpg",
-    alt: "Pastor training session",
-  },
-  {
-    src: "/images/photo-gallery/bible-study-fellowship-004.jpeg",
-    alt: "Bible study fellowship",
-  },
-  {
-    src: "/images/photo-gallery/pastor-training-philippines-007.jpg",
-    alt: "Pastors learning together",
-  },
-  {
-    src: "/images/photo-gallery/bible-study-fellowship-006.jpeg",
-    alt: "Scripture study",
-  },
-];
 
 export default function GiveToEquipPage() {
   const raised = 18000;
@@ -81,13 +61,10 @@ export default function GiveToEquipPage() {
     <>
       <Hero
         title="Training Leaders. Strengthening Faith."
-        subtitle="We're building an Equipping Center for pastors to have a space for proper training, equipping them to lead their communities."
+        subtitle="We are building an equipping center to help grassroots pastors faithfully preach God's Word, shepherd His people, and build healthy churches."
         variant="simple"
         backgroundImage="/images/photo-gallery/pastor-training-philippines-008.jpeg"
       />
-
-      {/* Image Strip */}
-      <ImageStrip images={equipImages} />
 
       {/* Campaign Overview */}
       <section className="section-padding bg-white">
@@ -104,6 +81,15 @@ export default function GiveToEquipPage() {
                 to lead their communities, strengthen the church, and bring
                 people closer to God—grounded in sound, truthful teaching.
               </p>
+            </div>
+
+            <div className="relative mb-12 aspect-video overflow-hidden rounded-2xl">
+              <Image
+                src="/images/equipping-center-groundbreaking.jpeg"
+                alt="Equipping Center groundbreaking ceremony"
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* Progress Bar */}
@@ -167,7 +153,7 @@ export default function GiveToEquipPage() {
                 <div className="grid md:grid-cols-5">
                   <div className="relative h-64 md:col-span-2 md:h-auto">
                     <Image
-                      src="/images/photo-gallery/pastor-training-philippines-009.jpeg"
+                      src="/images/pastor-ed-studying.jpeg"
                       alt="Pastor Ed Genotiva"
                       fill
                       className="object-cover"
@@ -219,7 +205,7 @@ export default function GiveToEquipPage() {
                   </div>
                   <div className="relative h-64 md:order-last md:col-span-2 md:h-auto">
                     <Image
-                      src="/images/photo-gallery/bible-study-fellowship-008.jpeg"
+                      src="/images/pastor-jun-preaching.jpeg"
                       alt="Pastor Jun Omboy"
                       fill
                       className="object-cover"

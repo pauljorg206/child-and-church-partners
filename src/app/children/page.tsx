@@ -1,9 +1,8 @@
 import Hero from "@/components/sections/Hero";
 import StatsSection from "@/components/sections/StatsSection";
 import CTASection from "@/components/sections/CTASection";
-import ImageGrid from "@/components/sections/ImageGrid";
 import Image from "next/image";
-import Link from "next/link";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -30,21 +29,6 @@ const stats = [
   },
 ];
 
-const childImages = [
-  {
-    src: "/images/photo-gallery/feeding-ministry-children-005.jpg",
-    alt: "Feeding ministry",
-  },
-  {
-    src: "/images/photo-gallery/church-worship-philippines-004.jpg",
-    alt: "Church worship",
-  },
-  {
-    src: "/images/photo-gallery/child-education-support-005.jpg",
-    alt: "School supplies",
-  },
-];
-
 export default function WhyChildrenPage() {
   return (
     <>
@@ -61,9 +45,10 @@ export default function WhyChildrenPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative h-80 overflow-hidden rounded-2xl lg:h-[400px]">
               <Image
-                src="/images/photo-gallery/children-nutrition-outreach-001.jpeg"
-                alt="Children in the Philippines"
+                src="/images/feeding-3.jpg"
+                alt="Children feeding program in the Philippines"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -91,16 +76,6 @@ export default function WhyChildrenPage() {
         background="off-white"
       />
 
-      {/* Image Grid Section */}
-      <section className="section-padding bg-white">
-        <div className="container-site">
-          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
-            Lives Waiting for Hope
-          </h2>
-          <ImageGrid images={childImages} columns={3} />
-        </div>
-      </section>
-
       {/* Impact Story */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
@@ -108,9 +83,10 @@ export default function WhyChildrenPage() {
             <div className="grid md:grid-cols-2">
               <div className="relative h-64 md:h-auto">
                 <Image
-                  src="/images/photo-gallery/sponsored-child-philippines-003.jpg"
-                  alt="Sponsored child story"
+                  src="/images/scholars.jpg"
+                  alt="Sponsored scholars studying together"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -136,95 +112,11 @@ export default function WhyChildrenPage() {
         </div>
       </section>
 
-      {/* Sponsorship CTA */}
-      <section className="relative py-20">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/photo-gallery/child-church-partners-ministry-002.jpg"
-            alt="Children ministry"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-primary-blue/90" />
-        </div>
-        <div className="container-site relative z-10">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-              Be a Channel of Hope
-            </h2>
-            <p className="mb-8 text-lg text-gray-200">
-              When you sponsor a child, you open doors to education, health, and
-              a brighter future.
-            </p>
-            <div className="inline-block rounded-2xl bg-white p-8 text-left shadow-xl">
-              <div className="mb-4 flex items-baseline justify-between">
-                <h3 className="text-xl font-bold text-gray-900">
-                  Sponsor a Child
-                </h3>
-                <span className="text-2xl font-bold text-accent-gold">
-                  $35/mo
-                </span>
-              </div>
-              <ul className="mb-6 space-y-2 text-gray-600">
-                <li className="flex items-center gap-2">
-                  <svg
-                    className="h-5 w-5 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Education & school supplies
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg
-                    className="h-5 w-5 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Health & nutrition support
-                </li>
-                <li className="flex items-center gap-2">
-                  <svg
-                    className="h-5 w-5 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Church community & mentorship
-                </li>
-              </ul>
-              <Link
-                href="/donate"
-                className="btn btn-primary w-full text-center"
-              >
-                Sponsor a Child Today
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <CTASection
-        title="Ready to Change a Life?"
-        description="Your generosity transforms futures and breaks the cycle of poverty."
-        primaryCta={{ label: "Donate Now", href: "/donate" }}
-        background="gold"
+        title="You Can Make a Difference"
+        description="Learn how sponsorship helps children break the cycle of poverty."
+        primaryCta={{ label: "See How to Help", href: "/give" }}
+        background="blue"
       />
     </>
   );

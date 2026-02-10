@@ -1,8 +1,7 @@
-import Hero from "@/components/sections/Hero";
+import HeroCarousel from "@/components/sections/HeroCarousel";
 import StatsSection from "@/components/sections/StatsSection";
 import VideoSection from "@/components/sections/VideoSection";
 import CTASection from "@/components/sections/CTASection";
-import ImageStrip from "@/components/sections/ImageStrip";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,31 +18,6 @@ const stats = [
     description: "We provide resources for formal theological education.",
     link: { label: "Learn More", href: "/churches" },
   },
-  {
-    number: "250+",
-    label: "Fed Weekly",
-    description: "Children receiving nutritious meals through our outreach.",
-    link: { label: "Learn More", href: "/give" },
-  },
-];
-
-const impactImages = [
-  {
-    src: "/images/photo-gallery/sponsored-child-philippines-002.jpg",
-    alt: "Sponsored child in the Philippines",
-  },
-  {
-    src: "/images/photo-gallery/church-worship-philippines-001.jpg",
-    alt: "Church worship in the Philippines",
-  },
-  {
-    src: "/images/photo-gallery/feeding-program-philippines-001.jpeg",
-    alt: "Feeding program for children",
-  },
-  {
-    src: "/images/photo-gallery/community-outreach-event-007.jpg",
-    alt: "Community outreach event",
-  },
 ];
 
 const heroImages = [
@@ -58,22 +32,19 @@ export default function Home() {
   return (
     <>
       {/* Hero Section with Carousel */}
-      <Hero
+      <HeroCarousel
         title="Overcome Barriers. Lead Change."
-        subtitle="Child & Church Partners International is Transforming Lives Through Education, Faith, and Community in the Philippines"
+        subtitle="Child & Church Partners International is Transforming Lives Through Faith, Education, and Community in the Philippines"
         primaryCta={{ label: "Make a Difference", href: "/donate" }}
         secondaryCta={{ label: "Our Story", href: "/about" }}
         variant="centered"
         backgroundImages={heroImages}
       />
 
-      {/* Impact Image Strip */}
-      <ImageStrip images={impactImages} />
-
       {/* Statistics Section */}
       <StatsSection
         title="The Reality"
-        subtitle="Millions Need Hope. Together, We Can Reach Them"
+        subtitle="Millions Need Hope and Help. Together, We Can Make A Difference."
         stats={stats}
         background="white"
       />
@@ -98,6 +69,7 @@ export default function Home() {
                   src="/images/photo-gallery/sponsored-child-philippines-002.jpg"
                   alt="Sponsored child in the Philippines"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -128,9 +100,10 @@ export default function Home() {
             <div className="overflow-hidden rounded-2xl bg-white shadow-lg">
               <div className="relative h-48">
                 <Image
-                  src="/images/photo-gallery/pastor-training-philippines-001.jpg"
-                  alt="Pastor training in the Philippines"
+                  src="/images/church.jpeg"
+                  alt="Church in the Philippines"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -166,7 +139,7 @@ export default function Home() {
         description="Watch How Generosity Transforms Lives"
         videoId="3-yo0YX7OG4"
         quote={{
-          text: "Through Child & Church Partners, we've seen lives transformed and communities changed forever.",
+          text: "Because you care enough to pray and give, many children and families living in poverty experience the loving kindness of God.",
           author: "Dani Sindac",
           title: "Co-Founder",
         }}
@@ -194,6 +167,7 @@ export default function Home() {
                 src="/images/received_571220392093528.jpeg"
                 alt="Dani and Rez Sindac, Founders"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

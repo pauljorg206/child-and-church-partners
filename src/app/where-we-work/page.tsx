@@ -1,27 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
-import ImageStrip from "@/components/sections/ImageStrip";
 import Image from "next/image";
 import type { Metadata } from "next";
-
-const regionImages = [
-  {
-    src: "/images/photo-gallery/volunteer-ministry-philippines-003.jpg",
-    alt: "Ministry in the Philippines",
-  },
-  {
-    src: "/images/photo-gallery/church-community-outreach-004.jpg",
-    alt: "Church community outreach",
-  },
-  {
-    src: "/images/photo-gallery/community-outreach-event-005.jpeg",
-    alt: "Community event",
-  },
-  {
-    src: "/images/photo-gallery/nonprofit-ministry-philippines-003.jpg",
-    alt: "Nonprofit ministry",
-  },
-];
 
 export const metadata: Metadata = {
   title: "Where We Work",
@@ -38,9 +18,6 @@ export default function WhereWeWorkPage() {
         variant="simple"
         backgroundImage="/images/photo-gallery/community-outreach-event-003.jpeg"
       />
-
-      {/* Image Strip */}
-      <ImageStrip images={regionImages} />
 
       {/* Introduction Section */}
       <section className="section-padding bg-white">

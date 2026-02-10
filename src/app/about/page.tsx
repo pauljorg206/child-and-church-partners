@@ -1,28 +1,8 @@
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
-import ImageStrip from "@/components/sections/ImageStrip";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-
-const aboutImages = [
-  {
-    src: "/images/photo-gallery/bible-study-fellowship-001.jpeg",
-    alt: "Bible study fellowship",
-  },
-  {
-    src: "/images/photo-gallery/filipino-children-ministry-004.jpg",
-    alt: "Ministry with Filipino children",
-  },
-  {
-    src: "/images/photo-gallery/volunteer-ministry-philippines-001.jpeg",
-    alt: "Volunteer ministry in the Philippines",
-  },
-  {
-    src: "/images/photo-gallery/youth-camp-philippines-001.jpeg",
-    alt: "Youth camp in the Philippines",
-  },
-];
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -32,25 +12,16 @@ export const metadata: Metadata = {
 
 const features = [
   {
-    title: "Our Founders",
-    description:
-      "Meet Dani and Rez Sindac, who dedicated their lives to serving children and churches in the Philippines.",
-    href: "/about/founders",
-    image: "/images/photo-gallery/pastor-training-philippines-005.jpg",
-  },
-  {
     title: "Our Inspiration",
     description:
       "Discover the heart behind our mission and what drives us to serve those in need.",
     href: "/about/inspiration",
-    image: "/images/photo-gallery/feeding-ministry-children-006.jpg",
   },
   {
     title: "I Believe in Sponsorship",
     description:
       "Learn why child sponsorship works and how it transforms lives.",
     href: "/about/sponsorship-works",
-    image: "/images/photo-gallery/child-sponsorship-program-007.jpeg",
   },
 ];
 
@@ -61,11 +32,8 @@ export default function AboutPage() {
         title="About Us"
         subtitle="We help vulnerable children and struggling churches in the Philippines fulfill their fullest potential and possibilities."
         variant="simple"
-        backgroundImage="/images/photo-gallery/child-church-partners-ministry-003.jpeg"
+        backgroundVideo="/images/children-singing-hero.mp4"
       />
-
-      {/* Image Strip */}
-      <ImageStrip images={aboutImages} />
 
       {/* Mission Section */}
       <section className="section-padding bg-white">
@@ -99,6 +67,7 @@ export default function AboutPage() {
                 src="/images/dani-rez.avif"
                 alt="Dani and Rez Sindac, Founders of Child & Church Partners"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -133,22 +102,14 @@ export default function AboutPage() {
           <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
             Learn More About Us
           </h2>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="mx-auto grid max-w-3xl gap-8 md:grid-cols-2">
             {features.map((feature) => (
               <Link
                 key={feature.title}
                 href={feature.href}
-                className="group overflow-hidden rounded-2xl bg-neutral-off-white transition-all hover:shadow-lg"
+                className="group rounded-2xl bg-neutral-off-white p-6 transition-all hover:shadow-lg"
               >
-                <div className="relative h-48">
-                  <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    fill
-                    className="object-cover transition-transform group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
+                <div>
                   <h3 className="mb-2 text-xl font-bold text-gray-900 transition-colors group-hover:text-primary-blue">
                     {feature.title}
                   </h3>

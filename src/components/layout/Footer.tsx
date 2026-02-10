@@ -36,8 +36,8 @@ export default function Footer() {
               Overcome Barriers. Lead Change.
             </p>
             <p className="text-sm text-gray-400">
-              U.S.-based Christian nonprofit helping children and churches in
-              the Philippines fulfill their fullest potential.
+              We walk alongside Filipino children in poverty and small churches
+              serving struggling communities in the Philippines.
             </p>
           </div>
 
@@ -87,8 +87,8 @@ export default function Footer() {
               </a>
             </p>
             <p className="mb-4 text-sm text-gray-400">
-              Child & Church Partners International is a 501(c)(3) nonprofit
-              organization.
+              We are a 501(c)(3) nonprofit organization. Your donations are
+              tax-deductible to the extent allowed by law.
             </p>
             {/* Social Links */}
             <div className="flex gap-4">

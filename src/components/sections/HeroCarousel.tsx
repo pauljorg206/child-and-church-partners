@@ -1,12 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
 
-interface HeroProps {
+interface HeroCarouselProps {
   title: string;
   subtitle?: string;
-  backgroundImage?: string;
-  backgroundVideo?: string;
+  backgroundImages: string[];
   primaryCta?: {
     label: string;
     href: string;
@@ -15,69 +17,55 @@ interface HeroProps {
     label: string;
     href: string;
   };
-  variant?: "default" | "simple" | "centered";
+  variant?: "default" | "centered";
   overlayOpacity?: number;
+  carouselInterval?: number;
 }
 
-export default function Hero({
+export default function HeroCarousel({
   title,
   subtitle,
-  backgroundImage,
-  backgroundVideo,
+  backgroundImages,
   primaryCta,
   secondaryCta,
   variant = "default",
   overlayOpacity = 0.5,
-}: HeroProps) {
+  carouselInterval = 5000,
+}: HeroCarouselProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (backgroundImages.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, carouselInterval);
+
+    return () => clearInterval(interval);
+  }, [backgroundImages.length, carouselInterval]);
+
   return (
     <section
-      className={cn(
-        "relative overflow-hidden",
-        variant === "simple" ? "py-16 sm:py-20" : "py-24 sm:py-32 lg:py-40"
-      )}
+      className={cn("relative overflow-hidden", "py-24 sm:py-32 lg:py-40")}
     >
-      {/* Background Image */}
-      {backgroundImage && (
-        <>
-          <Image
-            src={backgroundImage}
-            alt=""
-            fill
-            className="object-cover"
-            priority
-          />
-          <div
-            className="absolute inset-0 bg-gray-900"
-            style={{ opacity: overlayOpacity }}
-          />
-        </>
-      )}
+      {backgroundImages.map((img, index) => (
+        <Image
+          key={img}
+          src={img}
+          alt=""
+          fill
+          className={cn(
+            "object-cover transition-opacity duration-1000",
+            index === currentImageIndex ? "opacity-100" : "opacity-0"
+          )}
+          priority={index === 0}
+        />
+      ))}
+      <div
+        className="absolute inset-0 bg-gray-900"
+        style={{ opacity: overlayOpacity }}
+      />
 
-      {/* Background Video */}
-      {backgroundVideo && (
-        <>
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 h-full w-full object-cover"
-          >
-            <source src={backgroundVideo} type="video/mp4" />
-          </video>
-          <div
-            className="absolute inset-0 bg-gray-900"
-            style={{ opacity: overlayOpacity }}
-          />
-        </>
-      )}
-
-      {/* Fallback gradient background */}
-      {!backgroundImage && !backgroundVideo && (
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-blue to-blue-900" />
-      )}
-
-      {/* Content */}
       <div className="container-site relative z-10">
         <div
           className={cn(
@@ -85,14 +73,7 @@ export default function Hero({
             variant === "centered" && "mx-auto text-center"
           )}
         >
-          <h1
-            className={cn(
-              "text-balance font-bold text-white",
-              variant === "simple"
-                ? "text-3xl sm:text-4xl lg:text-5xl"
-                : "text-4xl sm:text-5xl lg:text-6xl"
-            )}
-          >
+          <h1 className="text-balance text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
             {title}
           </h1>
 

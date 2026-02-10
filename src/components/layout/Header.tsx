@@ -6,7 +6,6 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Home", href: "/" },
   {
     name: "About",
     href: "/about",
@@ -41,7 +40,20 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
   const dropdownRefs = useRef<Map<string, HTMLDivElement>>(new Map());
+
+  // Hide on scroll down, show on scroll up
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      setHidden(y > 80 && y > lastScrollY.current);
+      lastScrollY.current = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Handle keyboard navigation for dropdowns
   const handleKeyDown = useCallback(
@@ -129,7 +141,12 @@ export default function Header() {
         Skip to main content
       </a>
 
-      <header className="sticky top-0 z-50 bg-white shadow-sm">
+      <header
+        className={cn(
+          "sticky top-0 z-50 bg-white shadow-sm transition-transform duration-300",
+          hidden && !mobileMenuOpen && "-translate-y-full"
+        )}
+      >
         <nav className="container-site" aria-label="Main navigation">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}

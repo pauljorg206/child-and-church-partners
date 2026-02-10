@@ -1,9 +1,7 @@
-"use client";
-
 import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
 
-const DonationForm = dynamic(() => import("@/components/forms/DonationForm"), {
+const DonationFormWithPayPal = dynamic(() => import("./DonationFormWrapper"), {
   ssr: false,
   loading: () => (
     <div className="flex h-64 items-center justify-center">
@@ -73,7 +71,7 @@ export default function DonatePage() {
       <section className="section-padding bg-white">
         <div className="container-site">
           <div className="mx-auto max-w-4xl">
-            <DonationForm options={donationOptions} />
+            <DonationFormWithPayPal options={donationOptions} />
           </div>
         </div>
       </section>

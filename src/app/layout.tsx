@@ -5,7 +5,6 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import PayPalProvider from "@/components/providers/PayPalProvider";
 import {
   OrganizationSchema,
   WebsiteSchema,
@@ -74,13 +73,11 @@ export default function RootLayout({
         <WebsiteSchema />
       </head>
       <body className={inter.className}>
-        <PayPalProvider>
-          <Header />
-          <main id="main-content" className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
-        </PayPalProvider>
+        <Header />
+        <main id="main-content" className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
         <Analytics />
         {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />

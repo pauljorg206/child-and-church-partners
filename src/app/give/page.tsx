@@ -1,34 +1,14 @@
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
 import ProgramCard from "@/components/cards/ProgramCard";
-import ImageStrip from "@/components/sections/ImageStrip";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
-const giveImages = [
-  {
-    src: "/images/photo-gallery/feeding-ministry-children-003.jpeg",
-    alt: "Feeding ministry for children",
-  },
-  {
-    src: "/images/photo-gallery/child-education-support-004.jpeg",
-    alt: "Child education support",
-  },
-  {
-    src: "/images/photo-gallery/pastor-training-philippines-006.jpg",
-    alt: "Pastor training",
-  },
-  {
-    src: "/images/photo-gallery/church-community-outreach-005.jpeg",
-    alt: "Church community outreach",
-  },
-];
-
 export const metadata: Metadata = {
-  title: "Make a Difference",
+  title: "Be a Dream Releaser",
   description:
-    "Explore the many ways you can help children and churches in the Philippines through Child & Church Partners International.",
+    "Be a dream releaser — explore the many ways you can help children and churches in the Philippines through Child & Church Partners International.",
 };
 
 const programs = [
@@ -100,14 +80,11 @@ export default function GivePage() {
   return (
     <>
       <Hero
-        title="Make a Difference"
+        title="Be a Dream Releaser"
         subtitle="Help children and churches overcome and thrive."
         variant="simple"
         backgroundImage="/images/photo-gallery/ministry-philippines-ccpi-001.jpg"
       />
-
-      {/* Image Strip */}
-      <ImageStrip images={giveImages} />
 
       {/* Main Sponsorship Options */}
       <section className="section-padding bg-white">

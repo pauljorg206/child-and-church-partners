@@ -17,6 +17,7 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
+    "optimize-images": "node scripts/optimize-images.mjs",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -36,6 +37,7 @@
     "next": "14.2.20",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "sharp": "^0.34.5",
     "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
@@ -58,7 +60,6 @@
     "postcss": "^8.4.49",
     "prettier": "^3.8.0",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
     "vitest": "^4.0.17"
