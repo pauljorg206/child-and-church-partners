@@ -168,10 +168,7 @@ export default function OurApproachPage() {
           <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
             {approachPillars.map((pillar, index) => (
               <div key={index} className="rounded-2xl bg-white p-8 shadow-sm">
-                <div className="mb-4 flex items-start gap-4">
-                  <div className="text-4xl font-bold text-accent-gold/30">
-                    {pillar.number}
-                  </div>
+                <div className="mb-4 flex items-center gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary-blue/10">
                     <svg
                       className="h-6 w-6 text-primary-blue"
@@ -182,10 +179,10 @@ export default function OurApproachPage() {
                       {pillar.icon}
                     </svg>
                   </div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {pillar.title}
+                  </h3>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-gray-900">
-                  {pillar.title}
-                </h3>
                 <p className="text-gray-600">{pillar.description}</p>
               </div>
             ))}

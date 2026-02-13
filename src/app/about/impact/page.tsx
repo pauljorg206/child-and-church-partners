@@ -214,7 +214,7 @@ export default function ImpactPage() {
             <div className="grid gap-6 md:grid-cols-2">
               {programHighlights.map((program, index) => (
                 <div key={index} className="rounded-2xl bg-white p-6 shadow-sm">
-                  <div className="flex items-start gap-4">
+                  <div className="mb-4 flex items-center gap-4">
                     <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary-blue/10">
                       <svg
                         className="h-6 w-6 text-primary-blue"
@@ -225,15 +225,9 @@ export default function ImpactPage() {
                         {program.icon}
                       </svg>
                     </div>
-                    <div>
-                      <h3 className="mb-2 font-bold text-gray-900">
-                        {program.title}
-                      </h3>
-                      <p className="text-sm text-gray-600">
-                        {program.description}
-                      </p>
-                    </div>
+                    <h3 className="font-bold text-gray-900">{program.title}</h3>
                   </div>
+                  <p className="text-sm text-gray-600">{program.description}</p>
                 </div>
               ))}
             </div>
