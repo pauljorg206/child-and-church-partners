@@ -59,7 +59,7 @@ const nextConfig = {
               "font-src 'self'",
               "img-src 'self' data: https://static.wixstatic.com https://i.ytimg.com https://www.paypalobjects.com https://www.google-analytics.com",
               "connect-src 'self' https://api-m.paypal.com https://api-m.sandbox.paypal.com https://www.google-analytics.com https://vitals.vercel-insights.com",
-              "frame-src https://www.youtube.com https://www.paypal.com https://*.paypal.com",
+              "frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.paypal.com https://*.paypal.com",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self' https://api.web3forms.com",
