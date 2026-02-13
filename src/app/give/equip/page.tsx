@@ -143,9 +143,23 @@ export default function GiveToEquipPage() {
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
           <div className="mx-auto max-w-4xl">
-            <h2 className="mb-12 text-center text-3xl font-bold text-gray-900">
+            <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
               Meet the Pastors
             </h2>
+
+            <p className="mb-8 text-center text-lg text-gray-600">
+              These are the pastors Child &amp; Church Partners is currently
+              supporting.
+            </p>
+
+            <div className="relative mb-10 aspect-video overflow-hidden rounded-2xl">
+              <Image
+                src="/images/client/pastors.jpg"
+                alt="All pastors supported by Child & Church Partners"
+                fill
+                className="object-cover"
+              />
+            </div>
 
             <div className="space-y-8">
               {/* Pastor Ed - Image Left */}

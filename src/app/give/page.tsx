@@ -37,6 +37,7 @@ const programs = [
       "Sunday school materials",
       "Many other urgent needs",
     ],
+    image: "/images/church.jpeg",
     ctaLabel: "Sponsor a Church",
     ctaHref: "/donate",
   },

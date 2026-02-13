@@ -36,7 +36,7 @@ export default function WhyChurchesPage() {
         title="Why Churches"
         subtitle="Equip pastors to lead their communities with truth and grace."
         variant="simple"
-        backgroundImage="/images/photo-gallery/church-service-philippines-001.jpeg"
+        backgroundImage="/images/client/group-lunch.jpeg"
       />
 
       {/* Image + Quote Section */}
@@ -45,8 +45,8 @@ export default function WhyChurchesPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative h-80 overflow-hidden rounded-2xl lg:h-[400px]">
               <Image
-                src="/images/photo-gallery/church-community-service-001.jpeg"
-                alt="Church community in the Philippines"
+                src="/images/church.jpeg"
+                alt="Church service in the Philippines"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -111,8 +111,8 @@ export default function WhyChurchesPage() {
               <div className="overflow-hidden rounded-xl bg-white">
                 <div className="relative h-40">
                   <Image
-                    src="/images/photo-gallery/youth-leadership-training-002.jpg"
-                    alt="Leadership development"
+                    src="/images/client/youth.avif"
+                    alt="Youth leadership"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
@@ -128,8 +128,8 @@ export default function WhyChurchesPage() {
               <div className="overflow-hidden rounded-xl bg-white">
                 <div className="relative h-40">
                   <Image
-                    src="/images/water-baptism.jpeg"
-                    alt="Water baptism in the Philippines"
+                    src="/images/client/bible-11.jpg"
+                    alt="Bible study resources"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
@@ -141,38 +141,6 @@ export default function WhyChurchesPage() {
                     Books & study materials
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pastor Testimonial */}
-      <section className="section-padding bg-neutral-off-white">
-        <div className="container-site">
-          <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl bg-white shadow-lg">
-            <div className="grid md:grid-cols-2">
-              <div className="relative h-64 md:h-auto">
-                <Image
-                  src="/images/pastors.jpg"
-                  alt="Filipino pastors with training resources"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex flex-col justify-center p-8">
-                <span className="mb-2 inline-block text-sm font-semibold uppercase tracking-wider text-accent-gold">
-                  Pastor Story
-                </span>
-                <blockquote className="mb-4 text-xl italic text-gray-700">
-                  &ldquo;I want to learn more how to rightly handle the word of
-                  God.&rdquo;
-                </blockquote>
-                <div className="font-semibold text-gray-900">
-                  Pastor Jun Omboy
-                </div>
-                <div className="text-gray-600">Church Pastor, Philippines</div>
               </div>
             </div>
           </div>

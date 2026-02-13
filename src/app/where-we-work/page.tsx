@@ -16,7 +16,7 @@ export default function WhereWeWorkPage() {
         title="Where We Work"
         subtitle="Serving children and churches across the Philippines."
         variant="simple"
-        backgroundImage="/images/photo-gallery/community-outreach-event-003.jpeg"
+        backgroundImage="/images/client/community.jpeg"
       />
 
       {/* Introduction Section */}
@@ -36,8 +36,8 @@ export default function WhereWeWorkPage() {
             </p>
             <div className="relative aspect-video overflow-hidden rounded-2xl shadow-lg">
               <Image
-                src="/images/photo-gallery/nonprofit-ministry-philippines-001.jpg"
-                alt="Philippines ministry community"
+                src="/images/client/kids-play.jpeg"
+                alt="Children playing in the Philippines"
                 fill
                 className="object-cover"
               />
@@ -183,7 +183,7 @@ export default function WhereWeWorkPage() {
               <div className="overflow-hidden rounded-xl bg-white shadow-sm">
                 <div className="relative h-40">
                   <Image
-                    src="/images/photo-gallery/church-worship-philippines-006.jpeg"
+                    src="/images/client/church-group.jpeg"
                     alt="Partner churches"
                     fill
                     className="object-cover"
@@ -205,8 +205,8 @@ export default function WhereWeWorkPage() {
               <div className="overflow-hidden rounded-xl bg-white shadow-sm">
                 <div className="relative h-40">
                   <Image
-                    src="/images/photo-gallery/child-sponsorship-program-004.jpeg"
-                    alt="Children in need"
+                    src="/images/client/coloring.jpeg"
+                    alt="Children coloring"
                     fill
                     className="object-cover"
                   />
@@ -227,8 +227,8 @@ export default function WhereWeWorkPage() {
               <div className="overflow-hidden rounded-xl bg-white shadow-sm">
                 <div className="relative h-40">
                   <Image
-                    src="/images/photo-gallery/feeding-ministry-children-002.jpeg"
-                    alt="Holistic support"
+                    src="/images/client/scholar-1.jpeg"
+                    alt="Sponsored scholar"
                     fill
                     className="object-cover"
                   />
