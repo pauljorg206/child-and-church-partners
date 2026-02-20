@@ -415,8 +415,10 @@ export default function DonationForm({ options }: DonationFormProps) {
                 About Child & Church Partners
               </h4>
               <p className="mb-3 text-sm text-gray-600">
-                We transform lives in the Philippines by sponsoring children,
-                equipping pastors, and strengthening local churches.
+                We help Filipino children, churches, and communities grow in
+                faith, lead effectively, and serve faithfully. We are a
+                501(c)(3) nonprofit organization. Your donations are
+                tax-deductible to the extent allowed by law.
               </p>
               <div className="flex items-start gap-2 text-sm text-gray-600">
                 <svg

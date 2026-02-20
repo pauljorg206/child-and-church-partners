@@ -17,39 +17,42 @@ const DonationFormWithPayPal = dynamic(() => import("./DonationFormWrapper"), {
 const donationOptions = [
   {
     id: "child",
-    title: "Sponsor a Child",
-    amount: 35,
+    title: "Sponsor a Child: Feeding Outreach",
+    amount: 20,
     description:
-      "Education, health support, and community for a child in need.",
+      "Each week, your support provides a healthy meal for a child in need, along with biblical teaching and opportunities to make friends.",
+    recurring: true,
+  },
+  {
+    id: "student",
+    title: "Sponsor a Student",
+    amount: 25,
+    description:
+      "You can help a family break the cycle of poverty by supporting a student in completing their education.",
     recurring: true,
   },
   {
     id: "church",
     title: "Sponsor a Church",
-    amount: 50,
-    description: "Training, resources, and support for a local church.",
+    amount: 30,
+    description:
+      "Your generosity equips pastors of small rural churches with biblical training and practical resources to shepherd their congregations more effectively.",
     recurring: true,
   },
   {
     id: "backpack",
-    title: "Back-to-School Backpack",
+    title: "Back-to-School Blessing",
     amount: 20,
     description:
-      "Provide a backpack and school supplies for a child at the start of the school year, for distribution in May.",
-    recurring: false,
-  },
-  {
-    id: "feeding",
-    title: "Weekly Feeding Program",
-    amount: 25,
-    description: "Provide four nutritious meals for a child each month.",
+      "Your once-a-year sponsorship provides a child in need with a backpack filled with essential school supplies to help them get a head start in class.",
     recurring: false,
   },
   {
     id: "equip",
     title: "Give to Equip",
     amount: null,
-    description: "Support pastor training and education.",
+    description:
+      "Your financial support helps build our Equipping Center\u2014a place where pastors and emerging leaders grow in biblical knowledge, leadership, and the daily application of God\u2019s Word.",
     recurring: false,
   },
   {
@@ -57,7 +60,7 @@ const donationOptions = [
     title: "Other Urgent Needs",
     amount: null,
     description:
-      "Your gift helps communities thrive even in the midst of many challenges: church repairs/construction, livelihood opportunities, vocational training, and disaster relief.",
+      "Help a small congregation build or repair their church. Bring hope and support to a community affected by storms and disasters.",
     recurring: false,
   },
 ];

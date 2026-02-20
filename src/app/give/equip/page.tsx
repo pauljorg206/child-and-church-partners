@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function GiveToEquipPage() {
-  const raised = 18000;
+  const raised = 19500;
   const goal = 40000;
   const percentage = Math.round((raised / goal) * 100);
   const [shareMenuOpen, setShareMenuOpen] = useState(false);

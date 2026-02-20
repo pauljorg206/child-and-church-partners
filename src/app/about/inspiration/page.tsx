@@ -117,7 +117,7 @@ export default function InspirationPage() {
                 hadn&apos;t been there for her, she might have returned to
                 Phoenix.
               </p>
-              <p className="text-gray-600">
+              <p className="mt-6 text-gray-600">
                 Eventually, Mommy Zelma&apos;s friends and church family started
                 sending her financial support. Her mother church in Phoenix
                 donated funds to buy a property in Naic, Cavite. On this piece

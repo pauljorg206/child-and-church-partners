@@ -62,8 +62,10 @@ export default function WhyChurchesPage() {
               </blockquote>
               <p className="text-lg text-gray-600">
                 Most Filipino churches are small, rural congregations with very
-                scarce resources. Pastors often work other jobs to support their
-                families while serving their communities faithfully.
+                limited resources. Many pastors take on odd jobs to support
+                their families while faithfully serving their communities. Your
+                support helps provide the tools and resources they need to
+                preach, disciple, and serve more effectively.
               </p>
             </div>
           </div>

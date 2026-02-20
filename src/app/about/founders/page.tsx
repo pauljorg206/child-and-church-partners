@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const timeline = [
   {
+    year: "1985",
+    title: "Received Jesus as Lord and Savior",
+    description:
+      "Dani and Rez, at separate times, received Jesus as their personal Lord and Savior. They became friends and served together at their first church, Church On The Rock in Quezon City, Philippines, under the leadership of Norman and Anne LaBarre, missionaries and church planters from Church On The Rock in Rockwall, TX.",
+  },
+  {
     year: "1987",
     title: "Valley Cathedral Philippines Founded",
     description:
@@ -154,10 +160,9 @@ export default function FoundersPage() {
         <div className="container-site">
           <div className="mx-auto max-w-3xl text-center">
             <blockquote className="mb-6 text-2xl italic text-white sm:text-3xl">
-              &ldquo;We believe that when we invest in children and churches, we
-              invest in the future of the Philippines. Every child we sponsor,
-              every pastor we equip, every church we support—it all contributes
-              to a brighter tomorrow.&rdquo;
+              &ldquo;When we invest in the physical and spiritual needs of
+              children today, and when we equip grassroots churches, we are
+              strengthening families and the future of our nation.&rdquo;
             </blockquote>
             <div className="font-semibold text-accent-gold">
               — Dani and Rez Sindac

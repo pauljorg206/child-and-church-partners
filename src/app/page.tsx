@@ -61,15 +61,15 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
-            {/* Child Sponsorship Card */}
+          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+            {/* Feeding Outreach Card */}
             <div className="overflow-hidden rounded-2xl bg-white shadow-lg">
               <div className="relative h-48">
                 <Image
-                  src="/images/photo-gallery/sponsored-child-philippines-002.jpg"
-                  alt="Sponsored child in the Philippines"
+                  src="/images/photo-gallery/feeding-program-philippines-003.jpeg"
+                  alt="Children at a feeding outreach"
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -79,19 +79,53 @@ export default function Home() {
                     Sponsor a Child
                   </h3>
                   <span className="text-lg font-semibold text-accent-gold">
-                    $35/mo
+                    $20/mo
                   </span>
                 </div>
                 <ul className="mb-4 space-y-1 text-sm text-gray-600">
-                  <li>• Education & school supplies</li>
-                  <li>• Health & nutrition support</li>
-                  <li>• Community & spiritual growth</li>
+                  <li>• Weekly nutritious meals</li>
+                  <li>• Biblical teaching & friends</li>
+                  <li>• 250 children ages 5-10</li>
                 </ul>
                 <Link
                   href="/donate"
                   className="btn btn-primary w-full text-center"
                 >
                   Sponsor a Child
+                </Link>
+              </div>
+            </div>
+
+            {/* Student Sponsorship Card */}
+            <div className="overflow-hidden rounded-2xl bg-white shadow-lg">
+              <div className="relative h-48">
+                <Image
+                  src="/images/scholars.jpg"
+                  alt="Sponsored scholars"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <div className="mb-2 flex items-baseline justify-between">
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Sponsor a Student
+                  </h3>
+                  <span className="text-lg font-semibold text-accent-gold">
+                    $25/mo
+                  </span>
+                </div>
+                <ul className="mb-4 space-y-1 text-sm text-gray-600">
+                  <li>• Tuition, computers & books</li>
+                  <li>• Health & nutrition support</li>
+                  <li>• 30 scholars, grade school to college</li>
+                </ul>
+                <Link
+                  href="/donate"
+                  className="btn btn-primary w-full text-center"
+                >
+                  Sponsor a Student
                 </Link>
               </div>
             </div>
@@ -103,7 +137,7 @@ export default function Home() {
                   src="/images/church.jpeg"
                   alt="Church in the Philippines"
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -113,7 +147,7 @@ export default function Home() {
                     Sponsor a Church
                   </h3>
                   <span className="text-lg font-semibold text-accent-gold">
-                    $50/mo
+                    $30/mo
                   </span>
                 </div>
                 <ul className="mb-4 space-y-1 text-sm text-gray-600">
@@ -139,7 +173,7 @@ export default function Home() {
         description="Watch How Generosity Transforms Lives"
         videoId="3-yo0YX7OG4"
         quote={{
-          text: "Because you care enough to pray and give, many children and families living in poverty experience the loving kindness of God.",
+          text: "Children are both a blessing and a responsibility. Our desire is to see them grow physically and spiritually, prepared to lead and serve with reverence for God. When we shepherd our children with truth and grace, we are strengthening the future of families and nations.",
           author: "Dani Sindac",
           title: "Co-Founder",
         }}

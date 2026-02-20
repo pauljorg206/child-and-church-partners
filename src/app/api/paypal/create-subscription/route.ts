@@ -4,10 +4,13 @@ import { NextRequest, NextResponse } from "next/server";
 // These must be created in PayPal Dashboard first
 function getPlanId(programType: string, amount: number): string | null {
   // Check for predefined plans
-  if (programType === "child" && amount === 35) {
+  if (programType === "child" && amount === 20) {
     return process.env.PAYPAL_PLAN_ID_CHILD || null;
   }
-  if (programType === "church" && amount === 50) {
+  if (programType === "student" && amount === 25) {
+    return process.env.PAYPAL_PLAN_ID_STUDENT || null;
+  }
+  if (programType === "church" && amount === 30) {
     return process.env.PAYPAL_PLAN_ID_CHURCH || null;
   }
   // For custom recurring amounts, you would need to create plans dynamically

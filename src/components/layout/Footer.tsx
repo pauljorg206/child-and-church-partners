@@ -11,8 +11,7 @@ const quickLinks = [
 
 const getInvolved = [
   { name: "Donate", href: "/donate" },
-  { name: "Sponsor a Child", href: "/donate" },
-  { name: "Sponsor a Church", href: "/donate" },
+  { name: "Other Ways to Give", href: "/give" },
   { name: "Contact Us", href: "/contact" },
 ];
 

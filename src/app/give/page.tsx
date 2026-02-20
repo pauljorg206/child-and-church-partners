@@ -1,6 +1,5 @@
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
-import ProgramCard from "@/components/cards/ProgramCard";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -11,67 +10,52 @@ export const metadata: Metadata = {
     "Be a dream releaser — explore the many ways you can help children and churches in the Philippines through Child & Church Partners International.",
 };
 
-const programs = [
+const givingOptions = [
   {
-    title: "Sponsor a Child",
-    amount: "$35/month",
+    title: "Sponsor a Child: Feeding Outreach",
+    amount: "$20/month",
     description:
-      "Your gift can positively change the life of a child today and eternally.",
-    bulletPoints: [
-      "Transportation and lunch assistance",
-      "Provision for school supplies and projects",
-      "Health and nutrition support",
-      "A vibrant and supportive church community",
-    ],
-    ctaLabel: "Sponsor a Child",
-    ctaHref: "/donate",
-  },
-  {
-    title: "Sponsor a Church",
-    amount: "$50/month",
-    description:
-      "Your gift helps small rural churches serve their communities in tangible and lasting ways.",
-    bulletPoints: [
-      "Host outreach events and training",
-      "Purchase musical instruments and chairs",
-      "Sunday school materials",
-      "Many other urgent needs",
-    ],
-    image: "/images/church.jpeg",
-    ctaLabel: "Sponsor a Church",
-    ctaHref: "/donate",
-  },
-];
-
-const campaigns = [
-  {
-    title: "Back-to-School Backpack Campaign",
-    description:
-      "As many as 250 Filipino children living in poverty each receive a sturdy backpack filled with school supplies at the beginning of each school year.",
-    impact:
-      "Your support gives children from low-income families the head start they need to succeed.",
-    image: "/images/photo-gallery/child-education-support-002.jpg",
-    imageAlt: "Children with school supplies",
-  },
-  {
-    title: "Feeding Outreach",
-    description:
-      "Once a week, 200 to 250 children eat a nutritious meal at our local churches.",
-    impact:
-      "This weekly children's feeding program is an opportunity for churches to reach out to children and their families with the love and hope found in Jesus.",
+      "Weekly feeding program for 250 children ages 5-10 years old. Providing four nutritious meals for a child each month.",
     image: "/images/photo-gallery/feeding-program-philippines-003.jpeg",
     imageAlt: "Children eating nutritious meals",
   },
   {
-    title: "Other Urgent Needs",
+    title: "Sponsor a Student",
+    amount: "$25/month",
     description:
-      "Your gift helps communities thrive even in the midst of many challenges.",
-    bulletPoints: [
-      "Church repairs and construction",
-      "Livelihood opportunities for families",
-      "Vocational training for youth",
-      "Disaster relief for affected families",
-    ],
+      "Your help lightens the financial burden on struggling families, making it possible for students to attend school, graduate, and pursue a better future for their families.",
+    image: "/images/scholars.jpg",
+    imageAlt: "Sponsored scholars studying",
+  },
+  {
+    title: "Sponsor a Church",
+    amount: "$30/month",
+    description:
+      "Help equip small, rural churches with tools and resources that can bring lasting hope to an entire community.",
+    image: "/images/church.jpeg",
+    imageAlt: "Church in the Philippines",
+  },
+  {
+    title: "Back-to-School Backpack",
+    amount: "$20/child",
+    description:
+      "As many as 250 Filipino children living in poverty each receive a sturdy backpack filled with school supplies at the beginning of each school year. Your support gives children from low-income families the head start they need to succeed.",
+    image: "/images/photo-gallery/child-education-support-002.jpg",
+    imageAlt: "Children with school supplies",
+  },
+  {
+    title: "Give to Equip",
+    amount: "Any Amount",
+    description:
+      "Support a pastor's need for biblical training, study materials, and a mentoring community.",
+    image: "/images/pastors-training.jpeg",
+    imageAlt: "Pastors receiving training",
+  },
+  {
+    title: "Other Urgent Needs",
+    amount: "Any Amount",
+    description:
+      "Your gift helps communities thrive even in the midst of many challenges: church repairs and construction, livelihood opportunities, vocational training, and disaster relief.",
     image: "/images/photo-gallery/church-community-service-005.jpg",
     imageAlt: "Church community service",
   },
@@ -87,29 +71,55 @@ export default function GivePage() {
         backgroundImage="/images/photo-gallery/ministry-philippines-ccpi-001.jpg"
       />
 
-      {/* Main Sponsorship Options */}
+      {/* All Giving Options */}
       <section className="section-padding bg-white">
         <div className="container-site">
           <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
-            Sponsorship Programs
+            Choose Your Impact
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
-            Choose how you want to make a lasting impact in the Philippines.
+            Every gift makes a lasting difference in the Philippines.
           </p>
 
-          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-            {programs.map((program) => (
-              <ProgramCard
-                key={program.title}
-                title={program.title}
-                amount={program.amount}
-                description={program.description}
-                bulletPoints={program.bulletPoints}
-                ctaLabel={program.ctaLabel}
-                ctaHref={program.ctaHref}
-              />
+          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {givingOptions.map((option) => (
+              <div
+                key={option.title}
+                className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl"
+              >
+                <div className="relative h-44">
+                  <Image
+                    src={option.image}
+                    alt={option.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="mb-1 text-lg font-bold text-gray-900">
+                    {option.title}
+                  </h3>
+                  <div className="mb-3 text-2xl font-bold text-accent-gold">
+                    {option.amount}
+                  </div>
+                  <p className="mb-5 text-sm text-gray-600">
+                    {option.description}
+                  </p>
+                  <Link
+                    href="/donate"
+                    className="inline-block w-full rounded-lg bg-primary-blue px-6 py-3 text-center font-semibold text-white transition-all hover:bg-blue-700"
+                  >
+                    Give Now
+                  </Link>
+                </div>
+              </div>
             ))}
           </div>
+
+          <p className="mx-auto mt-10 max-w-xl text-center text-sm text-gray-500">
+            All donations are tax-deductible to the extent allowed by law.
+          </p>
         </div>
       </section>
 
@@ -135,78 +145,6 @@ export default function GivePage() {
         </div>
       </section>
 
-      {/* Campaign Giving */}
-      <section className="section-padding bg-neutral-off-white">
-        <div className="container-site">
-          <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:text-4xl">
-            Campaign Giving
-          </h2>
-          <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
-            Support specific initiatives that make a direct impact.
-          </p>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {campaigns.map((campaign) => (
-              <div
-                key={campaign.title}
-                className="overflow-hidden rounded-2xl bg-white shadow-sm"
-              >
-                <div className="relative h-40">
-                  <Image
-                    src={campaign.image}
-                    alt={campaign.imageAlt}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="mb-3 text-xl font-bold text-gray-900">
-                    {campaign.title}
-                  </h3>
-                  <p className="mb-4 text-sm text-gray-600">
-                    {campaign.description}
-                  </p>
-                  {campaign.impact && (
-                    <p className="mb-4 text-sm font-medium text-primary-blue">
-                      {campaign.impact}
-                    </p>
-                  )}
-                  {campaign.bulletPoints && (
-                    <ul className="mb-4 space-y-2">
-                      {campaign.bulletPoints.map((point) => (
-                        <li
-                          key={point}
-                          className="flex items-start gap-2 text-sm text-gray-600"
-                        >
-                          <svg
-                            className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent-gold"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  <Link
-                    href="/donate"
-                    className="font-medium text-primary-blue transition-colors hover:text-blue-700"
-                  >
-                    Give Now &rarr;
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Join Us on a Mission Section */}
       <section className="section-padding bg-white">
         <div className="container-site">
@@ -215,25 +153,23 @@ export default function GivePage() {
               <h2 className="mb-4 text-2xl font-bold text-gray-900">
                 Join Us on a Mission
               </h2>
-              <p className="mb-4 text-xl font-semibold text-accent-gold">
-                Cost: $5,000
+              <p className="mb-4 text-gray-600">
+                Our mission trips to the Philippines are designed to immerse you
+                in meaningful service. You&apos;ll meet the children, serve
+                alongside local churches, and experience the heart of our
+                ministry firsthand.
               </p>
               <p className="mb-4 text-gray-600">
-                Our missions in the Philippines last two weeks and are designed
-                to immerse you in meaningful service. The mission cost covers
-                your round-trip airfare, housing, meals, and accommodations for
-                the full two weeks. Nearly half of the mission cost goes
-                directly to supporting the children we serve.
+                The full mission cost of $5,000 covers round-trip airfare,
+                comfortable accommodations, meals, and in-country expenses for
+                two weeks. Half of your contribution goes directly to blessing
+                the ministry and communities you&apos;re serving.
               </p>
-              <p className="mb-4 text-gray-600">
-                During your time with us, you&apos;ll have the opportunity to
-                meet the children, serve alongside the community, and live out
-                the Lord&apos;s calling to be His hands and feet.
-              </p>
-              <p className="mb-6 text-sm text-gray-500">
-                Mission costs do not include personal spending money or any
-                food, lodging, or expenses incurred in the city before or after
-                the mission dates.
+              <p className="mb-4 font-medium text-primary-blue">
+                We don&apos;t want cost to be a barrier. If you feel called to
+                go but the full amount is out of reach, please reach out to us.
+                We&apos;re happy to work with you on flexible arrangements so
+                you can be part of this experience.
               </p>
               <Link href="/contact" className="btn-primary">
                 Contact Us About Upcoming Missions

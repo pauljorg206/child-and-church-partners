@@ -98,14 +98,18 @@ export default function WhyChildrenPage() {
                   Every Child Has a Dream
                 </h3>
                 <p className="mb-4 text-gray-600">
-                  With sponsorship, children receive education, nutrition, and
-                  community— giving them the tools to break free from
-                  generational poverty.
+                  Every year, with your support, 30 students&mdash;from grade
+                  school to college&mdash;are given the resources they need to
+                  succeed in school. Your donation of $25 a month helps provide
+                  for a student&apos;s:
                 </p>
-                <p className="text-gray-600">
-                  Your $35/month provides school supplies, meals, healthcare
-                  support, and a caring church family.
-                </p>
+                <ul className="space-y-1 text-gray-600">
+                  <li>&#8226; transportation and lunch</li>
+                  <li>&#8226; school supplies and projects</li>
+                  <li>&#8226; health and nutrition support</li>
+                  <li>&#8226; tuition, computers, and books</li>
+                  <li>&#8226; a supportive, God-fearing community</li>
+                </ul>
               </div>
             </div>
           </div>
