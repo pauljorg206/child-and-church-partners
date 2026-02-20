@@ -83,8 +83,8 @@ export default function WhyChildrenPage() {
             <div className="grid md:grid-cols-2">
               <div className="relative h-64 md:h-auto">
                 <Image
-                  src="/images/scholars.jpg"
-                  alt="Sponsored scholars studying together"
+                  src="/images/client/filipino-children-smiling.png"
+                  alt="Two smiling Filipino children"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
