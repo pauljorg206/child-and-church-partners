@@ -40,8 +40,8 @@ const givingOptions = [
     amount: "$20/child",
     description:
       "As many as 250 Filipino children living in poverty each receive a sturdy backpack filled with school supplies at the beginning of each school year. Your support gives children from low-income families the head start they need to succeed.",
-    image: "/images/photo-gallery/child-education-support-002.jpeg",
-    imageAlt: "Children with school supplies",
+    image: "/images/photo-gallery/filipino-youth-gathering-005.jpg",
+    imageAlt: "Boy holding a thank you sign",
   },
   {
     title: "Give to Equip",
@@ -68,7 +68,7 @@ export default function GivePage() {
         title="Be a Dream Releaser"
         subtitle="Help children and churches overcome and thrive."
         variant="simple"
-        backgroundImage="/images/photo-gallery/filipino-youth-gathering-005.jpg"
+        backgroundImage="/images/photo-gallery/child-education-support-002.jpeg"
       />
 
       {/* All Giving Options */}
