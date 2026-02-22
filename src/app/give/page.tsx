@@ -16,7 +16,7 @@ const givingOptions = [
     amount: "$20/month",
     description:
       "Weekly feeding program for 250 children ages 5-10 years old. Providing four nutritious meals for a child each month.",
-    image: "/images/photo-gallery/feeding-program-philippines-003.jpeg",
+    image: "/images/photo-gallery/feeding-program-philippines-003.jpg",
     imageAlt: "Children eating nutritious meals",
   },
   {
@@ -40,7 +40,7 @@ const givingOptions = [
     amount: "$20/child",
     description:
       "As many as 250 Filipino children living in poverty each receive a sturdy backpack filled with school supplies at the beginning of each school year. Your support gives children from low-income families the head start they need to succeed.",
-    image: "/images/photo-gallery/child-education-support-002.jpg",
+    image: "/images/photo-gallery/child-education-support-002.jpeg",
     imageAlt: "Children with school supplies",
   },
   {
@@ -68,7 +68,7 @@ export default function GivePage() {
         title="Be a Dream Releaser"
         subtitle="Help children and churches overcome and thrive."
         variant="simple"
-        backgroundImage="/images/photo-gallery/ministry-philippines-ccpi-001.jpg"
+        backgroundImage="/images/photo-gallery/filipino-youth-gathering-005.jpg"
       />
 
       {/* All Giving Options */}
@@ -85,7 +85,7 @@ export default function GivePage() {
             {givingOptions.map((option) => (
               <div
                 key={option.title}
-                className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl"
+                className="flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl"
               >
                 <div className="relative h-44">
                   <Image
@@ -96,7 +96,7 @@ export default function GivePage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-6">
                   <h3 className="mb-1 text-lg font-bold text-gray-900">
                     {option.title}
                   </h3>
@@ -108,7 +108,7 @@ export default function GivePage() {
                   </p>
                   <Link
                     href="/donate"
-                    className="inline-block w-full rounded-lg bg-primary-blue px-6 py-3 text-center font-semibold text-white transition-all hover:bg-blue-700"
+                    className="mt-auto inline-block w-full rounded-lg bg-primary-blue px-6 py-3 text-center font-semibold text-white transition-all hover:bg-blue-700"
                   >
                     Give Now
                   </Link>

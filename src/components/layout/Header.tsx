@@ -150,17 +150,14 @@ export default function Header() {
         <nav className="container-site" aria-label="Main navigation">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center">
               <Image
-                src="/images/Child & Church Partners LOGO TRANSPARENT.png"
-                alt="Child & Church Partners"
-                width={60}
-                height={60}
-                className="h-12 w-auto"
+                src="/images/photo-gallery/feeding-program-philippines-005.png"
+                alt="Child & Church Partners - Overcome Barriers. Lead Change."
+                width={280}
+                height={40}
+                className="h-10 w-auto"
               />
-              <span className="hidden text-lg font-bold text-primary-blue sm:block">
-                CHILD & CHURCH PARTNERS INTERNATIONAL
-              </span>
             </Link>
 
             {/* Desktop Navigation */}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import DonationTracker from "@/components/analytics/DonationTracker";
 import { useEffect, useState } from "react";
 
@@ -48,6 +49,17 @@ export default function ThankYouPage() {
       />
       <div className="container-site section-padding">
         <div className="mx-auto max-w-2xl text-center">
+          {/* Thank You Photo */}
+          <div className="relative mx-auto mb-8 h-64 w-full max-w-md overflow-hidden rounded-2xl">
+            <Image
+              src="/images/photo-gallery/ministry-philippines-ccpi-006.jpeg"
+              alt="A scholar girl holding a 'God Bless!' sign"
+              fill
+              sizes="(max-width: 448px) 100vw, 448px"
+              className="object-cover"
+            />
+          </div>
+
           {/* Success Icon */}
           <div className="mb-8 flex justify-center">
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-green-100">

@@ -45,8 +45,8 @@ export default function WhyChildrenPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative h-80 overflow-hidden rounded-2xl lg:h-[400px]">
               <Image
-                src="/images/feeding-3.jpg"
-                alt="Children feeding program in the Philippines"
+                src="/images/photo-gallery/church-service-philippines-007.jpeg"
+                alt="A girl holding a thank you sign showing the impact of sponsorship"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

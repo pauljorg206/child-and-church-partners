@@ -72,6 +72,7 @@ export default function DonatePage() {
         title="Donate"
         subtitle="Your generosity transforms lives and communities in the Philippines."
         variant="simple"
+        backgroundImage="/images/photo-gallery/feeding-ministry-children-007.jpg"
       />
 
       {/* Donation Form Section */}

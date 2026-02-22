@@ -192,8 +192,6 @@ export const galleryImages: GalleryImage[] = [
   "feeding-program-philippines-002.jpeg",
   "feeding-program-philippines-003.jpg",
   "feeding-program-philippines-004.jpg",
-  "feeding-program-philippines-005.png",
-  "feeding-program-philippines-006.png",
   "feeding-program-philippines-007.jpg",
   "feeding-program-philippines-008.jpg",
   "feeding-program-philippines-009.jpg",
@@ -225,8 +223,6 @@ export const galleryImages: GalleryImage[] = [
   "meal-program-filipinos-008.jpeg",
   "meal-program-filipinos-009.jpeg",
   // Community
-  "community-outreach-event-001.png",
-  "community-outreach-event-002.png",
   "community-outreach-event-003.jpeg",
   "community-outreach-event-004.jpg",
   "community-outreach-event-005.jpeg",
@@ -271,7 +267,6 @@ export const galleryImages: GalleryImage[] = [
   "christian-outreach-philippines-008.jpg",
   "christian-outreach-philippines-009.jpeg",
   "mission-work-philippines-001.jpeg",
-  "mission-work-philippines-002.png",
   "mission-work-philippines-003.jpeg",
   "mission-work-philippines-004.jpg",
   "mission-work-philippines-005.jpg",
@@ -312,16 +307,6 @@ export const galleryImages: GalleryImage[] = [
   category: getCategory(filename),
   caption: generateCaption(filename),
 }));
-
-// Insert the CCPI logo in the middle of the gallery
-const logoImage: GalleryImage = {
-  src: "/images/Child & Church Partners LOGO TRANSPARENT.png",
-  alt: "Child & Church Partners International Logo - Filipino non-profit organization helping children and churches in the Philippines",
-  category: "All",
-  caption: "Child & Church Partners International",
-};
-const middleIndex = Math.floor(galleryImages.length / 2);
-galleryImages.splice(middleIndex, 0, logoImage);
 
 // Pre-compute category counts
 export const categoryCounts: Record<string, number> = {

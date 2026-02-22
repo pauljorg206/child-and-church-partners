@@ -205,7 +205,7 @@ export default function SponsorshipWorksPage() {
             <div className="grid items-center gap-12 md:grid-cols-2">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="https://static.wixstatic.com/media/6ebd37_1f58d1c8c00446efbeb6d65a68dcb0d7~mv2.jpeg"
+                  src="/images/photo-gallery/church-community-service-002.jpeg"
                   alt="Sponsored child receiving education support"
                   fill
                   className="object-cover"
