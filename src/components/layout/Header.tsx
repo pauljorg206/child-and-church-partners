@@ -143,7 +143,7 @@ export default function Header() {
 
       <header
         className={cn(
-          "sticky top-0 z-50 bg-white shadow-sm transition-transform duration-300",
+          "sticky top-0 z-50 bg-primary-blue shadow-sm transition-transform duration-300",
           hidden && !mobileMenuOpen && "-translate-y-full"
         )}
       >
@@ -178,7 +178,7 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className="font-medium text-gray-700 transition-colors hover:text-primary-blue"
+                    className="font-medium text-white transition-colors hover:text-accent-gold"
                     aria-haspopup={item.children ? "true" : undefined}
                     aria-expanded={
                       item.children ? openDropdown === item.name : undefined
@@ -248,7 +248,7 @@ export default function Header() {
               {/* Mobile Menu Button */}
               <button
                 type="button"
-                className="rounded-md p-2 text-gray-700 lg:hidden"
+                className="rounded-md p-2 text-white lg:hidden"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
@@ -303,7 +303,7 @@ export default function Header() {
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="block rounded-lg px-4 py-2 font-medium text-gray-700 hover:bg-gray-50"
+                    className="block rounded-lg px-4 py-2 font-medium text-white hover:bg-white/10"
                     onClick={() => setMobileMenuOpen(false)}
                     tabIndex={mobileMenuOpen ? 0 : -1}
                   >
@@ -315,7 +315,7 @@ export default function Header() {
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block rounded-lg px-4 py-2 text-sm text-gray-600 hover:bg-gray-50"
+                          className="block rounded-lg px-4 py-2 text-sm text-blue-100 hover:bg-white/10"
                           onClick={() => setMobileMenuOpen(false)}
                           tabIndex={mobileMenuOpen ? 0 : -1}
                         >
