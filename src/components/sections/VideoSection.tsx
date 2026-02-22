@@ -1,5 +1,3 @@
-import { YouTubeEmbed } from "@next/third-parties/google";
-
 interface VideoSectionProps {
   title: string;
   description?: string;
@@ -32,9 +30,15 @@ export default function VideoSection({
         </div>
 
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-          {/* Video Embed - lazy loaded via lite-youtube facade */}
           <div className="aspect-video overflow-hidden rounded-2xl shadow-xl">
-            <YouTubeEmbed videoid={videoId} params="rel=0" />
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0`}
+              title={title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+              className="h-full w-full"
+            />
           </div>
 
           {/* Quote */}

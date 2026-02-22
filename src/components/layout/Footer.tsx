@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo and Tagline */}
           <div>
-            <Link href="/" className="mb-4 flex items-center gap-2">
+            <Link href="/" className="mb-4 flex items-center gap-3">
               <Image
                 src="/images/Child & Church Partners LOGO TRANSPARENT.png"
                 alt="Child & Church Partners"
@@ -30,10 +30,12 @@ export default function Footer() {
                 height={50}
                 className="h-12 w-auto"
               />
+              <span className="text-sm font-medium text-gray-300">
+                Overcome Barriers.
+                <br />
+                Lead Change.
+              </span>
             </Link>
-            <p className="mb-4 text-sm text-gray-300">
-              Overcome Barriers. Lead Change.
-            </p>
             <p className="text-sm text-gray-300">
               We walk alongside Filipino children in poverty and small churches
               serving struggling communities in the Philippines.
@@ -127,24 +129,20 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-800 pt-8 sm:flex-row">
-          <div className="flex flex-col items-center gap-2 sm:items-start">
-            <p className="text-sm text-gray-400">
-              &copy; {new Date().getFullYear()} Child & Church Partners
-              International. All rights reserved.
-            </p>
-            <p className="text-sm text-gray-400">
-              Made by{" "}
-              <a
-                href="https://www.naloseed.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-white"
-              >
-                Nalo Seed
-              </a>
-            </p>
-          </div>
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-gray-800 pb-2 pt-6 sm:flex-row">
+          <p className="text-sm text-gray-400">
+            &copy; {new Date().getFullYear()} Child & Church Partners
+            International. All rights reserved.{" "}
+            <span className="text-gray-500">|</span> Website by{" "}
+            <a
+              href="https://www.naloseed.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-white"
+            >
+              Nalo Seed
+            </a>
+          </p>
           <div className="flex gap-6 text-sm">
             <Link
               href="/privacy"

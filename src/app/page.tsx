@@ -66,7 +66,7 @@ export default function Home() {
             <div className="overflow-hidden rounded-2xl bg-white shadow-lg">
               <div className="relative h-48">
                 <Image
-                  src="/images/photo-gallery/feeding-program-philippines-003.jpeg"
+                  src="/images/photo-gallery/feeding-program-philippines-003.jpg"
                   alt="Children at a feeding outreach"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
