@@ -162,7 +162,7 @@ export const searchData: SearchItem[] = [
   {
     title: "How do I sponsor a child?",
     description:
-      "Visit our donation page to start sponsoring a child for $35 per month. You can choose to sponsor a specific child or let us match you with a child in need.",
+      "Visit our donation page to start sponsoring a child for $25 per month. You can choose to sponsor a specific child or let us match you with a child in need.",
     url: "/faq",
     category: "faq",
     keywords: ["sponsor", "child", "how to", "start"],
@@ -170,7 +170,7 @@ export const searchData: SearchItem[] = [
   {
     title: "How much does sponsorship cost?",
     description:
-      "Child sponsorship is $35 per month. Church partnership is $50 per month. You can also make one-time donations of any amount.",
+      "Child sponsorship is $25 per month. Church partnership is $30 per month. You can also make one-time donations of any amount.",
     url: "/faq",
     category: "faq",
     keywords: ["cost", "price", "amount", "sponsorship"],

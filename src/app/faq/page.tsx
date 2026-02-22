@@ -38,13 +38,13 @@ const faqData = {
     {
       question: "How does child sponsorship work?",
       answer:
-        "When you sponsor a child for $35 per month, your support provides educational assistance (transportation, school supplies), health and nutrition support, and connection to a vibrant church community. Your sponsorship helps break the cycle of poverty by giving children the resources they need to succeed.",
+        "When you sponsor a child for $25 per month, your support provides educational assistance (transportation, school supplies), health and nutrition support, and connection to a vibrant church community. Your sponsorship helps break the cycle of poverty by giving children the resources they need to succeed.",
     },
     {
-      question: "What does my $35 per month provide?",
+      question: "What does my $25 per month provide?",
       answer: (
         <div>
-          <p className="mb-3">Your monthly sponsorship of $35 provides:</p>
+          <p className="mb-3">Your monthly sponsorship of $25 provides:</p>
           <ul className="list-disc space-y-1 pl-5">
             <li>Transportation and lunch assistance for school</li>
             <li>School supplies and project materials</li>
@@ -75,14 +75,14 @@ const faqData = {
     {
       question: "How does church sponsorship work?",
       answer:
-        "Church sponsorship at $50 per month helps equip local churches in the Philippines to serve their communities effectively. Your support provides pastoral training, ministry resources, and helps churches conduct outreach programs.",
+        "Church sponsorship at $30 per month helps equip local churches in the Philippines to serve their communities effectively. Your support provides pastoral training, ministry resources, and helps churches conduct outreach programs.",
     },
     {
-      question: "What does my $50 per month provide?",
+      question: "What does my $30 per month provide?",
       answer: (
         <div>
           <p className="mb-3">
-            Your monthly church sponsorship of $50 helps provide:
+            Your monthly church sponsorship of $30 helps provide:
           </p>
           <ul className="list-disc space-y-1 pl-5">
             <li>Outreach events and community programs</li>
@@ -102,7 +102,7 @@ const faqData = {
     {
       question: "What is the 'Give to Equip' campaign?",
       answer:
-        "Give to Equip is our special campaign to raise $35,000 to build an equipping center for Filipino pastors. In the Philippines, more than 35,000 pastors lead churches without formal Bible training. This center will provide pastoral education and resources to help them serve their congregations more effectively.",
+        "Give to Equip is our special campaign to raise $40,000 to build an equipping center for Filipino pastors. In the Philippines, more than 35,000 pastors lead churches without formal Bible training. This center will provide pastoral education and resources to help them serve their congregations more effectively.",
     },
   ],
   donations: [
@@ -161,7 +161,7 @@ const faqSchemaData = [
   {
     question: "How does child sponsorship work?",
     answer:
-      "When you sponsor a child for $35 per month, your support provides educational assistance, health and nutrition support, and connection to a vibrant church community.",
+      "When you sponsor a child for $25 per month, your support provides educational assistance, health and nutrition support, and connection to a vibrant church community.",
   },
   {
     question: "Is my donation tax-deductible?",
@@ -171,7 +171,7 @@ const faqSchemaData = [
   {
     question: "How does church sponsorship work?",
     answer:
-      "Church sponsorship at $50 per month helps equip local churches in the Philippines to serve their communities effectively through pastoral training, ministry resources, and outreach programs.",
+      "Church sponsorship at $30 per month helps equip local churches in the Philippines to serve their communities effectively through pastoral training, ministry resources, and outreach programs.",
   },
   {
     question: "Can I communicate with my sponsored child?",

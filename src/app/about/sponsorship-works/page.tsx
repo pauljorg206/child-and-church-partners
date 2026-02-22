@@ -494,7 +494,7 @@ export default function SponsorshipWorksPage() {
 
       <CTASection
         title="Start Your Sponsorship Journey Today"
-        description="For just $35 a month, you can transform a child's life through education, community, and faith. Your sponsorship makes a lasting difference."
+        description="For just $25 a month, you can transform a child's life through education, community, and faith. Your sponsorship makes a lasting difference."
         primaryCta={{ label: "Sponsor a Child", href: "/children" }}
         secondaryCta={{ label: "Learn About Giving", href: "/give" }}
         background="gold"
