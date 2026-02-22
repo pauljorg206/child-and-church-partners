@@ -156,7 +156,7 @@ export default function Header() {
                 alt="Child & Church Partners - Overcome Barriers. Lead Change."
                 width={280}
                 height={40}
-                className="h-10 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
 
