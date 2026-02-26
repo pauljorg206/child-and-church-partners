@@ -79,11 +79,6 @@ export default function GalleryClient() {
           ))}
         </div>
 
-        {/* Results count */}
-        <p className="mb-8 text-center text-gray-600">
-          Showing {visibleImages.length} of {filteredImages.length} photos
-        </p>
-
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {visibleImages.map((image, index) => (
@@ -101,11 +96,7 @@ export default function GalleryClient() {
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
               />
-              <div className="absolute inset-0 flex items-end justify-center bg-black/0 transition-all duration-300 group-hover:bg-black/40">
-                <div className="p-4 text-center text-sm text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  {image.caption}
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/20" />
             </button>
           ))}
         </div>
@@ -136,7 +127,7 @@ export default function GalleryClient() {
           ref={lightboxRef}
           role="dialog"
           aria-modal="true"
-          aria-label={`Image ${selectedImage + 1} of ${visibleImages.length}: ${visibleImages[selectedImage].caption}`}
+          aria-label="Photo lightbox"
           tabIndex={-1}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 outline-none"
           onClick={() => setSelectedImage(null)}
@@ -191,14 +182,6 @@ export default function GalleryClient() {
           >
             &rsaquo;
           </button>
-
-          {/* Caption */}
-          <div className="absolute bottom-4 left-0 right-0 text-center text-white">
-            <p className="text-lg">{visibleImages[selectedImage].caption}</p>
-            <p className="mt-1 text-sm text-gray-400">
-              {selectedImage + 1} of {visibleImages.length}
-            </p>
-          </div>
         </div>
       )}
     </section>
