@@ -45,8 +45,8 @@ export default function WhyChildrenPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative h-80 overflow-hidden rounded-2xl lg:h-[400px]">
               <Image
-                src="/images/photo-gallery/church-service-philippines-007.jpeg"
-                alt="A girl holding a thank you sign showing the impact of sponsorship"
+                src="/images/coloring.jpeg"
+                alt="Filipino boy coloring a Fruits of the Spirit activity sheet"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -60,9 +60,11 @@ export default function WhyChildrenPage() {
                 </footer>
               </blockquote>
               <p className="text-lg text-gray-600">
-                Young Filipinos have boundless potential to inspire change. But
-                poverty creates barriers—many families survive on $2 a day,
-                making school supplies, transportation, and meals unaffordable.
+                Children are both a blessing and a responsibility. Our desire is
+                to see them grow physically and spiritually, prepared to lead
+                and serve with reverence for God. When we shepherd our children
+                with truth and grace, we are strengthening the future of
+                families and nations.
               </p>
             </div>
           </div>

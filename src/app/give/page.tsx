@@ -16,8 +16,8 @@ const givingOptions = [
     amount: "$20/month",
     description:
       "Weekly feeding program for 250 children ages 5-10 years old. Providing four nutritious meals for a child each month.",
-    image: "/images/photo-gallery/feeding-program-philippines-003.jpg",
-    imageAlt: "Children eating nutritious meals",
+    image: "/images/group-lunch.jpeg",
+    imageAlt: "Children eating a group lunch together",
   },
   {
     title: "Sponsor a Student",
@@ -40,8 +40,8 @@ const givingOptions = [
     amount: "$20/child",
     description:
       "As many as 250 Filipino children living in poverty each receive a sturdy backpack filled with school supplies at the beginning of each school year. Your support gives children from low-income families the head start they need to succeed.",
-    image: "/images/photo-gallery/filipino-youth-gathering-005.jpg",
-    imageAlt: "Boy holding a thank you sign",
+    image: "/images/school-backpack.avif",
+    imageAlt: "Back-to-school backpack with supplies",
   },
   {
     title: "Give to Equip",
@@ -56,8 +56,8 @@ const givingOptions = [
     amount: "Any Amount",
     description:
       "Your gift helps communities thrive even in the midst of many challenges: church repairs and construction, livelihood opportunities, vocational training, and disaster relief.",
-    image: "/images/photo-gallery/church-community-service-005.jpg",
-    imageAlt: "Church community service",
+    image: "/images/photo-gallery/youth-camp-philippines-001.jpeg",
+    imageAlt: "Church construction and repair work",
   },
 ];
 
