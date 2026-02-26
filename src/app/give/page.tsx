@@ -42,6 +42,7 @@ const givingOptions = [
       "As many as 250 Filipino children living in poverty each receive a sturdy backpack filled with school supplies at the beginning of each school year. Your support gives children from low-income families the head start they need to succeed.",
     image: "/images/school-backpack.avif",
     imageAlt: "Back-to-school backpack with supplies",
+    imagePosition: "object-[center_70%]",
   },
   {
     title: "Give to Equip",
@@ -93,7 +94,7 @@ export default function GivePage() {
                     alt={option.imageAlt}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
+                    className={`object-cover ${"imagePosition" in option ? option.imagePosition : ""}`}
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
