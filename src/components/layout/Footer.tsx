@@ -138,7 +138,7 @@ export default function Footer() {
               href="https://www.naloseed.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-white"
+              className="font-semibold text-accent-gold transition-colors hover:text-yellow-300"
             >
               Nalo Seed
             </a>
