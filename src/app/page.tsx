@@ -66,8 +66,8 @@ export default function Home() {
             <div className="overflow-hidden rounded-2xl bg-white shadow-lg">
               <div className="relative h-48">
                 <Image
-                  src="/images/photo-gallery/feeding-program-philippines-003.jpg"
-                  alt="Children at a feeding outreach"
+                  src="/images/group-lunch.jpeg"
+                  alt="Children eating a group lunch together"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
@@ -76,7 +76,7 @@ export default function Home() {
               <div className="p-6">
                 <div className="mb-2 flex items-baseline justify-between">
                   <h3 className="text-xl font-bold text-gray-900">
-                    Sponsor a Child
+                    Sponsor a Child: Feeding Outreach
                   </h3>
                   <span className="text-lg font-semibold text-accent-gold">
                     $20/mo
