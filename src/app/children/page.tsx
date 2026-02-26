@@ -45,11 +45,11 @@ export default function WhyChildrenPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative h-80 overflow-hidden rounded-2xl lg:h-[400px]">
               <Image
-                src="/images/coloring.jpeg"
-                alt="Filipino boy coloring a Fruits of the Spirit activity sheet"
+                src="/images/photo-gallery/filipino-children-ministry-009.jpeg"
+                alt="Filipino children holding gift boxes at Blessed Church"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="scale-125 object-cover object-[center_60%]"
               />
             </div>
             <div>
