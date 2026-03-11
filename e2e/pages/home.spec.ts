@@ -32,6 +32,9 @@ test.describe("Home Page", () => {
   });
 
   test("newsletter form is functional", async ({ page }) => {
+    // Wait for anti-spam timer (3s) to expire
+    await page.waitForTimeout(3100);
+
     const nameInput = page.getByPlaceholder("Your Name").last();
     const emailInput = page.getByPlaceholder("Your Email").last();
 

@@ -67,7 +67,9 @@ test.describe("Accessibility", () => {
     // Check for form labels
     const form = page.locator("form");
     if ((await form.count()) > 0) {
-      const inputs = form.locator("input, textarea");
+      const inputs = form.locator(
+        "input:not([aria-hidden='true'] input), textarea:not([aria-hidden='true'] textarea)"
+      );
       const count = await inputs.count();
 
       for (let i = 0; i < count; i++) {

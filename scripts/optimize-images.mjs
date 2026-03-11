@@ -29,7 +29,11 @@ async function optimizeImages() {
       const metadata = await image.metadata();
 
       // Skip if already small enough
-      if (metadata.width && metadata.width <= MAX_WIDTH && originalSize < 200_000) {
+      if (
+        metadata.width &&
+        metadata.width <= MAX_WIDTH &&
+        originalSize < 200_000
+      ) {
         continue;
       }
 
@@ -64,9 +68,7 @@ async function optimizeImages() {
     }
   }
 
-  console.log(
-    `\nDone! Total saved: ${(saved / 1024 / 1024).toFixed(1)} MB`
-  );
+  console.log(`\nDone! Total saved: ${(saved / 1024 / 1024).toFixed(1)} MB`);
 }
 
 optimizeImages();
