@@ -152,7 +152,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/photo-gallery/feeding-program-philippines-005.png"
+                src="/images/Child & Church Partners LOGO TRANSPARENT.png"
                 alt="Child & Church Partners - Overcome Barriers. Lead Change."
                 width={280}
                 height={40}
