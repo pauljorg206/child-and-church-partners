@@ -1,20 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
 // Map program types to PayPal Plan IDs
-// These must be created in PayPal Dashboard first
-function getPlanId(programType: string, amount: number): string | null {
-  // Check for predefined plans
-  if (programType === "child" && amount === 20) {
-    return process.env.PAYPAL_PLAN_ID_CHILD || null;
-  }
-  if (programType === "student" && amount === 25) {
+function getPlanId(programType: string): string | null {
+  if (programType === "child") return process.env.PAYPAL_PLAN_ID_CHILD || null;
+  if (programType === "student")
     return process.env.PAYPAL_PLAN_ID_STUDENT || null;
-  }
-  if (programType === "church" && amount === 30) {
+  if (programType === "church")
     return process.env.PAYPAL_PLAN_ID_CHURCH || null;
-  }
-  // For custom recurring amounts, you would need to create plans dynamically
-  // or have a general plan configured
   return process.env.PAYPAL_PLAN_ID_GENERAL || null;
 }
 
@@ -33,7 +25,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid amount" }, { status: 400 });
     }
 
-    const planId = getPlanId(programType, amount);
+    const planId = getPlanId(programType);
 
     if (!planId) {
       return NextResponse.json(
@@ -45,7 +37,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Log subscription attempt
     console.log("Subscription initiated:", {
       programType,
       amount,
