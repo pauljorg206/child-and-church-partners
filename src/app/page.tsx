@@ -192,7 +192,7 @@ export default function Home() {
                 lives to serving children and equipping pastors to raise
                 next-generation leaders.
               </p>
-              <Link href="/about/founders" className="btn-secondary">
+              <Link href="/about" className="btn-secondary">
                 Read Our Story
               </Link>
             </div>

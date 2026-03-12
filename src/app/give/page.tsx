@@ -160,18 +160,6 @@ export default function GivePage() {
                 alongside local churches, and experience the heart of our
                 ministry firsthand.
               </p>
-              <p className="mb-4 text-gray-600">
-                The full mission cost of $5,000 covers round-trip airfare,
-                comfortable accommodations, meals, and in-country expenses for
-                two weeks. Half of your contribution goes directly to blessing
-                the ministry and communities you&apos;re serving.
-              </p>
-              <p className="mb-4 font-medium text-primary-blue">
-                We don&apos;t want cost to be a barrier. If you feel called to
-                go but the full amount is out of reach, please reach out to us.
-                We&apos;re happy to work with you on flexible arrangements so
-                you can be part of this experience.
-              </p>
               <Link href="/contact" className="btn-primary">
                 Contact Us About Upcoming Missions
               </Link>
@@ -201,33 +189,6 @@ export default function GivePage() {
             >
               Learn More
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Tax Deductible Notice */}
-      <section className="bg-neutral-off-white py-8">
-        <div className="container-site">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="flex flex-col items-center gap-2 text-gray-600">
-              <svg
-                className="h-6 w-6 text-accent-gold"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <p className="text-sm">
-                Child & Church Partners International is a 501(c)(3) nonprofit
-                organization. All donations are tax-deductible to the extent
-                allowed by law.
-              </p>
-              <p className="text-sm font-medium">EIN: 82-2285185</p>
-            </div>
           </div>
         </div>
       </section>

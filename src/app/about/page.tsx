@@ -1,6 +1,5 @@
 import Hero from "@/components/sections/Hero";
 import CTASection from "@/components/sections/CTASection";
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -62,13 +61,14 @@ export default function AboutPage() {
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="relative h-80 overflow-hidden rounded-2xl lg:h-[450px]">
-              <Image
-                src="/images/dani-rez.avif"
-                alt="Dani and Rez Sindac, Founders of Child & Church Partners"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+            <div className="aspect-video overflow-hidden rounded-2xl shadow-xl">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/3-yo0YX7OG4?rel=0"
+                title="Child & Church Partners Thanksgiving Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                className="h-full w-full"
               />
             </div>
             <div>
@@ -88,8 +88,8 @@ export default function AboutPage() {
                 International, continuing their lifelong commitment to walking
                 alongside pastors and communities in the Philippines.
               </p>
-              <Link href="/about/founders" className="btn-secondary">
-                Read Their Full Story
+              <Link href="/about" className="btn-secondary">
+                Learn More About Us
               </Link>
             </div>
           </div>
@@ -139,26 +139,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What We Believe */}
+      {/* Founders Quote */}
       <section className="section-padding bg-neutral-off-white">
         <div className="container-site">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold text-gray-900 sm:text-4xl">
-              What We Believe
-            </h2>
-            <p className="mb-8 text-lg text-gray-600">
-              We believe that every child deserves access to education, health
-              care, and a loving community. We believe that churches, when
-              properly equipped and supported, can be powerful agents of change
-              in their communities. And we believe that together, we can
-              overcome barriers and lead change.
-            </p>
-            <div className="rounded-2xl bg-white p-8 shadow-sm">
-              <blockquote className="text-xl italic text-gray-700">
-                &ldquo;A church built on God&apos;s truth and grace has power to
-                shine life into a world darkened by despair.&rdquo;
+            <div className="mb-8 rounded-2xl bg-white p-8 shadow-sm">
+              <blockquote className="mb-4 text-xl italic text-gray-700 sm:text-2xl">
+                &ldquo;When we invest in the physical and spiritual needs of
+                children today, and when we equip grassroots churches, we are
+                strengthening families and the future of our nation.&rdquo;
               </blockquote>
+              <div className="font-semibold text-accent-gold">
+                — Dani and Rez Sindac
+              </div>
             </div>
+            <p className="text-lg text-gray-600">
+              A church built on God&apos;s truth and grace has the power to
+              shine life into a world in need of hope, healing, and redemption.
+            </p>
           </div>
         </div>
       </section>

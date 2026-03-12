@@ -81,10 +81,10 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Contact</h3>
             <p className="mb-4 text-sm text-gray-300">
               <a
-                href="mailto:info@childandchurchpartners.org"
+                href="mailto:rgsindac@gmail.com"
                 className="transition-colors hover:text-white"
               >
-                info@childandchurchpartners.org
+                rgsindac@gmail.com
               </a>
             </p>
             <p className="mb-4 text-sm text-gray-300">

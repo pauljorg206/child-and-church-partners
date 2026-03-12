@@ -199,7 +199,7 @@ export default function CookiePolicyPage() {
           <br />
           Austin, Texas, USA
           <br />
-          Email: info@childandchurchpartners.org
+          Email: rgsindac@gmail.com
         </p>
       </section>
     </LegalPageLayout>

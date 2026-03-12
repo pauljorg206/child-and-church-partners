@@ -11,7 +11,6 @@ const navigation = [
     href: "/about",
     children: [
       { name: "Our Story", href: "/about" },
-      { name: "Our Founders", href: "/about/founders" },
       { name: "Our Inspiration", href: "/about/inspiration" },
       { name: "2025 Impact", href: "/about/impact" },
     ],

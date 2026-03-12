@@ -20,7 +20,7 @@ export function OrganizationSchema() {
       addressRegion: "TX",
       addressCountry: "US",
     },
-    email: "info@childandchurchpartners.org",
+    email: "rgsindac@gmail.com",
     nonprofitStatus: "Nonprofit501c3",
     taxID: "82-2285185",
     sameAs: [],

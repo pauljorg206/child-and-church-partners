@@ -243,7 +243,7 @@ export default function TermsOfServicePage() {
           <br />
           Austin, Texas, USA
           <br />
-          Email: info@childandchurchpartners.org
+          Email: rgsindac@gmail.com
         </p>
       </section>
     </LegalPageLayout>

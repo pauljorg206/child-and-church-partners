@@ -6,9 +6,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function GiveToEquipPage() {
-  const raised = 19500;
-  const goal = 40000;
-  const percentage = Math.round((raised / goal) * 100);
   const [shareMenuOpen, setShareMenuOpen] = useState(false);
 
   const handleShare = async () => {
@@ -90,30 +87,6 @@ export default function GiveToEquipPage() {
                 fill
                 className="object-cover"
               />
-            </div>
-
-            {/* Progress Bar */}
-            <div className="mb-12 rounded-2xl bg-neutral-off-white p-8">
-              <h3 className="mb-4 text-center text-xl font-bold text-gray-900">
-                Help Us Raise Funding for an Equipping Center!
-              </h3>
-              <div className="mb-4 flex items-center justify-between">
-                <div>
-                  <div className="text-3xl font-bold text-accent-gold">
-                    $18K
-                  </div>
-                  <div className="text-gray-600">raised of $40K goal</div>
-                </div>
-                <div className="text-4xl font-bold text-primary-blue">
-                  {percentage}%
-                </div>
-              </div>
-              <div className="h-4 w-full rounded-full bg-gray-200">
-                <div
-                  className="h-4 rounded-full bg-accent-gold transition-all duration-1000"
-                  style={{ width: `${percentage}%` }}
-                />
-              </div>
             </div>
 
             {/* The Challenge */}

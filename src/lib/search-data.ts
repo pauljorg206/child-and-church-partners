@@ -25,14 +25,6 @@ export const searchData: SearchItem[] = [
     keywords: ["about", "mission", "vision", "story"],
   },
   {
-    title: "Our Founders",
-    description:
-      "Meet the founders of Child & Church Partners and learn about their journey.",
-    url: "/about/founders",
-    category: "page",
-    keywords: ["founders", "leadership", "team"],
-  },
-  {
     title: "Our Inspiration",
     description:
       "Discover the inspiration behind Child & Church Partners and why we do what we do.",
